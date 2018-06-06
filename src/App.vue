@@ -13,6 +13,7 @@
           v-bind:discipline="project.discipline"
           />
       </main>
+      <Footer v-bind:year="copyrightYear"/>
     </section>
   </div>
 </template>
@@ -22,13 +23,15 @@ import HelloWorld from './components/HelloWorld.vue'
 
 import Header from './components/_common/Header.vue'
 import Project from './components/_common/Project.vue'
+import Footer from './components/_common/Footer.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
     Header,
-    Project
+    Project,
+    Footer
   },
   data () {
     return {
@@ -45,7 +48,18 @@ export default {
         //   path: 'member',
         //   discipline: 'development'
         // }
-      ]
+      ],
+      copyrightYear: this.getCurrentYear()
+    }
+  },
+  methods: {
+    getCurrentYear: function () {
+      
+      let d = new Date(),
+          y = d.getFullYear();
+
+      return y
+
     }
   }
 }

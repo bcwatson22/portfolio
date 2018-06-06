@@ -18,24 +18,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 30px;
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
 
-  .logo,
-  .intro {
-    width: calc(50% - 15px);
-  }
+    .logo,
+    .intro {
+      width: calc(50% - 15px);
+    }
 
-  .intro {
-    p {
-      &:last-of-type {
-        margin-bottom: 0;
+    .intro {
+      p {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }
-}
 </style>
