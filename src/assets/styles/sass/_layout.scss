@@ -48,6 +48,13 @@ body {
   // padding: 0 15px;
 }
 
+main {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 // header {
 //   margin-bottom: 15px;
 //
