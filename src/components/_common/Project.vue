@@ -1,7 +1,7 @@
 <template>
   <section class="project" :class="disciplines">
     <img :src="require('./../../assets/images/projects/' + name + '.jpg')">
-    <a class="info" v-bind:href="link === 'modal' ? 'modal' : link" v-bind:target="link === 'modal' ? false : '_blank'">
+    <a v-if="link !== 'modal'" class="info" v-bind:href="link" target="_blank">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -10,21 +10,30 @@
         </li>
       </ul>
     </a>
+    <button v-if="link === 'modal'" class="info" @click="$emit('activate-modal', name)">
+      <h1>{{ title }}</h1>
+      <p>{{ blurb }}</p>
+      <ul class="indicator">
+        <li v-for="(discipline, index) in disciplines" :key="index"  :class="discipline">
+          {{ discipline }}
+        </li>
+      </ul>
+    </button>
   </section>
 </template>
 
 <script>
-export default {
-  name: 'Project',
-  props: {
-    id: Number,
-    title: String,
-    name: String,
-    disciplines: Array,
-    blurb: String,
-    link: String
+  export default {
+    name: 'Project',
+    props: {
+      id: Number,
+      title: String,
+      name: String,
+      disciplines: Array,
+      blurb: String,
+      link: String
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -36,6 +45,8 @@ export default {
     position: relative;
     // box-shadow: 0px 0px 5px 1px transparent;
     transition: all 0.3s ease;
+    margin: 15px 0;
+    background: #fff;
 
     &:hover,
     &:focus {
@@ -85,6 +96,8 @@ export default {
           transition: all 0.25s ease;
           // @include hwa();
           @include delay(4, 0.1s, 0);
+          // box-shadow: 0px 0px 3px 1px #fff;
+          border: 1px solid #fff;
 
           &.development {
             background: $yellow;
@@ -94,7 +107,7 @@ export default {
             background: $green;
           }
 
-          &.illustration {
+          &.branding {
             background: $blue;
           }
 
