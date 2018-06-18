@@ -4,6 +4,8 @@
       <Header/>
       <!-- <img src="./assets/images/global/logo.png"> -->
       <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+        <p>Modal show: <strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
+        <button @click="closeModal()">Close</button>
       <main>
         <Project
           v-for="project of projects"
@@ -20,9 +22,9 @@
         v-if="showModal"
         /> -->
 
-      <section v-if="modal.show" class="modal">
+      <!-- <section v-if="modal.show" class="modal">
         <h2>Modal</h2>
-      </section>
+      </section> -->
 
     </section>
   </div>
@@ -35,6 +37,9 @@ import Header from './components/_common/Header.vue'
 import Project from './components/_common/Project.vue'
 import Footer from './components/_common/Footer.vue'
 import Modal from './components/_common/Modal.vue'
+
+import { mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'app',
@@ -81,12 +86,15 @@ export default {
           link: 'modal'
         }
       ],
-      copyrightYear: this.getCurrentYear(),
-      modal: {
-        show: false,
-        active: null
-      }
+      copyrightYear: this.getCurrentYear()
     }
+  },
+  computed: {
+    ...mapGetters([
+      // Mounts the "safelyStoredNumber" getter to the scope of your component.
+      'modalShown',
+      'modalData'
+    ])
   },
   methods: {
     getCurrentYear: function () {
@@ -96,7 +104,11 @@ export default {
 
       return y
 
-    }
+    },
+    ...mapMutations([
+      // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
+      'closeModal'
+    ])
   }
 }
 </script>

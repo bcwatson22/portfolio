@@ -10,7 +10,7 @@
         </li>
       </ul>
     </a>
-    <button v-if="link === 'modal'" class="info" @click="$emit('activate-modal', name)">
+    <button v-if="link === 'modal'" class="info" @click="activateModal(name)">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
     name: 'Project',
     props: {
@@ -32,6 +34,11 @@
       disciplines: Array,
       blurb: String,
       link: String
+    },
+    methods: {
+      ...mapMutations([
+        'activateModal'
+      ])
     }
   }
 </script>
