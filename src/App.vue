@@ -4,7 +4,7 @@
       <Header/>
       <!-- <img src="./assets/images/global/logo.png"> -->
       <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-        <p>Modal show: <strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
+        <p><strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
         <button @click="closeModal()">Close</button>
       <main>
         <Project
@@ -15,6 +15,7 @@
           v-bind:disciplines="project.disciplines"
           v-bind:blurb="project.blurb"
           v-bind:link="project.link"
+          v-bind:data="project"
           />
       </main>
       <Footer v-bind:year="copyrightYear"/>
@@ -22,9 +23,14 @@
         v-if="showModal"
         /> -->
 
-      <!-- <section v-if="modal.show" class="modal">
-        <h2>Modal</h2>
-      </section> -->
+      <section class="modal" v-if="modalShown">
+        <div class="mask" @click.self="closeModal()">
+          <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
+          <h2>{{modalData.title}}</h2>
+          <p>{{modalData.blurb}}</p>
+          <button @click="closeModal()">Close</button>
+        </div>
+      </section>
 
     </section>
   </div>
@@ -113,7 +119,20 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .modal {
+    .mask {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+  }
+
   #app {
     /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

@@ -10,7 +10,7 @@
         </li>
       </ul>
     </a>
-    <button v-if="link === 'modal'" class="info" @click="activateModal(name)">
+    <button v-if="link === 'modal'" class="info" @click="activateModal(data)">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -28,6 +28,7 @@
   export default {
     name: 'Project',
     props: {
+      data: Object,
       id: Number,
       title: String,
       name: String,
