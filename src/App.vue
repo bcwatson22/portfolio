@@ -41,15 +41,15 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
 
-import Header from './components/_common/Header.vue'
-import Project from './components/_common/Project.vue'
-import Footer from './components/_common/Footer.vue'
-import Modal from './components/_common/Modal.vue'
+import Header from './components/_common/Header.vue';
+import Project from './components/_common/Project.vue';
+import Footer from './components/_common/Footer.vue';
+import Modal from './components/_common/Modal.vue';
 
-import { mapGetters } from 'vuex'
-import { mapMutations } from 'vuex'
+import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'app',
