@@ -23,14 +23,18 @@
         v-if="showModal"
         /> -->
 
-      <section class="modal" v-if="modalShown">
-        <div class="mask" @click.self="closeModal()">
-          <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
-          <h2>{{modalData.title}}</h2>
-          <p>{{modalData.blurb}}</p>
-          <button @click="closeModal()">Close</button>
-        </div>
-      </section>
+      <transition name="popup">
+        <section class="modal" v-if="modalShown">
+          <div class="mask" @click.self="closeModal()">
+            <div class="container">
+              <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
+              <h2>{{modalData.title}}</h2>
+              <p>{{modalData.blurb}}</p>
+              <button @click="closeModal()">Close</button>
+            </div>
+          </div>
+        </section>
+      </transition>
 
     </section>
   </div>
@@ -119,20 +123,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  .modal {
-    .mask {
-      position: fixed;
-      z-index: 10;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      padding: 30px;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-  }
-
+<!-- <style lang="scss">
   #app {
     /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -141,4 +132,4 @@ export default {
     color: #2c3e50;
     margin-top: 60px; */
   }
-</style>
+</style> -->

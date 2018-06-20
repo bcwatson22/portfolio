@@ -55,6 +55,68 @@ main {
   justify-content: space-between;
 }
 
+.modal {
+  .mask {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.9);
+    // transition: opacity 0.5s ease;
+
+    .container {
+      // transition: all 0.3s ease;
+    }
+  }
+}
+
+// .popup-enter,
+// .popup-leave-to {
+//   opacity: 0;
+// }
+//
+// .popup-enter .container,
+// .popup-leave-to .container {
+//   -webkit-transform: scale(1.02);
+//   transform: scale(1.02);
+// }
+
+.popup-enter-active,
+.popup-enter-active .container {
+  transition: all 0.3s ease-out;
+}
+
+// .popup-enter-active .mask {
+//   transition: all 0.15s ease-out;
+// }
+
+.popup-leave-active,
+.popup-leave-active .container {
+  transition: all 0.15s ease-in;
+}
+
+.popup-enter,
+.popup-leave-to {
+  .container {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+// .popup-enter .mask {
+//   opacity: 0;
+// }
+
+.popup-leave-to {
+  opacity: 0;
+}
+
+
+
 // header {
 //   margin-bottom: 15px;
 //
