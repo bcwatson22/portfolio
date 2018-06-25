@@ -10,7 +10,7 @@
         </li>
       </ul>
     </a>
-    <button v-if="link === 'modal'" class="info" @click="activateModal(data)">
+    <a v-if="link === 'modal'" class="info" v-bind:href="getCleanUrl(title)" @click="activateModal($event, data)">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -18,7 +18,7 @@
           {{ discipline }}
         </li>
       </ul>
-    </button>
+    </a>
   </section>
 </template>
 
@@ -37,8 +37,29 @@
       link: String
     },
     methods: {
+      getCleanUrl: function (title) {
+
+        let url = title.replace(/\s+/g, '-').toLowerCase()
+
+        return url;
+
+      },
+      activateModal: function (event, modalData) {
+
+        if (event) event.preventDefault();
+
+        let project = event.target.closest('.info'),
+            target = project.getAttribute('href'),
+            prefix = 'projects/',
+            url = prefix + target;
+
+        if (history) history.pushState(modalData, modalData.title, url);
+
+        this.updateModal(modalData);
+
+      },
       ...mapMutations([
-        'activateModal'
+        'updateModal'
       ])
     }
   }

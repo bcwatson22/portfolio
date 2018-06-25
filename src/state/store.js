@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
     modalData: state => state.modal.active
   },
   mutations: {
-    activateModal (state, payload) {
+    updateModal (state, payload) {
       state.modal.show = true;
       state.modal.active = payload;
     },
@@ -25,8 +25,8 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-    activateModal (context, payload) {
-      context.commit('activateModal', payload);
+    updateModal (context, payload) {
+      context.commit('updateModal', payload);
     }
   }
 });

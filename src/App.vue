@@ -5,7 +5,7 @@
       <!-- <img src="./assets/images/global/logo.png"> -->
       <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
         <p><strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
-        <button @click="closeModal()">Close</button>
+        <button @click="deactivateModal()">Close</button>
       <main>
         <Project
           v-for="project of projects"
@@ -25,12 +25,12 @@
 
       <transition name="popup">
         <section class="modal" v-if="modalShown">
-          <div class="mask" @click.self="closeModal()">
+          <div class="mask" @click.self="deactivateModal()">
             <div class="container">
               <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
               <h2>{{modalData.title}}</h2>
               <p>{{modalData.blurb}}</p>
-              <button @click="closeModal()">Close</button>
+              <button @click="deactivateModal()">Close</button>
             </div>
           </div>
         </section>
@@ -51,6 +51,8 @@ import Modal from './components/_common/Modal.vue';
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 
+import mixins from './assets/scripts/mixins.js'
+
 export default {
   name: 'app',
   components: {
@@ -60,6 +62,7 @@ export default {
     Footer,
     Modal
   },
+  mixins: [mixins],
   data () {
     return {
       projects: [
@@ -112,9 +115,16 @@ export default {
       let d = new Date(),
           y = d.getFullYear();
 
-      return y
+      return y;
 
     },
+    // deactivateModal: function () {
+    //
+    //   if (history) history.pushState('home', 'Billy Watson', '/');
+    //
+    //   this.closeModal();
+    //
+    // },
     ...mapMutations([
       // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
       'closeModal'
