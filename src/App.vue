@@ -5,7 +5,7 @@
       <!-- <img src="./assets/images/global/logo.png"> -->
       <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
         <p><strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
-        <button @click="deactivateModal()">Close</button>
+        <button @click="deactivateModal(true)">Close</button>
       <main>
         <Project
           v-for="project of projects"
@@ -25,12 +25,12 @@
 
       <transition name="popup">
         <section class="modal" v-if="modalShown">
-          <div class="mask" @click.self="deactivateModal()">
+          <div class="mask" @click.self="deactivateModal(true)">
             <div class="container">
               <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
               <h2>{{modalData.title}}</h2>
               <p>{{modalData.blurb}}</p>
-              <button @click="deactivateModal()">Close</button>
+              <button @click="deactivateModal(true)">Close</button>
             </div>
           </div>
         </section>
@@ -51,7 +51,7 @@ import Modal from './components/_common/Modal.vue';
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 
-import mixins from './assets/scripts/mixins.js'
+import mixins from './assets/scripts/mixins.js';
 
 export default {
   name: 'app',
@@ -63,13 +63,73 @@ export default {
     Modal
   },
   mixins: [mixins],
+  mounted () {
+
+    // setTimeout(function () {
+    //
+    //   window.addEventListener("popstate", function (event) {
+    //     let state = event.state;
+    //
+    //     if (state !== 'home') {
+    //
+    //       console.log('activate ' + state.name);
+    //
+    //       this.activateModal(event, state);
+    //
+    //     } else {
+    //
+    //       console.log('deactivate!');
+    //
+    //       this.deactivateModal(false);
+    //
+    //     }
+    //   }, false);
+    //
+    //   // this.onPopState();
+    //
+    //
+    // }, 5000);
+
+    // window.addEventListener("popstate", function (event) {
+    //   let state = event.state;
+    //
+    //   if (state !== 'home') {
+    //
+    //     console.log('activate ' + state.name);
+    //
+    //     this.activateModal(event, state);
+    //
+    //   }
+    // }, false);
+
+    // window.onpopstate = function (event) {
+    //
+    //   let state = event.state;
+    //
+    //   if (state !== 'home') {
+    //
+    //     console.log('activate ' + state.name);
+    //
+    //     this.activateModal(event, state);
+    //
+    //   } else {
+    //
+    //
+    //
+    //   }
+
+    //  };
+
+    // this.onPopState();
+
+  },
   data () {
     return {
       projects: [
         {
           id: 1,
           title: 'Bing Jones',
-          name: 'bing',
+          name: 'bing-jones',
           disciplines: ['development', 'design', 'branding'],
           blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           link: 'http://bingjones.co.uk'
@@ -77,7 +137,7 @@ export default {
         {
           id: 2,
           title: 'Member Centre',
-          name: 'member',
+          name: 'member-centre',
           disciplines: ['development'],
           blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           link: 'modal'
@@ -85,7 +145,7 @@ export default {
         {
           id: 3,
           title: 'Furness Brothers',
-          name: 'furness',
+          name: 'furness-brothers',
           disciplines: ['branding'],
           blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           link: 'modal'
@@ -118,13 +178,6 @@ export default {
       return y;
 
     },
-    // deactivateModal: function () {
-    //
-    //   if (history) history.pushState('home', 'Billy Watson', '/');
-    //
-    //   this.closeModal();
-    //
-    // },
     ...mapMutations([
       // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
       'closeModal'

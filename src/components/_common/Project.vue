@@ -23,7 +23,9 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex';
+
+  import mixins from './../../assets/scripts/mixins.js';
 
   export default {
     name: 'Project',
@@ -36,30 +38,17 @@
       blurb: String,
       link: String
     },
+    mixins: [mixins],
     methods: {
       getCleanUrl: function (title) {
 
-        let url = title.replace(/\s+/g, '-').toLowerCase()
+        let url = title.replace(/\s+/g, '-').toLowerCase();
 
         return url;
 
       },
-      activateModal: function (event, modalData) {
-
-        if (event) event.preventDefault();
-
-        let project = event.target.closest('.info'),
-            target = project.getAttribute('href'),
-            prefix = 'projects/',
-            url = prefix + target;
-
-        if (history) history.pushState(modalData, modalData.title, url);
-
-        this.updateModal(modalData);
-
-      },
       ...mapMutations([
-        'updateModal'
+        'openModal'
       ])
     }
   }
