@@ -24,10 +24,12 @@
         /> -->
 
       <transition name="popup">
-        <Modal
+
+        <!-- <Modal
           v-if="modalShown"
           v-bind:data="modalData"
-          />
+          /> -->
+        <router-view :projectData="projects"></router-view>
         <!-- <section class="modal" v-if="modalShown">
           <div class="mask" @click.self="deactivateModal(true)">
             <div class="container">
@@ -38,6 +40,7 @@
             </div>
           </div>
         </section> -->
+
       </transition>
 
     </section>

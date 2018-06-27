@@ -1,12 +1,15 @@
 <template>
   <section class="modal">
-    <div class="mask" @click.self="deactivateModal(true)">
+    <div class="mask" @click.self="deactivateModal()">
+    <!-- <router-link to="/" tag="div" class="mask"> -->
       <div class="container">
-        <img :src="require('./../../assets/images/projects/' + data.name + '.jpg')">
-        <h2>{{data.title}}</h2>
-        <p>{{data.blurb}}</p>
-        <button @click="deactivateModal(true)">Close</button>
+        <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
+        <h2>{{modalData.title}}</h2>
+        <p>{{modalData.blurb}}</p>
+        <!-- <button @click="deactivateModal(true)">Close</button> -->
+        <router-link to="/" class="close">Close</router-link>
       </div>
+    <!-- </router-link> -->
     </div>
   </section>
 </template>
@@ -19,10 +22,28 @@
   export default {
     name: 'Modal',
     props: {
-      data: Object
+      // modalData: Object,
+      projectData: Array
     },
     mixins: [mixins],
+    data () {
+      return {
+        modalData: {}
+      }
+    },
+    created () {
+
+      this.getProjectData();
+
+    },
     methods: {
+      getProjectData: function () {
+
+        let project = this.projectData.filter(project => project.name === this.$route.params.name);
+
+        this.modalData = project[0];
+
+      },
       ...mapMutations([
         'closeModal'
       ])

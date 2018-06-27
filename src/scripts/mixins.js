@@ -21,16 +21,17 @@ export default {
 
     },
 
-    deactivateModal: function (event) {
+    deactivateModal: function () {
 
-      if (event) {
+      // if (event) {
+      //
+      //   this.pushState('home', '/');
+      //
+      // }
+      //
+      // this.closeModal();
 
-        // if (history) history.pushState('home', 'Billy Watson', '/');
-        this.pushState('home', '/');
-
-      }
-
-      this.closeModal();
+      this.$router.push('/');
 
     },
 

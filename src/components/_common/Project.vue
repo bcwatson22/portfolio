@@ -10,7 +10,9 @@
         </li>
       </ul>
     </a>
-    <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)">
+    <!-- <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)"> -->
+    <!-- <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)"> -->
+    <router-link v-if="link === 'modal'" :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -18,7 +20,8 @@
           {{ discipline }}
         </li>
       </ul>
-    </a>
+    </router-link>
+    <!-- </a> -->
   </section>
 </template>
 
