@@ -1,15 +1,12 @@
 <template>
   <section class="modal">
     <div class="mask" @click.self="deactivateModal()">
-    <!-- <router-link to="/" tag="div" class="mask"> -->
       <div class="container">
         <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
         <h2>{{modalData.title}}</h2>
         <p>{{modalData.blurb}}</p>
-        <!-- <button @click="deactivateModal(true)">Close</button> -->
         <router-link to="/" class="close">Close</router-link>
       </div>
-    <!-- </router-link> -->
     </div>
   </section>
 </template>
@@ -22,7 +19,6 @@
   export default {
     name: 'Modal',
     props: {
-      // modalData: Object,
       projectData: Array
     },
     mixins: [mixins],

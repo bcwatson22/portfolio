@@ -1,7 +1,7 @@
 <template>
   <section class="project" :class="disciplines">
     <img :src="require('./../../assets/images/projects/' + name + '.jpg')">
-    <a v-if="link !== 'modal'" class="info" v-bind:href="link" target="_blank">
+    <a v-if="link !== 'modal'" class="info" :href="link" target="_blank">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -10,8 +10,6 @@
         </li>
       </ul>
     </a>
-    <!-- <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)"> -->
-    <!-- <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)"> -->
     <router-link v-if="link === 'modal'" :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
@@ -21,7 +19,6 @@
         </li>
       </ul>
     </router-link>
-    <!-- </a> -->
   </section>
 </template>
 

@@ -1,46 +1,31 @@
 <template>
   <div id="app">
     <section class="wrapper">
+
       <Header/>
+
       <!-- <img src="./assets/images/global/logo.png"> -->
       <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
         <p><strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
         <button @click="deactivateModal(true)">Close</button>
+
       <main>
         <Project
           v-for="project of projects"
-          v-bind:key="project.id"
-          v-bind:title="project.title"
-          v-bind:name="project.name"
-          v-bind:disciplines="project.disciplines"
-          v-bind:blurb="project.blurb"
-          v-bind:link="project.link"
-          v-bind:data="project"
+            :key="project.id"
+            :title="project.title"
+            :name="project.name"
+            :disciplines="project.disciplines"
+            :blurb="project.blurb"
+            :link="project.link"
+            :data="project"
           />
       </main>
-      <Footer v-bind:year="copyrightYear"/>
-      <!-- <Modal
-        v-if="showModal"
-        /> -->
+
+      <Footer :year="copyrightYear"/>
 
       <transition name="popup">
-
-        <!-- <Modal
-          v-if="modalShown"
-          v-bind:data="modalData"
-          /> -->
         <router-view :projectData="projects"></router-view>
-        <!-- <section class="modal" v-if="modalShown">
-          <div class="mask" @click.self="deactivateModal(true)">
-            <div class="container">
-              <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
-              <h2>{{modalData.title}}</h2>
-              <p>{{modalData.blurb}}</p>
-              <button @click="deactivateModal(true)">Close</button>
-            </div>
-          </div>
-        </section> -->
-
       </transition>
 
     </section>
@@ -70,66 +55,6 @@ export default {
     Modal
   },
   mixins: [mixins],
-  mounted () {
-
-    // setTimeout(function () {
-    //
-    //   window.addEventListener("popstate", function (event) {
-    //     let state = event.state;
-    //
-    //     if (state !== 'home') {
-    //
-    //       console.log('activate ' + state.name);
-    //
-    //       this.activateModal(event, state);
-    //
-    //     } else {
-    //
-    //       console.log('deactivate!');
-    //
-    //       this.deactivateModal(false);
-    //
-    //     }
-    //   }, false);
-    //
-    //   // this.onPopState();
-    //
-    //
-    // }, 5000);
-
-    // window.addEventListener("popstate", function (event) {
-    //   let state = event.state;
-    //
-    //   if (state !== 'home') {
-    //
-    //     console.log('activate ' + state.name);
-    //
-    //     this.activateModal(event, state);
-    //
-    //   }
-    // }, false);
-
-    // window.onpopstate = function (event) {
-    //
-    //   let state = event.state;
-    //
-    //   if (state !== 'home') {
-    //
-    //     console.log('activate ' + state.name);
-    //
-    //     this.activateModal(event, state);
-    //
-    //   } else {
-    //
-    //
-    //
-    //   }
-
-    //  };
-
-    // this.onPopState();
-
-  },
   data () {
     return {
       projects: [
@@ -192,14 +117,3 @@ export default {
   }
 }
 </script>
-
-<!-- <style lang="scss">
-  #app {
-    /* font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px; */
-  }
-</style> -->
