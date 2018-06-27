@@ -51,7 +51,7 @@ import Modal from './components/_common/Modal.vue';
 import { mapGetters } from 'vuex';
 import { mapMutations } from 'vuex';
 
-import mixins from './assets/scripts/mixins.js';
+import mixins from './scripts/mixins.js';
 
 export default {
   name: 'app',

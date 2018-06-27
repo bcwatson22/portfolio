@@ -25,7 +25,7 @@
 <script>
   import { mapMutations } from 'vuex';
 
-  import mixins from './../../assets/scripts/mixins.js';
+  import mixins from './../../scripts/mixins.js';
 
   export default {
     name: 'Project',
