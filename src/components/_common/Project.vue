@@ -10,7 +10,7 @@
         </li>
       </ul>
     </a>
-    <a v-if="link === 'modal'" class="info" v-bind:href="getCleanUrl(title)" @click="activateModal($event, data)">
+    <a v-if="link === 'modal'" class="info" v-bind:href="name" @click="activateModal($event, data)">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
@@ -40,13 +40,6 @@
     },
     mixins: [mixins],
     methods: {
-      getCleanUrl: function (title) {
-
-        let url = title.replace(/\s+/g, '-').toLowerCase();
-
-        return url;
-
-      },
       ...mapMutations([
         'openModal'
       ])

@@ -24,7 +24,11 @@
         /> -->
 
       <transition name="popup">
-        <section class="modal" v-if="modalShown">
+        <Modal
+          v-if="modalShown"
+          v-bind:data="modalData"
+          />
+        <!-- <section class="modal" v-if="modalShown">
           <div class="mask" @click.self="deactivateModal(true)">
             <div class="container">
               <img :src="require('./assets/images/projects/' + modalData.name + '.jpg')">
@@ -33,7 +37,7 @@
               <button @click="deactivateModal(true)">Close</button>
             </div>
           </div>
-        </section>
+        </section> -->
       </transition>
 
     </section>
