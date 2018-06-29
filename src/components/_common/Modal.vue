@@ -3,9 +3,11 @@
     <div class="mask" @click.self="deactivateModal()">
       <div class="container">
         <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
-        <h2>{{modalData.title}}</h2>
-        <p>{{modalData.blurb}}</p>
-        <router-link to="/" class="close">Close</router-link>
+        <div class="info">
+          <h2>{{modalData.title}}</h2>
+          <p>{{modalData.blurb}}</p>
+        </div>
+        <router-link to="/" class="close"></router-link>
       </div>
     </div>
   </section>

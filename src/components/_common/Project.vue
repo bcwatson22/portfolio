@@ -58,6 +58,8 @@
     transition: all 0.3s ease;
     margin: 15px 0;
     background: #fff;
+    display: flex;
+    align-items: center;
 
     &:hover,
     &:focus {
@@ -76,7 +78,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       transition: all 0.5s ease;
       cursor: pointer;
       overflow: hidden;
