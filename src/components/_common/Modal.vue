@@ -2,11 +2,14 @@
   <section class="modal">
     <div class="mask" @click.self="deactivateModal()">
       <div class="container">
-        <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
-        <div class="info">
+        <div class="project-image">
+          <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
+        </div>
+        <div class="project-info">
           <h2>{{modalData.title}}</h2>
           <p>{{modalData.blurb}}</p>
         </div>
+        <button class="toggle" @click="toggleInfo()">i</button>
         <router-link to="/" class="close"></router-link>
       </div>
     </div>
@@ -14,7 +17,7 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex';
+  // import { mapMutations } from 'vuex';
 
   import mixins from './../../scripts/mixins.js';
 
@@ -42,9 +45,16 @@
         this.modalData = project[0];
 
       },
-      ...mapMutations([
-        'closeModal'
-      ])
+      toggleInfo: function () {
+
+        let $infoBox = document.getElementsByClassName('project-info')[0];
+
+        $infoBox.classList.toggle('visible');
+
+      }
+      // ...mapMutations([
+      //   'closeModal'
+      // ])
     }
   }
 </script>

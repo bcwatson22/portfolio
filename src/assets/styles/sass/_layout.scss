@@ -63,22 +63,45 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 0 30px;
-    overflow-y: scroll;
+    padding: 30px;
+    // overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
-    align-items: center;
+    // align-items: center;
+    justify-content: space-around;
 
     .container {
-      position: relative;
+      // position: relative;
+      // overflow-y: scroll;
+      overflow: hidden;
       will-change: opacity, transform;
 
-      .info {
-        position: absolute;
+      // img {
+      //   height: 100%;
+      //   width: auto;
+      //   max-width: none;
+      // }
+
+      .project-image {
+        height: 100%;
+        overflow-y: scroll;
+      }
+
+      .project-info {
+        position: fixed;
         bottom: 0;
         left: 0;
-        padding: 30px;
+        padding: 30px 30% 30px 30px;
         background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 100%);
+        opacity: 0;
+        transform: translateY(100%);
+        will-change: opacity, transform;
+        transition: all 0.3s ease;
+
+        &.visible {
+          opacity: 1;
+          transform: translateY(0%);
+        }
 
         h2 {
           margin-top: 30px;
@@ -90,7 +113,7 @@ main {
       }
 
       .close {
-        position: absolute;
+        position: fixed;
         top: 30px;
         right: 30px;
         color: #fff;
@@ -111,6 +134,30 @@ main {
           line-height: 34px;
           text-align: center;
         }
+      }
+
+      .toggle {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.6);
+        // text-indent: -99999px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        box-shadow: 0px 0px 5px 1px #fff;
+
+        // &:after {
+        //   content: "\00ce";
+        //   position: absolute;
+        //   font-size: 4rem;
+        //   width: 100%;
+        //   height: 100%;
+        //   line-height: 34px;
+        //   text-align: center;
+        // }
       }
     }
   }
