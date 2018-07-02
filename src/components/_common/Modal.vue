@@ -9,8 +9,8 @@
           <h2>{{modalData.title}}</h2>
           <p>{{modalData.blurb}}</p>
         </div>
-        <button class="toggle" @click="toggleInfo()">i</button>
-        <router-link to="/" class="close"></router-link>
+        <button class="icon toggle" @click="toggleInfo()">Info</button>
+        <router-link to="/" class="icon close">Close</router-link>
       </div>
     </div>
   </section>
