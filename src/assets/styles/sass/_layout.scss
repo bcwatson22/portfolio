@@ -64,82 +64,43 @@ main {
   height: 40px;
   border-radius: 100%;
   box-shadow: 0px 0px 5px 1px #fff;
-}
+  overflow: hidden;
 
-.modal {
-  .mask {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
     width: 100%;
     height: 100%;
-    padding: 30px;
-    // overflow-y: scroll;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    // align-items: center;
-    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-    .container {
-      // position: relative;
-      // overflow-y: scroll;
-      overflow: hidden;
-      will-change: opacity, transform;
+  &:before {
+    transition: transform 0.2s ease;
+    will-change: transform;
+  }
 
-      // img {
-      //   height: 100%;
-      //   width: auto;
-      //   max-width: none;
-      // }
+  &:after {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+    will-change: opacity, transform;
+  }
 
-      .project-image {
-        height: 100%;
-        overflow-y: scroll;
-      }
+  &:hover {
+    &:before {
+      transform: scale(10);
+    }
 
-      .project-info {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: 30px 30% 30px 30px;
-        background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.6) 100%);
-        opacity: 0;
-        transform: translateY(100%);
-        will-change: opacity, transform;
-        transition: all 0.3s ease;
+    &:after {
+      opacity: 1;
+    }
+  }
 
-        &.visible {
-          opacity: 1;
-          transform: translateY(0%);
-        }
-
-        h2 {
-          margin-top: 30px;
-        }
-
-        p {
-          margin-bottom: 0;
-        }
-      }
-
-      .close,
-      .toggle {
-        position: fixed;
-        right: 30px;
-      }
-
-      .close {
-        top: 30px;
-        background: rgba(0, 0, 0, 0.6) url('./../images/global/icons/times.svg') 50% 50% no-repeat;
-        background-size: 50% 50%;
-      }
-
-      .toggle {
-        bottom: 30px;
-        background: rgba(0, 0, 0, 0.6) url('./../images/global/icons/info.svg') 50% 50% no-repeat;
-        background-size: 50% 50%;
-      }
+  &:active {
+    &:after {
+      transform: scale(0.9);
     }
   }
 }
