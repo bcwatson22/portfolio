@@ -102,15 +102,15 @@
           margin-bottom: 15px;
           border-radius: 100%;
           text-indent: -99999rem;
-          width: 14px;
-          height: 14px;
+          width: 15px;
+          height: 15px;
           opacity: 0;
           transform: translateX(50px);
           transition: all 0.25s ease;
           // @include hwa();
           @include delay(4, 0.1s, 0);
           // box-shadow: 0px 0px 3px 1px #fff;
-          border: 1px solid #fff;
+          // border: 1px solid #fff;
 
           &.development {
             background: $yellow;
