@@ -12,8 +12,12 @@ export default new Router({
       name: 'Home'
     },
     {
+      path: '/projects',
+      name: 'Projects'
+    },
+    {
       path: '/projects/:name',
-      name: 'Projects',
+      name: 'Project',
       component: Modal
     },
     { path: '*',

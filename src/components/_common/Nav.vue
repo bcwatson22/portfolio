@@ -2,16 +2,16 @@
   <nav>
     <ul class="disciplines">
       <li class="development">
-        <a href="#" data-indicate="Development"></a>
+        <a href="development" @click.prevent="filterProjects($event)" data-indicate="Development"></a>
       </li>
       <li class="design">
-        <a href="#" data-indicate="Design"></a>
+        <a href="design" @click.prevent="filterProjects($event)" data-indicate="Design"></a>
       </li>
       <li class="branding">
-        <a href="#" data-indicate="Branding"></a>
+        <a href="branding" @click.prevent="filterProjects($event)" data-indicate="Branding"></a>
       </li>
       <li class="video">
-        <a href="#" data-indicate="Video"></a>
+        <a href="video" @click.prevent="filterProjects($event)" data-indicate="Video"></a>
       </li>
       <li class="cv">
         <a href="#" data-indicate="CV"></a>
@@ -24,9 +24,21 @@
 </template>
 
 <script>
-export default {
-  name: 'Nav'
-}
+  export default {
+    name: 'Nav',
+    methods: {
+      filterProjects: function (event) {
+
+        let href = event ? event.currentTarget.getAttribute('href') : '',
+            currentFilter = this.$route.query.filter;
+
+        console.log(currentFilter);
+
+        this.$router.push({ path: 'projects', query: { filter: href }});
+
+      }
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -91,7 +103,7 @@ export default {
         background: $red;
 
         &:before {
-          background: url('./../../assets/images/global/icons/video-light.svg') 50% 50% no-repeat;
+          background: url('./../../assets/images/global/icons/video-circle-light.svg') 50% 50% no-repeat;
           background-size: 50% 50%;
         }
       }

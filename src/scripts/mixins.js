@@ -39,6 +39,14 @@ export default {
 
       if (history) history.pushState(state, 'Billy Watson', url);
 
+    },
+
+    getProjectData: function (projectName) {
+
+      let project = this.projectDatabase.filter(project => project.name === projectName);
+
+      this.projectData = project[0];
+
     }
 
   }

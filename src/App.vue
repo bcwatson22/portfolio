@@ -25,7 +25,7 @@
       <Footer :year="copyrightYear"/>
 
       <transition name="popup">
-        <router-view :projectData="projects"></router-view>
+        <router-view :projectDatabase="projects"></router-view>
       </transition>
 
     </section>
@@ -55,6 +55,11 @@ export default {
     Modal
   },
   mixins: [mixins],
+  watch: {
+    '$route' (to, from) {
+      console.log('route change! from = ' + from.query.filter + ', to = ' + to.query.filter);
+    }
+  },
   data () {
     return {
       projects: [

@@ -3,11 +3,11 @@
     <div class="mask" @click.self="deactivateModal()">
       <div class="container">
         <div class="project-image">
-          <img :src="require('./../../assets/images/projects/' + modalData.name + '.jpg')">
+          <img :src="require('./../../assets/images/projects/' + projectData.name + '.jpg')">
         </div>
         <div class="project-info">
-          <h2>{{modalData.title}}</h2>
-          <p>{{modalData.blurb}}</p>
+          <h2>{{projectData.title}}</h2>
+          <p>{{projectData.blurb}}</p>
         </div>
         <button class="icon toggle" @click="toggleInfo()">Info</button>
         <router-link to="/" class="icon close">Close</router-link>
@@ -24,27 +24,20 @@
   export default {
     name: 'Modal',
     props: {
-      projectData: Array
+      projectDatabase: Array
     },
     mixins: [mixins],
     data () {
       return {
-        modalData: {}
+        projectData: {}
       }
     },
     created () {
 
-      this.getProjectData();
+      this.getProjectData(this.$route.params.name);
 
     },
     methods: {
-      getProjectData: function () {
-
-        let project = this.projectData.filter(project => project.name === this.$route.params.name);
-
-        this.modalData = project[0];
-
-      },
       toggleInfo: function () {
 
         let $infoBox = document.getElementsByClassName('project-info')[0];
