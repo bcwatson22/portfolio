@@ -1,23 +1,23 @@
 <template>
   <nav>
-    <ul>
+    <ul class="disciplines">
       <li class="development">
-        <a href="#" data-filter="Development"></a>
+        <a href="#" data-indicate="Development"></a>
       </li>
       <li class="design">
-        <a href="#" data-filter="Design"></a>
+        <a href="#" data-indicate="Design"></a>
       </li>
       <li class="branding">
-        <a href="#" data-filter="Branding"></a>
+        <a href="#" data-indicate="Branding"></a>
       </li>
       <li class="video">
-        <a href="#" data-filter="Video"></a>
+        <a href="#" data-indicate="Video"></a>
       </li>
       <li class="cv">
-        <a href="#" data-filter="CV"></a>
+        <a href="#" data-indicate="CV"></a>
       </li>
       <li class="contact">
-        <a href="#" data-filter="Contact"></a>
+        <a href="#" data-indicate="Contact"></a>
       </li>
     </ul>
   </nav>
@@ -137,7 +137,7 @@ export default {
       }
 
       &:after {
-        content: attr(data-filter);
+        content: attr(data-indicate);
         display: inline-block;
         color: #fff;
         position: absolute;

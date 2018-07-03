@@ -5,7 +5,7 @@
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
-        <li v-for="(discipline, index) in disciplines" :key="index"  :class="discipline">
+        <li v-for="(discipline, index) in disciplines" :key="index" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
@@ -14,7 +14,7 @@
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="indicator">
-        <li v-for="(discipline, index) in disciplines" :key="index"  :class="discipline">
+        <li v-for="(discipline, index) in disciplines" :key="index" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
