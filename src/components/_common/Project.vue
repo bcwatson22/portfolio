@@ -1,6 +1,6 @@
 <template>
   <section class="project" :class="disciplines">
-    <img :src="require('./../../assets/images/projects/' + name + '.jpg')">
+    <img :src="require('./../../assets/images/projects/' + name + '.jpg')" :alt="title + ' thumb'">
     <a v-if="link !== 'modal'" class="info" :href="link" target="_blank">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>

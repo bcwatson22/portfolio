@@ -40,8 +40,8 @@ import Project from './components/_common/Project.vue';
 import Footer from './components/_common/Footer.vue';
 import Modal from './components/_common/Modal.vue';
 
-import { mapGetters } from 'vuex';
-import { mapMutations } from 'vuex';
+// import { mapGetters } from 'vuex';
+// import { mapMutations } from 'vuex';
 
 import mixins from './scripts/mixins.js';
 
@@ -126,13 +126,13 @@ export default {
       copyrightYear: this.getCurrentYear()
     }
   },
-  computed: {
-    ...mapGetters([
-      // Mounts the "safelyStoredNumber" getter to the scope of your component.
-      'modalShown',
-      'modalData'
-    ])
-  },
+  // computed: {
+  //   ...mapGetters([
+  //     // Mounts the "safelyStoredNumber" getter to the scope of your component.
+  //     'modalShown',
+  //     'modalData'
+  //   ])
+  // },
   methods: {
     getCurrentYear: function () {
 
@@ -142,10 +142,10 @@ export default {
       return y;
 
     },
-    ...mapMutations([
-      // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
-      'closeModal'
-    ])
+    // ...mapMutations([
+    //   // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
+    //   'closeModal'
+    // ])
   }
 }
 </script>
