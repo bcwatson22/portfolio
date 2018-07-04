@@ -1,19 +1,21 @@
 <template>
-  <section class="modal">
-    <div class="mask" @click.self="deactivateModal()">
-      <div class="container">
-        <div class="project-image">
-          <img :src="require('./../../assets/images/projects/' + projectData.name + '.jpg')">
+  <transition name="popup">
+    <section class="modal">
+      <div class="mask" @click.self="deactivateModal()">
+        <div class="container">
+          <div class="project-image">
+            <img :src="require('./../../assets/images/projects/' + projectData.name + '.jpg')">
+          </div>
+          <div class="project-info">
+            <h2>{{projectData.title}}</h2>
+            <p>{{projectData.blurb}}</p>
+          </div>
+          <button class="icon toggle" @click="toggleInfo()">Info</button>
+          <router-link to="/" class="icon close">Close</router-link>
         </div>
-        <div class="project-info">
-          <h2>{{projectData.title}}</h2>
-          <p>{{projectData.blurb}}</p>
-        </div>
-        <button class="icon toggle" @click="toggleInfo()">Info</button>
-        <router-link to="/" class="icon close">Close</router-link>
       </div>
-    </div>
-  </section>
+    </section>
+  </transition>
 </template>
 
 <script>
@@ -24,7 +26,7 @@
   export default {
     name: 'Modal',
     props: {
-      projectDatabase: Array
+      // projectDatabase: Array
     },
     mixins: [mixins],
     data () {

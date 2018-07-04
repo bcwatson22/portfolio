@@ -43,9 +43,10 @@ export default {
 
     getProjectData: function (projectName) {
 
-      let project = this.projectDatabase.filter(project => project.name === projectName);
+      let projects = this.$store.getters.allProjects,
+          project = projects.filter(project => project.name === projectName)[0];
 
-      this.projectData = project[0];
+      this.projectData = project;
 
     }
 

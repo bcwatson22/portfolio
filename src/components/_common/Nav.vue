@@ -2,16 +2,16 @@
   <nav>
     <ul class="disciplines">
       <li class="development">
-        <a href="development" @click.prevent="filterProjects($event)" data-indicate="Development"></a>
+        <a href="development" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.development }" data-indicate="Development"></a>
       </li>
       <li class="design">
-        <a href="design" @click.prevent="filterProjects($event)" data-indicate="Design"></a>
+        <a href="design" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.design }" data-indicate="Design"></a>
       </li>
       <li class="branding">
-        <a href="branding" @click.prevent="filterProjects($event)" data-indicate="Branding"></a>
+        <a href="branding" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.branding }" data-indicate="Branding"></a>
       </li>
       <li class="video">
-        <a href="video" @click.prevent="filterProjects($event)" data-indicate="Video"></a>
+        <a href="video" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.video }" data-indicate="Video"></a>
       </li>
       <li class="cv">
         <a href="#" data-indicate="CV"></a>
@@ -26,15 +26,27 @@
 <script>
   export default {
     name: 'Nav',
+    data () {
+      return {
+        filterActive: {
+          development: this.$route.query.filter === 'development',
+          design: this.$route.query.filter === 'design',
+          branding: this.$route.query.filter === 'branding',
+          video: this.$route.query.filter === 'video'
+        }
+      }
+    },
     methods: {
-      filterProjects: function (event) {
+      addFilterQuery: function (event) {
 
         let href = event ? event.currentTarget.getAttribute('href') : '',
             currentFilter = this.$route.query.filter;
 
-        console.log(currentFilter);
+        // console.log(currentFilter);
 
         this.$router.push({ path: 'projects', query: { filter: href }});
+
+        // this.$emit('updateProjectFilter', href);
 
       }
     }
@@ -134,6 +146,10 @@
       // text-indent: -99999rem;
       transition: transform 0.2s ease;
       will-change: transform;
+
+      &.active {
+        box-shadow: 0px 0px 30px 15px #fff;
+      }
 
       &:before {
         content: '';
