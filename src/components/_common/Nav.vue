@@ -2,16 +2,16 @@
   <nav>
     <ul class="disciplines">
       <li class="development">
-        <a href="development" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.development }" data-indicate="Development"></a>
+        <router-link :to="{ path: 'projects', query: { filter: 'development' }}" data-indicate="Development"></router-link>
       </li>
       <li class="design">
-        <a href="design" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.design }" data-indicate="Design"></a>
+        <router-link :to="{ path: 'projects', query: { filter: 'design' }}" data-indicate="Design"></router-link>
       </li>
       <li class="branding">
-        <a href="branding" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.branding }" data-indicate="Branding"></a>
+        <router-link :to="{ path: 'projects', query: { filter: 'branding' }}" data-indicate="Branding"></router-link>
       </li>
       <li class="video">
-        <a href="video" @click.prevent="addFilterQuery($event)" :class="{ 'active': filterActive.video }" data-indicate="Video"></a>
+        <router-link :to="{ path: 'projects', query: { filter: 'video' }}" data-indicate="Video"></router-link>
       </li>
       <li class="cv">
         <a href="#" data-indicate="CV"></a>
@@ -25,26 +25,7 @@
 
 <script>
   export default {
-    name: 'Nav',
-    data () {
-      return {
-        filterActive: {
-          development: this.$route.query.filter === 'development',
-          design: this.$route.query.filter === 'design',
-          branding: this.$route.query.filter === 'branding',
-          video: this.$route.query.filter === 'video'
-        }
-      }
-    },
-    methods: {
-      addFilterQuery: function (event) {
-
-        let href = event ? event.currentTarget.getAttribute('href') : '';
-
-        this.$router.push({ path: 'projects', query: { filter: href }});
-
-      }
-    }
+    name: 'Nav'
   }
 </script>
 
@@ -142,7 +123,7 @@
       transition: transform 0.2s ease;
       will-change: transform;
 
-      &.active {
+      &.router-link-exact-active {
         box-shadow: 0px 0px 30px 15px #fff;
       }
 

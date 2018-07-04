@@ -1,5 +1,5 @@
 <template>
-  <article class="project" :class="disciplines">
+  <article class="project" :class="name">
     <img :src="require('./../../assets/images/projects/' + name + '.jpg')" :alt="title + ' thumb'">
     <a v-if="link !== 'modal'" class="info" :href="link" target="_blank">
       <h1>{{ title }}</h1>
