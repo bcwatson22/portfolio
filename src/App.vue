@@ -2,8 +2,6 @@
   <div id="app">
     <section class="wrapper">
 
-      <!-- <p> {{activeProjects}}</p> -->
-
       <Header/>
 
       <!-- <img src="./assets/images/global/logo.png"> -->
@@ -12,24 +10,9 @@
         <button @click="deactivateModal(true)">Close</button> -->
       <main>
         <router-view></router-view>
-      <!-- <main> -->
-        <!-- <Project
-          v-for="project of filteredProjects"
-            :key="project.id"
-            :title="project.title"
-            :name="project.name"
-            :disciplines="project.disciplines"
-            :blurb="project.blurb"
-            :link="project.link"
-            :data="project"
-          /> -->
       </main>
 
       <Footer :year="copyrightYear"/>
-
-      <!-- <transition name="popup"> -->
-        <!-- <router-view :projectDatabase="filteredProjects"></router-view> -->
-      <!-- </transition> -->
 
     </section>
   </div>
@@ -58,47 +41,6 @@ export default {
     Modal
   },
   mixins: [mixins],
-  watch: {
-    // '$route' (to, from) {
-      // console.log('route change! from = ' + from.query.filter + ', to = ' + to.query.filter);
-
-      // let newFilter = to.query.filter;
-      //
-      // if (newFilter) {
-      //
-      //
-      //
-      // } else {
-      //
-      //
-      //
-      // }
-
-    // }
-  },
-  // beforeRouteUpdate (to, from, next) {
-  //   console.log('bladdy route change! from = ' + from.query.filter + ', to = ' + to.query.filter);
-  //   next();
-  // },
-  created () {
-
-    // let filter = this.$route.query.filter;
-    //
-    // if (filter) {
-    //
-    //   this.filterProjects(filter);
-    //
-    //   // console.log('filter!');
-    //
-    // } else {
-    //
-    //   this.filteredProjects = this.originalProjects;
-    //
-    //   console.log('nay filter..');
-    //
-    // }
-
-  },
   methods: {
     getCurrentYear: function () {
 
@@ -107,93 +49,10 @@ export default {
 
       return y;
 
-    },
-    // filterProjects: function (filter) {
-    //
-    //   this.filteredProjects = this.originalProjects.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(filter.toLowerCase()) > -1);
-    //
-    //   // console.log(this.filteredProjects.length);
-    //
-    // },
-    // onUpdateProjectFilter: function (filter) {
-    //
-    //   // console.log('update filter !! - ' + filter);
-    //
-    // }
-    // ...mapMutations([
-    //   // Mounts the "incrementStoredNumber" mutation to `this.incrementStoredNumber()`.
-    //   'closeModal'
-    // ])
+    }
   },
   data () {
     return {
-      // originalProjects: [
-      //   {
-      //     id: 1,
-      //     title: 'Bing Jones',
-      //     name: 'bing-jones',
-      //     disciplines: ['Development', 'Design', 'Branding'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'http://bingjones.co.uk'
-      //   },
-      //   {
-      //     id: 2,
-      //     title: 'Member Centre',
-      //     name: 'member-centre',
-      //     disciplines: ['Development', 'Design'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   },
-      //   {
-      //     id: 3,
-      //     title: 'Furness Brothers',
-      //     name: 'furness-brothers',
-      //     disciplines: ['Design', 'Branding'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   },
-      //   {
-      //     id: 4,
-      //     title: 'RMD',
-      //     name: 'rmd',
-      //     disciplines: ['Design', 'Branding'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   },
-      //   {
-      //     id: 5,
-      //     title: 'Quality of Service',
-      //     name: 'quality-of-service',
-      //     disciplines: ['Development'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'https://www.plus.net/help/quality-of-service/'
-      //   },
-      //   {
-      //     id: 6,
-      //     title: 'Planet Vlog',
-      //     name: 'planet-vlog',
-      //     disciplines: ['Video'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   },
-      //   {
-      //     id: 7,
-      //     title: 'X Games',
-      //     name: 'xgames',
-      //     disciplines: ['Design'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   },
-      //   {
-      //     id: 8,
-      //     title: 'Back to Basics',
-      //     name: 'basics',
-      //     disciplines: ['Design'],
-      //     blurb: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-      //     link: 'modal'
-      //   }
-      // ],
-      // filteredProjects: [],
       copyrightYear: this.getCurrentYear()
     }
   },
@@ -201,7 +60,6 @@ export default {
     ...mapGetters([
       // Mounts the "safelyStoredNumber" getter to the scope of your component.
       'filteredProjects'
-      // 'modalData'
     ])
   }
 }

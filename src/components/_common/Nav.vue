@@ -39,14 +39,9 @@
     methods: {
       addFilterQuery: function (event) {
 
-        let href = event ? event.currentTarget.getAttribute('href') : '',
-            currentFilter = this.$route.query.filter;
-
-        // console.log(currentFilter);
+        let href = event ? event.currentTarget.getAttribute('href') : '';
 
         this.$router.push({ path: 'projects', query: { filter: href }});
-
-        // this.$emit('updateProjectFilter', href);
 
       }
     }

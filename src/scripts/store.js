@@ -74,45 +74,27 @@ export const store = new Vuex.Store({
       ],
       filtered: []
     }
-    // modal: {
-    //   show: false,
-    //   active: null
-    // }
   },
   getters: {
     allProjects: state => state.projects.original,
 
     filteredProjects: state => state.projects.filtered.length ? state.projects.filtered : state.projects.original
-    // modalShown: state => state.modal.show,
-    // modalData: state => state.modal.active
   },
   mutations: {
     filterProjects (state, payload) {
 
       state.projects.filtered = state.projects.original.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(payload.toLowerCase()) > -1);
 
-      // this.filteredProjects = this.originalProjects.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(filter.toLowerCase()) > -1);
     },
     restoreProjects (state) {
 
       state.projects.filtered = state.projects.original;
 
     }
-    // openModal (state, payload) {
-    //   state.modal.show = true;
-    //   state.modal.active = payload;
-    // },
-    // closeModal (state) {
-    //   state.modal.show = false;
-    //   state.modal.active = null;
-    // }
   },
   actions: {
     filterProjects (context, payload) {
       context.commit('filterProjects', payload);
     }
-    // openModal (context, payload) {
-    //   context.commit('openModal', payload);
-    // }
   }
 });

@@ -20,8 +20,6 @@ export default new Router({
       component: Projects,
       props: (route) => ({
         activeFilter: route.query.filter
-        // projectDatabase: this.$store.commit('filterProjects', route.query.filter);
-        // projectDatabase: projectDatabase
       })
     },
     {

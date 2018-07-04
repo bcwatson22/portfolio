@@ -19,15 +19,10 @@
 </template>
 
 <script>
-  // import { mapMutations } from 'vuex';
-
   import mixins from './../../scripts/mixins.js';
 
   export default {
     name: 'Modal',
-    props: {
-      // projectDatabase: Array
-    },
     mixins: [mixins],
     data () {
       return {
