@@ -72,29 +72,43 @@ export const store = new Vuex.Store({
           link: 'modal'
         }
       ],
-      filtered: []
+      filtered: [],
+      activeFilter: false
     }
   },
   getters: {
     allProjects: state => state.projects.original,
 
-    filteredProjects: state => state.projects.filtered.length ? state.projects.filtered : state.projects.original
+    filteredProjects: state => state.projects.filtered.length ? state.projects.filtered : state.projects.original,
+
+    currentFilter: state => state.projects.activeFilter
   },
   mutations: {
     filterProjects (state, payload) {
 
       state.projects.filtered = state.projects.original.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(payload.toLowerCase()) > -1);
 
+      state.projects.activeFilter = payload;
+
     },
     restoreProjects (state) {
 
       state.projects.filtered = state.projects.original;
 
+      state.projects.activeFilter = false;
+
     }
   },
   actions: {
     filterProjects (context, payload) {
+
       context.commit('filterProjects', payload);
+
+    },
+    restoreProjects (context) {
+
+      context.commit('restoreProjects');
+
     }
   }
 });

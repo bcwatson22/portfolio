@@ -10,8 +10,8 @@
             <h2>{{projectData.title}}</h2>
             <p>{{projectData.blurb}}</p>
           </div>
-          <button class="icon toggle" @click="toggleInfo()">Info</button>
-          <router-link to="/" class="icon close">Close</router-link>
+          <button class="icon full-size info" @click="toggleInfo()">Info</button>
+          <a class="icon full-size close" @click="$router.go(-1)">Close</a>
         </div>
       </div>
     </section>
@@ -99,7 +99,7 @@
         }
 
         .close,
-        .toggle {
+        .info {
           position: fixed;
           right: 30px;
         }
@@ -107,29 +107,29 @@
         .close {
           top: 30px;
 
-          &:before {
-            background: url('./../../assets/images/global/icons/close-light.svg') 50% 50% no-repeat;
-            background-size: 50% 50%;
-          }
-
-          &:after {
-            background: url('./../../assets/images/global/icons/close-dark.svg') 50% 50% no-repeat;
-            background-size: 50% 50%;
-          }
+          // &:before {
+          //   background: url('./../../assets/images/global/icons/close-light.svg') 50% 50% no-repeat;
+          //   background-size: 50% 50%;
+          // }
+          //
+          // &:after {
+          //   background: url('./../../assets/images/global/icons/close-dark.svg') 50% 50% no-repeat;
+          //   background-size: 50% 50%;
+          // }
         }
 
-        .toggle {
+        .info {
           bottom: 30px;
 
-          &:before {
-            background: url('./../../assets/images/global/icons/info-light.svg') 50% 50% no-repeat;
-            background-size: 50% 50%;
-          }
-
-          &:after {
-            background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
-            background-size: 50% 50%;
-          }
+          // &:before {
+          //   background: url('./../../assets/images/global/icons/info-light.svg') 50% 50% no-repeat;
+          //   background-size: 50% 50%;
+          // }
+          //
+          // &:after {
+          //   background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
+          //   background-size: 50% 50%;
+          // }
         }
       }
     }

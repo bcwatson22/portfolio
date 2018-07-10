@@ -55,16 +55,112 @@ main {
   // justify-content: space-between;
 }
 
+.disciplines {
+  // &:hover,
+  // &:focus {
+  //   .icon {
+  //     transform: scale(1);
+  //
+  //     &:before {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
+
+  li {
+    margin: 15px;
+    transition: transform 0.2s ease;
+    will-change: transform;
+
+    &:after {
+      content: attr(data-indicate);
+      display: inline-block;
+      color: #fff;
+      position: absolute;
+      // left: 50%;
+      // transform: translate(-50%, 10px);
+      will-change: opacity;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+
+    // &:hover {
+    //   transform: translateY(-10px);
+    //
+    //   &:after {
+    //     opacity: 1;
+    //   }
+    // }
+  }
+}
+
 .icon {
   color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  // background: rgba(0, 0, 0, 0.6);
   text-indent: -99999px;
   display: block;
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  box-shadow: 0px 0px 5px 1px #fff;
+  // box-shadow: 0px 0px 5px 1px #fff;
   overflow: hidden;
+
+  &.full-size {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 5px 1px #fff;
+
+    // &:before,
+    // &:after {
+    //   content: '';
+    //   display: block;
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    // }
+    //
+    // &:before {
+    //   transition: transform 0.2s ease;
+    //   will-change: transform;
+    // }
+    //
+    // &:after {
+    //   transition: opacity 0.2s ease;
+    //   opacity: 0;
+    //   will-change: opacity;
+    // }
+    //
+    // &:hover {
+    //   &:before {
+    //     transform: scale(10);
+    //   }
+    //
+    //   &:after {
+    //     opacity: 1;
+    //   }
+    // }
+    &:hover {
+      &:before {
+        transform: scale(10);
+      }
+
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.scale-up {
+    background: grey;
+    transform: scale(0.375);
+    transition: transform 0.2s ease;
+    will-change: transform;
+
+    &:before {
+      opacity: 0;
+    }
+  }
 
   &:before,
   &:after {
@@ -78,29 +174,133 @@ main {
   }
 
   &:before {
-    transition: transform 0.2s ease;
-    will-change: transform;
+    transition: all 0.2s ease;
+    will-change: opacity, transform;
   }
 
   &:after {
     transition: opacity 0.2s ease;
     opacity: 0;
-    will-change: opacity, transform;
+    will-change: opacity;
   }
 
-  &:hover {
-    &:before {
-      transform: scale(10);
-    }
-
-    &:after {
-      opacity: 1;
-    }
-  }
+  // &:hover {
+  //   &:before {
+  //     transform: scale(10);
+  //   }
+  //
+  //   &:after {
+  //     opacity: 1;
+  //   }
+  // }
 
   &:active {
     &:after {
       transform: scale(0.9);
+    }
+  }
+
+  &.close {
+    &:before {
+      background: url('./../../assets/images/global/icons/close-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/close-dark.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.info {
+    &:before {
+      background: url('./../../assets/images/global/icons/info-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.development {
+    background: $yellow;
+
+    &:before {
+      background: url('./../../assets/images/global/icons/development-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/development-colour.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.design {
+    background: $green;
+
+    &:before {
+      background: url('./../../assets/images/global/icons/design-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/design-colour.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.branding {
+    background: $blue;
+
+    &:before {
+      background: url('./../../assets/images/global/icons/branding-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/branding-colour.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.video {
+    background: $red;
+
+    &:before {
+      background: url('./../../assets/images/global/icons/video-circle-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/video-circle-colour.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.cv {
+    &:before {
+      background: url('./../../assets/images/global/icons/cv-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/cv-dark.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.contact {
+    &:before {
+      background: url('./../../assets/images/global/icons/contact-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+
+    &:after {
+      background: url('./../../assets/images/global/icons/contact-dark.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
     }
   }
 }

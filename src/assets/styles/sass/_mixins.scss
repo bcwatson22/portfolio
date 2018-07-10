@@ -10,10 +10,15 @@
     transform: translate3d(0, 0, 0);
 }
 
-@mixin delay($number, $delay, $defer) {
+@mixin delay($number, $delay, $defer, $transition: true) {
     @for $i from 1 through $number {
         &:nth-of-type(#{$i}) {
+          @if $transition {
             transition-delay: $i * $delay + $defer;
+          } @else {
+            animation-delay: $i * $delay + $defer;
+          }
+
         }
     }
 }
