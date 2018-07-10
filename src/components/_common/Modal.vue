@@ -106,30 +106,10 @@
 
         .close {
           top: 30px;
-
-          // &:before {
-          //   background: url('./../../assets/images/global/icons/close-light.svg') 50% 50% no-repeat;
-          //   background-size: 50% 50%;
-          // }
-          //
-          // &:after {
-          //   background: url('./../../assets/images/global/icons/close-dark.svg') 50% 50% no-repeat;
-          //   background-size: 50% 50%;
-          // }
         }
 
         .info {
           bottom: 30px;
-
-          // &:before {
-          //   background: url('./../../assets/images/global/icons/info-light.svg') 50% 50% no-repeat;
-          //   background-size: 50% 50%;
-          // }
-          //
-          // &:after {
-          //   background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
-          //   background-size: 50% 50%;
-          // }
         }
       }
     }
