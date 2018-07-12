@@ -1,6 +1,6 @@
 <template>
   <article v-if="link === 'raster'" class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/real/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+    <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
     <router-link :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
@@ -12,7 +12,7 @@
     </router-link>
   </article>
   <article v-else-if="link === 'vector'" class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/real/' + name + '.svg')" :alt="title + ' thumb'">
+    <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
     <router-link :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
@@ -24,7 +24,7 @@
     </router-link>
   </article>
   <article v-else class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/real/' + name + '-1200.jpg')" :alt="title + ' thumb'">
+    <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
     <a class="info" :href="link" target="_blank">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
@@ -38,12 +38,16 @@
 </template>
 
 <script>
+  // import ProjectInfo from './ProjectInfo.vue';
   // import { mapMutations } from 'vuex';
 
   import mixins from './../../scripts/mixins.js';
 
   export default {
     name: 'Project',
+    // components: {
+    //   ProjectInfo
+    // },
     props: {
       data: Object,
       id: Number,
