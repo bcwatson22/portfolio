@@ -31,7 +31,7 @@ export default {
       //
       // this.closeModal();
 
-      this.$router.push('/');
+      this.$router.go(-1);
 
     },
 
