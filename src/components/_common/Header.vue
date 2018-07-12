@@ -5,7 +5,7 @@
     </section>
     <section class="intro">
       <p>A creative and passionate Web Developer from the Peak District with five years' experience, both in agency and in-house environments.</p>
-      <p>JavaScript specialist with knowledge of modern frameworks including Angular and Vue. Also skilled in design, branding and video. Fan of music, mountain biking and Yorkshire Tea.</p>
+      <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also skilled in design, branding and video. Fan of music, mountain biking and Yorkshire Tea.</p>
     </section>
     <Nav/>
   </header>

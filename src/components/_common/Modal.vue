@@ -6,7 +6,7 @@
           <div class="project-image">
             <img :src="require('./../../assets/images/projects/' + projectData.name + '.jpg')">
           </div>
-          <div class="project-info">
+          <div class="project-info visible">
             <h2>{{projectData.title}}</h2>
             <p>{{projectData.blurb}}</p>
           </div>

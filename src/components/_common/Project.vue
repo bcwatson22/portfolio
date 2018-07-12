@@ -1,16 +1,7 @@
 <template>
-  <article class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/' + name + '.jpg')" :alt="title + ' thumb'">
-    <a v-if="link !== 'modal'" class="info" :href="link" target="_blank">
-      <h1>{{ title }}</h1>
-      <p>{{ blurb }}</p>
-      <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
-          {{ discipline }}
-        </li>
-      </ul>
-    </a>
-    <router-link v-if="link === 'modal'" :to="'/projects/' + name" class="info">
+  <article v-if="link === 'raster'" class="project" :class="name">
+    <img :src="require('./../../assets/images/projects/real/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+    <router-link :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
@@ -19,6 +10,30 @@
         </li>
       </ul>
     </router-link>
+  </article>
+  <article v-else-if="link === 'vector'" class="project" :class="name">
+    <img :src="require('./../../assets/images/projects/real/' + name + '.svg')" :alt="title + ' thumb'">
+    <router-link :to="'/projects/' + name" class="info">
+      <h1>{{ title }}</h1>
+      <p>{{ blurb }}</p>
+      <ul class="disciplines indicate">
+        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
+          {{ discipline }}
+        </li>
+      </ul>
+    </router-link>
+  </article>
+  <article v-else class="project" :class="name">
+    <img :src="require('./../../assets/images/projects/real/' + name + '-1200.jpg')" :alt="title + ' thumb'">
+    <a class="info" :href="link" target="_blank">
+      <h1>{{ title }}</h1>
+      <p>{{ blurb }}</p>
+      <ul class="disciplines indicate">
+        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
+          {{ discipline }}
+        </li>
+      </ul>
+    </a>
   </article>
 </template>
 
@@ -61,6 +76,8 @@
     background: #fff;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    min-height: 300px;
 
     &:hover,
     &:focus {
@@ -81,13 +98,44 @@
     }
   }
 
+  img {
+    .planet-vlog &,
+    .furness-brothers &,
+    .rmd &,
+    .pyramid-sk8 & {
+      position: absolute;
+      max-width: none;
+    }
+
+    .planet-vlog & {
+      width: 180%;
+    }
+
+    .furness-brothers & {
+      width: 400%;
+      left: -20%;
+    }
+
+    .rmd & {
+      width: 300%;
+      top: 10%;
+      left: -190%;
+    }
+
+    .pyramid-sk8 & {
+      width: 200%;
+      top: -190%;
+      left: -50%;
+    }
+  }
+
   .info {
     color: #fff;
     text-decoration: none;
     position: absolute;
     top: 0;
     left: 0;
-    padding: 30px 120px 30px 30px;
+    padding: 30px 150px 30px 30px;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -100,10 +148,10 @@
       text-align: left;
     }
 
-    p {
-      font-size: 14px;
-      font-size: 1.4rem;
-    }
+    // p {
+    //   font-size: 14px;
+    //   font-size: 1.4rem;
+    // }
   }
 
   .disciplines {
