@@ -17,7 +17,7 @@
         <a href="#" class="icon scaled cv"></a>
       </li>
       <li data-indicate="Contact">
-        <a href="#" class="icon scaled contact"></a>
+        <router-link to="/contact" class="icon scaled contact"></router-link>
       </li>
     </ul>
   </nav>
@@ -85,7 +85,8 @@
         }
       }
 
-      &.active {
+      &.active,
+      &.router-link-exact-active {
         transform: scale(1);
         background: #fff;
         will-change: transform, background-color;

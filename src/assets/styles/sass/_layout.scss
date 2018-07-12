@@ -73,13 +73,21 @@ main {
   }
 }
 
-.icon {
-  color: #fff;
-  text-indent: -99999px;
+.icon,
+.icon-links li a:before {
   display: block;
   width: 40px;
   height: 40px;
   border-radius: 100%;
+}
+
+.icon {
+  color: #fff;
+  text-indent: -99999px;
+  // display: block;
+  // width: 40px;
+  // height: 40px;
+  // border-radius: 100%;
   overflow: hidden;
 
   &.full-size {
@@ -236,6 +244,44 @@ main {
 
     &:after {
       background: url('./../../assets/images/global/icons/contact-dark.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+}
+
+.icon-links li {
+  a {
+    position: relative;
+    padding-left: 55px;
+    line-height: 40px;
+    margin-bottom: 15px;
+    color: #fff;
+
+    &:before {
+      content: '';
+      background: grey;
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &.email a {
+    &:before {
+      background: grey url('./../../assets/images/global/icons/contact-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.linkedin a {
+    &:before {
+      background: grey url('./../../assets/images/global/icons/linkedin-light.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
+  }
+
+  &.github a {
+    &:before {
+      background: grey url('./../../assets/images/global/icons/github-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }

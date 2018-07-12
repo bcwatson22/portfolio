@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <h1 style="width: 100%">filteredProjects.length = {{filteredProjects.length}}, {{activeFilter}}</h1>
+    <!-- <h1 style="width: 100%">filteredProjects.length = {{filteredProjects.length}}, {{activeFilter}}</h1> -->
     <Project
       v-for="project of filteredProjects"
         :key="project.id"

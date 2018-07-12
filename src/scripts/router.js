@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Projects from './../components/_common/Projects';
 import Modal from './../components/_common/Modal';
+import Contact from './../components/_common/Contact';
 
 // import { mapMutations } from 'vuex';
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/projects/:name',
       name: 'Project',
       component: Modal
+    },
+    {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
     },
     { path: '*',
       redirect: '/projects'
