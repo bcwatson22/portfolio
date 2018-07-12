@@ -97,7 +97,7 @@ main {
     }
   }
 
-  &.scale-up {
+  &.scaled {
     background: grey;
     transform: scale(0.375);
     transition: transform 0.2s ease;

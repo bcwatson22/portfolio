@@ -2,22 +2,22 @@
   <nav>
     <ul class="disciplines">
       <li data-indicate="Development">
-        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scale-up development" :class="currentFilter === 'development' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development" :class="currentFilter === 'development' ? 'active' : ''"></router-link>
       </li>
       <li data-indicate="Design">
-        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scale-up design" :class="currentFilter === 'design' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design" :class="currentFilter === 'design' ? 'active' : ''"></router-link>
       </li>
       <li data-indicate="Branding">
-        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scale-up branding" :class="currentFilter === 'branding' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding" :class="currentFilter === 'branding' ? 'active' : ''"></router-link>
       </li>
       <li data-indicate="Video">
-        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scale-up video" :class="currentFilter === 'video' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''"></router-link>
       </li>
       <li data-indicate="CV">
-        <a href="#" class="icon scale-up cv"></a>
+        <a href="#" class="icon scaled cv"></a>
       </li>
       <li data-indicate="Contact">
-        <a href="#" class="icon scale-up contact"></a>
+        <a href="#" class="icon scaled contact"></a>
       </li>
     </ul>
   </nav>

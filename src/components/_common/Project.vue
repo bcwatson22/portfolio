@@ -5,7 +5,7 @@
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon scale-up" :class="discipline.toLowerCase()">
+        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
@@ -14,7 +14,7 @@
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon scale-up" :class="discipline.toLowerCase()">
+        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
@@ -75,7 +75,8 @@
 
       li {
         opacity: 1;
-        transform: translateX(0) scale(0.375);
+        // transform: translateX(0) scale(0.375);
+        transform: translateX(0);
       }
     }
   }
@@ -109,13 +110,13 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 15px;
+    padding: 20px 15px;
     height: 100%;
 
     .icon {
-      // @include delay(4, 0.1s, 0, false);
       opacity: 0;
-      transform: translateX(50px) scale(0.375);
+      // transform: translateX(50px) scale(0.375);
+      transform: translateX(50px);
       transition: all 0.25s ease;
       // @include hwa();
       @include delay(4, 0.1s, 0);
@@ -124,14 +125,8 @@
     &:hover,
     &:focus {
       .icon {
-        transform: translateX(0) scale(1);
-
-        // &:nth-of-type(1),
-        // &:nth-of-type(2),
-        // &:nth-of-type(3),
-        // &:nth-of-type(4) {
-        //   transition-delay: 0;
-        // }
+        // transform: translateX(0) scale(1);
+        transform: translateX(0);
 
         &:before {
           opacity: 1;
