@@ -14,10 +14,10 @@
         <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''"></router-link>
       </li>
       <li data-indicate="CV">
-        <a href="#" class="icon scaled cv"></a>
+        <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv"></a>
       </li>
       <li data-indicate="Contact">
-        <a href="/contact" @click.prevent="linkTo('contact')" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''"></a>
+        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''"></a>
       </li>
     </ul>
   </nav>
@@ -35,11 +35,21 @@
       ])
     },
     methods: {
-      linkTo: function (target) {
+      linkTo: function (event, file) {
 
-        if (this.currentFilter) this.$store.commit('restoreProjects');
+        let href = event ? event.currentTarget.getAttribute('href') : '';
 
-        this.$router.push(target);
+        if (file) {
+
+          window.open(href, '_blank');
+
+        } else {
+
+          if (this.currentFilter) this.$store.commit('restoreProjects');
+
+          this.$router.push(href);
+
+        }
 
       }
     }

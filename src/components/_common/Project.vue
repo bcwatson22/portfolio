@@ -162,7 +162,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 20px 15px;
+    padding: 20px 30px;
     height: 100%;
 
     .icon {

@@ -40,7 +40,6 @@ body {
 }
 
 .wrapper {
-  // background: $light-grey;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -69,6 +68,8 @@ main {
       will-change: opacity;
       transition: opacity 0.3s ease;
       opacity: 0;
+      font-size: 14px;
+      font-size: 1.4rem;
     }
   }
 }
@@ -89,10 +90,12 @@ main {
   // height: 40px;
   // border-radius: 100%;
   overflow: hidden;
+  background: $grey;
 
   &.full-size {
-    background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 0px 5px 1px #fff;
+    // background: rgba(0, 0, 0, 0.6);
+    // box-shadow: 0px 0px 5px 1px #fff;
+    // background: $grey;
 
     &:hover {
       &:before {
@@ -106,7 +109,7 @@ main {
   }
 
   &.scaled {
-    background: grey;
+    // background: $grey;
     transform: scale(0.375);
     transition: transform 0.2s ease;
     will-change: transform;
@@ -259,7 +262,7 @@ main {
 
     &:before {
       content: '';
-      background: grey;
+      background: $grey;
       position: absolute;
       left: 0;
     }
@@ -267,21 +270,21 @@ main {
 
   &.email a {
     &:before {
-      background: grey url('./../../assets/images/global/icons/contact-light.svg') 50% 50% no-repeat;
+      background: $grey url('./../../assets/images/global/icons/contact-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }
 
   &.linkedin a {
     &:before {
-      background: grey url('./../../assets/images/global/icons/linkedin-light.svg') 50% 50% no-repeat;
+      background: $grey url('./../../assets/images/global/icons/linkedin-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }
 
   &.github a {
     &:before {
-      background: grey url('./../../assets/images/global/icons/github-light.svg') 50% 50% no-repeat;
+      background: $grey url('./../../assets/images/global/icons/github-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }
