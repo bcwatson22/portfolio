@@ -38,7 +38,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     footer {
       padding: 20px;
     }

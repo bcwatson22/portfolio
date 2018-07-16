@@ -1,35 +1,41 @@
 <template>
-  <article v-if="link === 'raster'" class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+  <article v-if="link === 'raster'" class="project" :class="name" :data-primary="disciplines.primary.toLowerCase()">
+    <div class="thumbnail">
+      <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+    </div>
     <router-link :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
+        <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
     </router-link>
   </article>
-  <article v-else-if="link === 'vector'" class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
+  <article v-else-if="link === 'vector'" class="project vector" :class="name" :data-primary="disciplines.primary.toLowerCase()">
+    <div class="thumbnail">
+      <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
+    </div>
     <router-link :to="'/projects/' + name" class="info">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
+        <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
     </router-link>
   </article>
-  <article v-else class="project" :class="name">
-    <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
+  <article v-else class="project" :class="name" :data-primary="disciplines.primary.toLowerCase()">
+    <div class="thumbnail">
+      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
+    </div>
     <a class="info" :href="link" target="_blank">
       <h1>{{ title }}</h1>
       <p>{{ blurb }}</p>
       <ul class="disciplines indicate">
-        <li v-for="(discipline, index) in disciplines" :key="index" class="icon" :class="discipline.toLowerCase()">
+        <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
           {{ discipline }}
         </li>
       </ul>
@@ -53,7 +59,7 @@
       id: Number,
       title: String,
       name: String,
-      disciplines: Array,
+      disciplines: Object,
       blurb: String,
       link: String
     },
@@ -83,6 +89,10 @@
     overflow: hidden;
     // min-height: 300px;
     // padding-top: 30%;
+
+    &.vector {
+      background: #fff;
+    }
 
     &:before {
       content: '';
@@ -116,6 +126,10 @@
         transform: translateX(0);
       }
     }
+  }
+
+  .thumbnail {
+    background: #fff;
   }
 
   img {
@@ -155,7 +169,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 30px 150px 30px 30px;
+    padding: 30px 120px 30px 30px;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -167,11 +181,6 @@
     h1 {
       text-align: left;
     }
-
-    // p {
-    //   font-size: 14px;
-    //   font-size: 1.4rem;
-    // }
   }
 
   .disciplines {
@@ -190,78 +199,146 @@
       @include delay(4, 0.1s, 0);
     }
 
-    &:hover,
-    &:focus {
-      .icon {
-        // transform: translateX(0) scale(1);
-        transform: translateX(0);
+    // &:hover,
+    // &:focus {
+    //   .icon {
+    //     // transform: translateX(0) scale(1);
+    //     transform: translateX(0);
+    //
+    //     &:before {
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
+  }
 
-        &:before {
-          opacity: 1;
-        }
-      }
+  @media screen and (max-width: 1000px) {
+    .info {
+      padding-right: 90px;
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 900px) {
     .project {
       width: calc(50% - 10px);
       margin: 10px 0;
     }
+
+    .info {
+      padding: 20px 80px 20px 20px;
+    }
+
+    .disciplines {
+      // top: 20px;
+      // right: 20px;
+      padding: 10px 20px;
+    }
   }
-        // li {
-        //   animation: slideInRight 0.25s ease;
-        // }
 
-        // li {
-        //   display: block;
-        //   margin-bottom: 15px;
-        //   border-radius: 100%;
-        //   text-indent: -99999rem;
-        //   width: 15px;
-        //   height: 15px;
-        //   opacity: 0;
-        //   transform: translateX(50px);
-        //   transition: all 0.25s ease;
-        //   // @include hwa();
-        //   @include delay(4, 0.1s, 0);
-        //   // box-shadow: 0px 0px 3px 1px #fff;
-        //   // border: 1px solid #fff;
-        //
-        //   &.development {
-        //     background: $yellow;
-        //   }
-        //
-        //   &.design {
-        //     background: $green;
-        //   }
-        //
-        //   &.branding {
-        //     background: $blue;
-        //   }
-        //
-        //   &.video {
-        //     background: $red;
-        //   }
-        // }
+  // @media screen and (max-width: 770px) {
+  //   .project {
+  //     width: 100%;
+  //     // padding-right: 30%;
+  //     background: $grey;
+  //
+  //     &:before {
+  //       padding: 0;
+  //     }
+  //   }
+  //
+  //   .thumbnail {
+  //     float: left;
+  //     width: 70%;
+  //   }
+  //
+  //   img {
+  //     .planet-vlog & {
+  //       width: 100%;
+  //       top: -90%;
+  //     }
+  //
+  //     .furness-brothers & {
+  //       top: -120%;
+  //     }
+  //
+  //     .rmd & {
+  //       top: -40%;
+  //     }
+  //
+  //     .pyramid-sk8 & {
+  //       top: -400%;
+  //     }
+  //   }
+  //
+  //   .info {
+  //     height: auto;
+  //     position: relative;
+  //     float: right;
+  //     width: 30%;
+  //     opacity: 1;
+  //     padding: 15px;
+  //     left: auto;
+  //     // right: 0;
+  //     background: $grey;
+  //   }
+  //
+  //   .disciplines {
+  //     position: relative;
+  //     padding: 0;
+  //     height: auto;
+  //     display: flex;
+  //     justify-content: center;
+  //
+  //     .icon {
+  //       transform: translate(0, 0);
+  //       opacity: 1;
+  //       // width: 33%;
+  //       margin: 0 15px 0 0;
+  //     }
+  //   }
+  // }
 
+  @media screen and (max-width: 770px) {
+    .project {
+      width: 100%;
+      flex-wrap: wrap;
+      background: none;
+      margin: 20px 0;
+      box-shadow: 0px 0px 5px 1px #fff;
 
-    // &:hover,
-    // &:focus {
-    //   .info {
-    //     opacity: 1;
-    //     transition: all 0.15s ease;
-    //
-    //     li {
-    //       opacity: 1;
-    //       transform: translateX(0) scale(0.375);
-    //     }
-    //
-    //     // li {
-    //     //   animation: slideInRight 0.25s ease forwards;
-    //     //   @include delay(4, 0.1s, 0, false);
-    //     // }
-    //   }
-    // }
+      &:before {
+        padding-top: 60%;
+      }
+    }
 
+    .thumbnail,
+    .info {
+      width: 100%;
+      float: none;
+    }
+
+    .info {
+      height: auto;
+      position: relative;
+      opacity: 1;
+      padding: 15px;
+      left: auto;
+      background: #000;
+    }
+
+    .disciplines {
+      position: relative;
+      padding: 0;
+      height: auto;
+      display: flex;
+      justify-content: center;
+
+      .icon {
+        transform: translate(0, 0);
+        opacity: 1;
+        // width: 33%;
+        margin: 0 15px 0 0;
+      }
+    }
+  }
 </style>

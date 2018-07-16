@@ -172,6 +172,7 @@ main {
   }
 
   &.development {
+    color: $yellow;
     background: $yellow;
 
     &:before {
@@ -186,6 +187,7 @@ main {
   }
 
   &.design {
+    color: $green;
     background: $green;
 
     &:before {
@@ -200,6 +202,7 @@ main {
   }
 
   &.branding {
+    color: $blue;
     background: $blue;
 
     &:before {
@@ -214,6 +217,7 @@ main {
   }
 
   &.video {
+    color: $red;
     background: $red;
 
     &:before {
@@ -225,6 +229,11 @@ main {
       background: url('./../../assets/images/global/icons/video-circle-colour.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
+  }
+
+  &.cv,
+  &.contact {
+    color: $grey;
   }
 
   &.cv {
@@ -320,9 +329,15 @@ main {
   opacity: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   main {
     padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  body {
+    background: #000;
   }
 }
 

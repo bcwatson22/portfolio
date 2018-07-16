@@ -110,6 +110,7 @@
         transform: scale(1);
         background: #fff;
         will-change: transform, background-color;
+        box-shadow: 0px 0px 5px 5px;
 
         &:before {
           transform: scale(10);
