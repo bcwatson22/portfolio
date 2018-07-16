@@ -1,14 +1,15 @@
 <template>
   <section class="contact">
-    <article class="image">
-      <img src="./../../assets/images/global/mugshot.jpg" alt="Billy Watson">
-    </article>
     <article class="links">
       <ul class="icon-links">
         <li class="email"><a href="mailto:bcwatson22@gmail.com">bcwatson22@gmail.com</a></li>
-        <li class="linkedin"><a href="https://www.linkedin.com/in/watsonbilly">linkedin.com/in/watsonbilly</a></li>
-        <li class="github"><a href="https://github.com/bcwatson22">github.com/bcwatson22</a></li>
+        <li class="linkedin"><a href="https://www.linkedin.com/in/watsonbilly" target="_blank">linkedin.com/in/watsonbilly</a></li>
+        <li class="github"><a href="https://github.com/bcwatson22" target="_blank">github.com/bcwatson22</a></li>
       </ul>
+    </article>
+    <article class="image">
+      <!-- <img src="./../../assets/images/global/mug.jpg" alt="Billy Watson"> -->
+      <img src="./../../assets/images/global/mugshot.jpg" alt="Billy Watson">
     </article>
   </section>
 </template>
@@ -31,9 +32,13 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    .image,
-    .links {
+    .links,
+    .image {
       width: calc(50% - 15px);
+    }
+
+    .links {
+      padding-left: 10%;
     }
   }
 

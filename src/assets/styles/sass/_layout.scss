@@ -35,7 +35,7 @@ body {
 }
 
 body {
-  background: #000 url('./../../assets/images/global/nebula.png') center 200px no-repeat;
+  background: #000 url('./../../assets/images/global/nebula.png') center 300px no-repeat;
   color: #fff;
 }
 
@@ -57,7 +57,7 @@ main {
 
 .disciplines {
   li {
-    margin: 15px;
+    margin: 15px 0;
     transition: transform 0.2s ease;
     will-change: transform;
 

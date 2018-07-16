@@ -17,7 +17,7 @@
         <a href="#" class="icon scaled cv"></a>
       </li>
       <li data-indicate="Contact">
-        <router-link to="/contact" class="icon scaled contact"></router-link>
+        <a href="/contact" @click.prevent="linkTo('contact')" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''"></a>
       </li>
     </ul>
   </nav>
@@ -33,6 +33,15 @@
         // Mounts the "safelyStoredNumber" getter to the scope of your component.
         'currentFilter'
       ])
+    },
+    methods: {
+      linkTo: function (target) {
+
+        if (this.currentFilter) this.$store.commit('restoreProjects');
+
+        this.$router.push(target);
+
+      }
     }
   }
 </script>
@@ -60,7 +69,8 @@
 
     ul {
       display: flex;
-      justify-content: space-around;
+      // justify-content: space-around;
+      justify-content: space-between;
     }
 
     li {
