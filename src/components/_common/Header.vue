@@ -32,24 +32,31 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 45px 30px 0;
+  }
 
+  .logo,
+  .intro {
+    width: calc(50% - 15px);
+  }
+
+  .logo {
+    padding-left: 10%;
+  }
+
+  .intro {
+    padding-right: 10%;
+
+    p {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
     .logo,
     .intro {
-      width: calc(50% - 15px);
-    }
-
-    .logo {
-      padding-left: 10%;
-    }
-
-    .intro {
-      padding-right: 10%;
-
-      p {
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
+      padding: 0;
     }
   }
 </style>

@@ -32,15 +32,15 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 15px 0;
+  }
 
-    .links,
-    .image {
-      width: calc(50% - 15px);
-    }
+  .links,
+  .image {
+    width: calc(50% - 15px);
+  }
 
-    .links {
-      padding-left: 10%;
-    }
+  .links {
+    padding-left: 10%;
   }
 
   img {
@@ -57,11 +57,54 @@
     li {
       width: 100%;
       margin-bottom: 60px;
+      font-size: 20px;
       font-size: 2rem;
 
       &:last-of-type {
         margin: 0;
       }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .links {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    ul li {
+      margin-bottom: 30px;
+      font-size: inherit;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .contact {
+      display: block;
+    }
+
+    .links,
+    .image {
+      width: 100%;
+    }
+
+    ul {
+      flex-direction: row;
+
+      li {
+        width: 60%;
+
+        &:last-of-type {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    ul li {
+      width: 100%;
     }
   }
 </style>
