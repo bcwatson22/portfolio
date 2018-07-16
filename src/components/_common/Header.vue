@@ -59,4 +59,45 @@ export default {
       padding: 0;
     }
   }
+
+  @media screen and (max-width: 600px) {
+    header {
+      padding: 20px 20px 0;
+    }
+
+    .logo,
+    .intro {
+      width: 100%;
+    }
+
+    .logo {
+      padding: 0 25%;
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        width: calc(50% - 10px);
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .logo {
+      padding: 0 15%;
+    }
+
+    .intro {
+      p {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
 </style>

@@ -26,7 +26,7 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 30px 30px 45px;
 
     small {
       display: block;
@@ -35,6 +35,12 @@ export default {
     .logo {
       max-width: 115px;
       margin-left: auto;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    footer {
+      padding: 20px;
     }
   }
 </style>

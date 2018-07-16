@@ -81,7 +81,23 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    min-height: 300px;
+    // min-height: 300px;
+    // padding-top: 30%;
+
+    &:before {
+      content: '';
+      width: 1px;
+      margin-left: -1px;
+      float: left;
+      height: 0;
+      padding-top: 60%;
+    }
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
 
     &:hover,
     &:focus {
@@ -129,7 +145,7 @@
     .pyramid-sk8 & {
       width: 200%;
       top: -190%;
-      left: -50%;
+      left: -48%;
     }
   }
 
@@ -184,6 +200,13 @@
           opacity: 1;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .project {
+      width: calc(50% - 10px);
+      margin: 10px 0;
     }
   }
         // li {
