@@ -1,7 +1,9 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+      <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'"
+      :srcset="require('./../../assets/images/projects/' + name + '-2400.jpg') + ' 2400w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-300.jpg') + ' 300w'"
+      sizes="(min-width: 771px) 50vw, 100vw">
       <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
