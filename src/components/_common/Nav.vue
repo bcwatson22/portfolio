@@ -30,7 +30,6 @@
     name: 'Nav',
     computed: {
       ...mapGetters([
-        // Mounts the "safelyStoredNumber" getter to the scope of your component.
         'currentFilter'
       ])
     },
@@ -56,14 +55,13 @@
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style lang="scss" scoped>
   @import './../../assets/styles/sass/_variables.scss';
 
   nav {
     width: 100%;
     margin-top: 15px;
-    // min-height: 75px;
     position: relative;
 
     &:hover,
@@ -80,7 +78,6 @@
 
   ul {
     display: flex;
-    // justify-content: space-around;
     justify-content: space-between;
   }
 

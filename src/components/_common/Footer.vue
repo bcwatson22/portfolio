@@ -10,15 +10,14 @@
 </template>
 
 <script>
-export default {
-  name: 'Footer',
-  props: {
-    year: Number
+  export default {
+    name: 'Footer',
+    props: {
+      year: Number
+    }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   footer {
     width: 100%;

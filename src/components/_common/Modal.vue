@@ -36,23 +36,10 @@
 
       this.getProjectData(this.$route.params.name);
 
-    },
-    // methods: {
-    //   toggleInfo: function () {
-    //
-    //     let $infoBox = document.getElementsByClassName('info')[0];
-    //
-    //     $infoBox.classList.toggle('visible');
-    //
-    //   }
-    //   // ...mapMutations([
-    //   //   'closeModal'
-    //   // ])
-    // }
+    }
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .mask {
     position: fixed;

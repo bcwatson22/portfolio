@@ -1,19 +1,13 @@
 <template>
   <div id="app">
     <section class="wrapper">
-
       <Header/>
 
-      <!-- <img src="./assets/images/global/logo.png"> -->
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-        <!-- <p><strong>{{modalShown}}</strong>. Modal active: <strong>{{modalData}}</strong></p>
-        <button @click="deactivateModal(true)">Close</button> -->
       <main>
         <router-view></router-view>
       </main>
 
       <Footer :year="copyrightYear"/>
-
     </section>
   </div>
 </template>
@@ -27,7 +21,6 @@ import Footer from './components/_common/Footer.vue';
 import Modal from './components/_common/Modal.vue';
 
 import { mapGetters } from 'vuex';
-// import { mapMutations } from 'vuex';
 
 import mixins from './scripts/mixins.js';
 
@@ -58,7 +51,6 @@ export default {
   },
   computed: {
     ...mapGetters([
-      // Mounts the "safelyStoredNumber" getter to the scope of your component.
       'filteredProjects'
     ])
   }

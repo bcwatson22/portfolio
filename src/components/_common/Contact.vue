@@ -8,7 +8,6 @@
       </ul>
     </article>
     <article class="image">
-      <!-- <img src="./../../assets/images/global/mug.jpg" alt="Billy Watson"> -->
       <img src="./../../assets/images/global/mugshot.jpg" alt="Billy Watson">
       <span class="overlay">
         <h1>Intit just.</h1>
@@ -18,17 +17,11 @@
 </template>
 
 <script>
-  // import Project from './Project.vue';
-
-  // import { mapGetters } from 'vuex';
-  // import { mapMutations } from 'vuex';
-
   export default {
     name: 'Contact'
   }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .contact {
     display: flex;

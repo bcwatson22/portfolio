@@ -12,21 +12,18 @@
 </template>
 
 <script>
-import Nav from './Nav.vue';
+  import Nav from './Nav.vue';
 
-export default {
-  name: 'Header',
-  components: {
-    Nav
+  export default {
+    name: 'Header',
+    components: {
+      Nav
+    }
   }
-}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   header {
-    // width: 80%;
-    // margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -52,13 +49,6 @@ export default {
       }
     }
   }
-
-  // @media screen and (max-width: 900px) {
-  //   .logo,
-  //   .intro {
-  //     padding: 0;
-  //   }
-  // }
 
   @media screen and (max-width: 900px) {
     header {

@@ -12,7 +12,6 @@ export default {
             prefix = 'projects/',
             url = prefix + target;
 
-        // if (history) history.pushState(modalData, modalData.title, url);
         this.pushState(modalData, url);
 
       }
@@ -22,14 +21,6 @@ export default {
     },
 
     deactivateModal: function () {
-
-      // if (event) {
-      //
-      //   this.pushState('home', '/');
-      //
-      // }
-      //
-      // this.closeModal();
 
       this.$router.go(-1);
 

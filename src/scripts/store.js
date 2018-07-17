@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development', 'Design', 'Branding'],
           },
-          blurb: 'Portrait gallery design and development project for Sheffield-based painter. Site built in Angular 4; featuring progressive image loading, meta-based animations and data-driven content using AJAX and behaviour subjects.',
+          blurb: 'Portrait gallery design and development project for Sheffield-based painter. Site built in Angular 4; featuring progressive image loading, meta-based animations and randomised content based on promises and behaviour subjects.',
           link: 'http://bingjones.co.uk'
         },
         {
@@ -26,7 +26,7 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development', 'Design'],
           },
-          blurb: 'Prototype Member Centre built for Plusnet, vastly modernising their current setup. Built in Angular 4 and based on user-tested designs. Project features search functionality, broadband speed test journey and an intuitive UI.',
+          blurb: 'Prototype Member Centre built for Plusnet, vastly modernising their current setup. Project developed in Angular 4 and features search functionality, broadband speed test journey and an intuitive, user tested UI.',
           link: 'http://billywatson.net/member'
         },
         {
@@ -70,7 +70,7 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development'],
           },
-          blurb: 'New page developed for Plusnet site, using data visualisation to display results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and animation delays. Head of Digital proclaimed it "best page on\'t site."',
+          blurb: 'New page developed for Plusnet site, using animated graphs and counters to visualise results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and transition delays. Head of Digital proclaimed it "best page on\'t site."',
           link: 'https://www.plus.net/help/quality-of-service/'
         },
         {
