@@ -2,22 +2,22 @@
   <nav>
     <ul class="disciplines">
       <li data-indicate="Development">
-        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development" :class="currentFilter === 'development' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development" :class="currentFilter === 'development' ? 'active' : ''">Development</router-link>
       </li>
       <li data-indicate="Design">
-        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design" :class="currentFilter === 'design' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design" :class="currentFilter === 'design' ? 'active' : ''">Design</router-link>
       </li>
       <li data-indicate="Branding">
-        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding" :class="currentFilter === 'branding' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding" :class="currentFilter === 'branding' ? 'active' : ''">Branding</router-link>
       </li>
       <li data-indicate="Video">
-        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''"></router-link>
+        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''">Video</router-link>
       </li>
       <li data-indicate="CV">
-        <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv"></a>
+        <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv">CV</a>
       </li>
       <li data-indicate="Contact">
-        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''"></a>
+        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''">Contact</a>
       </li>
     </ul>
   </nav>

@@ -1,10 +1,8 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <!-- <span class="thumb"> -->
-        <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
-      <!-- </span> -->
-      <span class="overlay info">
+      <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'">
+      <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
             {{ discipline }}
@@ -12,17 +10,14 @@
         </ul>
         <h1>{{ title }}</h1>
         <p>{{ blurb }}</p>
-
       </span>
     </router-link>
+    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'vector'" class="project vector" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <!-- <span class="thumb"> -->
-        <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
-      <!-- </span> -->
-
-      <span class="overlay info">
+      <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
+      <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
             {{ discipline }}
@@ -30,16 +25,14 @@
         </ul>
         <h1>{{ title }}</h1>
         <p>{{ blurb }}</p>
-
       </span>
     </router-link>
+    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="link" target="_blank">
-      <!-- <span class="thumb"> -->
-        <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
-      <!-- </span> -->
-      <span class="overlay info">
+      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
+      <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
             {{ discipline }}
@@ -47,9 +40,9 @@
         </ul>
         <h1>{{ title }}</h1>
         <p>{{ blurb }}</p>
-
       </span>
     </a>
+    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
   </article>
 </template>
 
@@ -131,10 +124,10 @@
     &:focus {
       // box-shadow: 2px 2px 4px 3px $blue;
       box-shadow: 0px 0px 5px 1px #fff;
-      z-index: 2;
+      // z-index: 2;
       // background: rgba(0, 0, 0, 0.7);
 
-      .info {
+      .overlay {
         opacity: 1;
         transition: all 0.15s ease;
       }
@@ -202,7 +195,7 @@
     }
   }
 
-  .info {
+  .overlay {
     // color: #fff;
     // text-decoration: none;
     // position: absolute;
@@ -221,6 +214,17 @@
     // height: 100%;
     // width: 100%;
 
+    &.visible {
+      opacity: 1;
+      transition: all 0.15s ease;
+
+      li {
+        opacity: 1;
+        // transform: translateX(0) scale(0.375);
+        transform: translateX(0);
+      }
+    }
+
     h1 {
       text-align: left;
     }
@@ -234,10 +238,11 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 20px 30px;
+    padding: 30px;
     height: 100%;
 
     .icon {
+      margin-top: 0;
       opacity: 0;
       // transform: translateX(50px) scale(0.375);
       transform: translateX(50px);
@@ -259,8 +264,32 @@
     // }
   }
 
-  @media screen and (max-width: 1000px) {
+  .info {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+  }
+
+  @media screen and (pointer: coarse) and (min-width: 771px) {
+    .project:hover,
+    .project:focus {
+      .overlay {
+        opacity: 0;
+
+        &.visible {
+          opacity: 1;
+        }
+      }
+    }
+
     .info {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .overlay {
       padding-right: 90px;
     }
   }
@@ -271,14 +300,14 @@
       margin: 10px 0;
     }
 
-    .info {
+    .overlay {
       padding: 20px 80px 20px 20px;
     }
 
     .disciplines {
       // top: 20px;
       // right: 20px;
-      padding: 10px 20px;
+      padding: 20px;
     }
   }
 
@@ -317,7 +346,7 @@
   //     }
   //   }
   //
-  //   .info {
+  //   .overlay {
   //     height: auto;
   //     position: relative;
   //     float: right;
@@ -368,7 +397,7 @@
     }
 
     // .thumb,
-    .info {
+    .overlay {
       width: 100%;
       position: relative;
       overflow: visible;
@@ -388,7 +417,7 @@
       // float: none;
     }
 
-    // .info {
+    // .overlay {
       // height: auto;
       // // position: relative;
       // opacity: 1;

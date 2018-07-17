@@ -48,6 +48,27 @@ export default {
 
       this.projectData = project;
 
+    },
+
+    getClosest: function (elem, selector) {
+
+      for ( ; elem && elem !== document; elem = elem.parentNode ) {
+
+          if (elem.matches(selector)) return elem;
+
+      }
+
+      return null;
+
+    },
+
+    toggleInfo: function (event, parent, target) {
+
+      let $parent = this.getClosest(event.currentTarget, parent),
+          $target = $parent.querySelectorAll(target)[0];
+
+      if ($target) $target.classList.toggle('visible');
+
     }
 
   }

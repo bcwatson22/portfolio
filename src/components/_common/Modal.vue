@@ -3,18 +3,18 @@
     <section class="modal">
       <div class="mask" @click.self="deactivateModal()">
         <div class="container">
-          <div class="project-image" :class="projectData.link === 'vector' ? 'vector' : ''">
+          <div class="image" :class="projectData.link === 'vector' ? 'vector' : ''">
             <img v-if="projectData.link === 'raster'" :src="require('./../../assets/images/projects/' + projectData.name + '-1200.jpg')" :alt="projectData.title + ' thumb'">
             <img v-if="projectData.link === 'vector'" :src="require('./../../assets/images/projects/' + projectData.name + '.svg')" :alt="projectData.title + ' thumb'">
           </div>
-          <div class="project-info">
+          <div class="details">
             <h2>{{ projectData.title }}</h2>
             <p>{{ projectData.blurb }}</p>
           </div>
           <!-- <button class="icon full-size info" @click="toggleInfo()">Info</button>
           <a class="icon full-size close" @click="$router.go(-1)">Close</a> -->
         </div>
-        <button class="icon full-size info" @click="toggleInfo()">Info</button>
+        <button class="icon full-size info" @click="toggleInfo($event, '.modal', '.details')">Info</button>
         <a class="icon full-size close" @click="$router.go(-1)">Close</a>
       </div>
     </section>
@@ -37,18 +37,18 @@
       this.getProjectData(this.$route.params.name);
 
     },
-    methods: {
-      toggleInfo: function () {
-
-        let $infoBox = document.getElementsByClassName('project-info')[0];
-
-        $infoBox.classList.toggle('visible');
-
-      }
-      // ...mapMutations([
-      //   'closeModal'
-      // ])
-    }
+    // methods: {
+    //   toggleInfo: function () {
+    //
+    //     let $infoBox = document.getElementsByClassName('info')[0];
+    //
+    //     $infoBox.classList.toggle('visible');
+    //
+    //   }
+    //   // ...mapMutations([
+    //   //   'closeModal'
+    //   // ])
+    // }
   }
 </script>
 
@@ -73,7 +73,7 @@
     // pointer-events: none;
   }
 
-  .project-image {
+  .image {
     height: 100%;
     // overflow-y: scroll;
     // display: flex;
@@ -91,7 +91,7 @@
     margin: auto;
   }
 
-  .project-info {
+  .details {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -132,11 +132,11 @@
 
   @media screen and (max-width: 900px) {
     .mask,
-    .project-image.vector {
+    .image.vector {
       padding: 20px;
     }
 
-    .project-info {
+    .info {
       padding-left: 20px;
       padding-bottom: 20px;
     }
@@ -157,11 +157,11 @@
 
   @media screen and (max-width: 450px) {
     .mask,
-    .project-image.vector {
+    .image.vector {
       padding: 10px;
     }
 
-    .project-info {
+    .info {
       padding-left: 10px;
       padding-bottom: 10px;
     }

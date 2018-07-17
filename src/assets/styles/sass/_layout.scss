@@ -262,6 +262,16 @@ main {
   }
 }
 
+@media screen and (pointer: coarse) {
+  .icon.scaled {
+    transform: scale(1);
+
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
 .icon-links li {
   a {
     position: relative;
