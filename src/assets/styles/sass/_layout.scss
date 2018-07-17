@@ -55,6 +55,21 @@ main {
   // justify-content: space-between;
 }
 
+.logo {
+  will-change: opacity;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+  }
+
+  &:active {
+    opacity: 1;
+    transition: none;
+  }
+}
+
 .disciplines {
   li {
     margin: 15px 0;

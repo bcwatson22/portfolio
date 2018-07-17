@@ -3,9 +3,9 @@
     <section class="small-print">
       <small>&copy;{{ year }}. All rights reserved.</small>
     </section>
-    <section class="logo">
+    <router-link to="/projects" class="logo">
       <img src="./../../assets/images/global/logo-white.svg" alt="Billy Watson logo">
-    </section>
+    </router-link>
   </footer>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
   <header>
-    <section class="logo">
+    <router-link to="/projects" class="logo">
       <img src="./../../assets/images/global/logo-white.svg" alt="Billy Watson logo">
-    </section>
+    </router-link>
     <section class="intro">
       <p>A creative and passionate Web Developer from the Peak District with five years' experience, both in agency and in-house environments.</p>
       <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also skilled in design, branding and video. Fan of music, mountain biking and Yorkshire Tea.</p>
@@ -53,12 +53,12 @@ export default {
     }
   }
 
-  @media screen and (max-width: 900px) {
-    .logo,
-    .intro {
-      padding: 0;
-    }
-  }
+  // @media screen and (max-width: 900px) {
+  //   .logo,
+  //   .intro {
+  //     padding: 0;
+  //   }
+  // }
 
   @media screen and (max-width: 900px) {
     header {
@@ -67,6 +67,7 @@ export default {
 
     .logo,
     .intro {
+      padding: 0;
       width: 100%;
     }
 
