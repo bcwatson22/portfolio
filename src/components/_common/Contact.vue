@@ -8,7 +8,8 @@
       </ul>
     </article>
     <article class="image">
-      <img src="./../../assets/images/global/mugshot.jpg" alt="Billy Watson">
+      <img src="./../../assets/images/global/mugshot-1000.jpg" alt="Billy Watson" srcset="./../../assets/images/global/mugshot-800.jpg 800w, ./../../assets/images/global/mugshot-600.jpg 600w, ./../../assets/images/global/mugshot-400.jpg 400w"
+      sizes="(min-width: 500px) 50vw, 100vw">
       <span class="overlay">
         <h1>Intit just.</h1>
       </span>

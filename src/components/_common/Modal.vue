@@ -4,7 +4,8 @@
       <div class="mask" @click.self="deactivateModal()">
         <div class="container">
           <div class="image" :class="projectData.link === 'vector' ? 'vector' : ''">
-            <img v-if="projectData.link === 'raster'" :src="require('./../../assets/images/projects/' + projectData.name + '-1200.jpg')" :alt="projectData.title + ' thumb'">
+            <img v-if="projectData.link === 'raster'" :src="require('./../../assets/images/projects/' + projectData.name + '-1200.jpg')" :alt="projectData.title + ' thumb'" :srcset="require('./../../assets/images/projects/' + projectData.name + '-2400.jpg') + ' 2400w,' + require('./../../assets/images/projects/' + projectData.name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + projectData.name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + projectData.name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + projectData.name + '-400.jpg') + ' 400w'"
+            sizes="100vw">
             <img v-if="projectData.link === 'vector'" :src="require('./../../assets/images/projects/' + projectData.name + '.svg')" :alt="projectData.title + ' thumb'">
           </div>
           <div class="details">
