@@ -34,7 +34,7 @@
       </span>
     </router-link>
   </article>
-  <article v-else class="project" :class="name" :data-primary="disciplines.primary.toLowerCase()">
+  <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="link" target="_blank">
       <!-- <span class="thumb"> -->
         <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'">
@@ -113,7 +113,9 @@
       padding-top: 60%;
     }
 
-    &.raster {
+    &.red-eric,
+    &.x-games,
+    &.basics {
       &:before {
         padding-top: 70%;
       }
@@ -221,6 +223,10 @@
 
     h1 {
       text-align: left;
+    }
+
+    p {
+      margin: 0;
     }
   }
 
@@ -413,9 +419,9 @@
       }
     }
 
-    p {
-      margin: 0;
-    }
+    // p {
+    //   margin: 0;
+    // }
   }
 
   // @media screen and (max-width: 450px) {
