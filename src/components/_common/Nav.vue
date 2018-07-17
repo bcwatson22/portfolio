@@ -63,7 +63,7 @@
   nav {
     width: 100%;
     margin-top: 15px;
-    min-height: 75px;
+    // min-height: 75px;
     position: relative;
 
     &:hover,
@@ -76,50 +76,70 @@
         }
       }
     }
+  }
 
-    ul {
-      display: flex;
-      // justify-content: space-around;
-      justify-content: space-between;
+  ul {
+    display: flex;
+    // justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  li {
+    &:after {
+      left: 50%;
+      transform: translate(-50%, 10px);
     }
 
-    li {
+    &:hover {
+      transform: translateY(-10px);
+
       &:after {
-        left: 50%;
-        transform: translate(-50%, 10px);
+        opacity: 1;
       }
+    }
+  }
 
-      &:hover {
-        transform: translateY(-10px);
-
-        &:after {
-          opacity: 1;
-        }
+  a {
+    &:active {
+      &:before {
+        transform: scale(0.9);
       }
     }
 
-    a {
-      &:active {
-        &:before {
-          transform: scale(0.9);
-        }
+    &.active,
+    &.router-link-exact-active {
+      transform: scale(1);
+      background: #fff;
+      will-change: transform, background-color;
+      box-shadow: 0px 0px 5px 5px;
+
+      &:before {
+        transform: scale(10);
       }
 
-      &.active,
-      &.router-link-exact-active {
-        transform: scale(1);
-        background: #fff;
-        will-change: transform, background-color;
-        box-shadow: 0px 0px 5px 5px;
-
-        &:before {
-          transform: scale(10);
-        }
-
-        &:after {
-          opacity: 1;
-        }
+      &:after {
+        opacity: 1;
       }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    nav {
+      margin-top: 10px;
+    }
+
+    .disciplines li {
+      &:after {
+        font-size: 12px;
+        font-size: 1.2rem;
+        transform: translate(-50%, 5px);
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .disciplines li {
+      margin: 10px 0;
     }
   }
 </style>

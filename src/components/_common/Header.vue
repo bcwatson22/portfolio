@@ -89,6 +89,10 @@ export default {
   }
 
   @media screen and (max-width: 450px) {
+    header {
+      padding: 20px 10px 0;
+    }
+
     .logo {
       padding: 0 15%;
     }

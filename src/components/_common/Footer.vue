@@ -40,7 +40,13 @@ export default {
 
   @media screen and (max-width: 900px) {
     footer {
-      padding: 20px;
+      padding: 10px 20px 20px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    footer {
+      padding: 0 10px 20px;
     }
   }
 </style>

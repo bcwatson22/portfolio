@@ -10,6 +10,9 @@
     <article class="image">
       <!-- <img src="./../../assets/images/global/mug.jpg" alt="Billy Watson"> -->
       <img src="./../../assets/images/global/mugshot.jpg" alt="Billy Watson">
+      <span class="overlay">
+        <h1>Intit just.</h1>
+      </span>
     </article>
   </section>
 </template>
@@ -43,10 +46,6 @@
     padding-left: 10%;
   }
 
-  img {
-    border-radius: 100%;
-  }
-
   ul {
     display: flex;
     flex-direction: column;
@@ -63,6 +62,32 @@
       &:last-of-type {
         margin: 0;
       }
+    }
+  }
+
+  .image {
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+
+    &:hover {
+      .overlay {
+        opacity: 1;
+        transition: all 0.15s ease;
+      }
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+    h1 {
+      margin: 0;
+      width: 100%;
     }
   }
 

@@ -78,7 +78,7 @@
       width: 100%;
       height: 100%;
       opacity: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.7);
       transition: all 0.5s ease;
       cursor: pointer;
       overflow: hidden;
