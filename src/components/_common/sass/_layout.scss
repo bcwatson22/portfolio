@@ -1,10 +1,5 @@
 @import 'mixins';
 
-#app {
-  will-change: padding;
-  transition: all 0.3s ease;
-}
-
 html,
 body {
   height: 100%;
@@ -154,18 +149,6 @@ main {
 
     &:after {
       background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
-      background-size: 50% 50%;
-    }
-  }
-
-  &.cookie {
-    &:before {
-      background: url('./../../assets/images/global/icons/cookie-light.svg') 50% 50% no-repeat;
-      background-size: 50% 50%;
-    }
-
-    &:after {
-      background: url('./../../assets/images/global/icons/cookie-dark.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }

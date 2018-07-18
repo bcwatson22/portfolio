@@ -12,8 +12,8 @@
       </main>
 
       <Footer :year="copyrightYear"/>
-      <CookieBanner/>
     </section>
+    <CookieBanner v-if="cookieBanner"/>
   </div>
 </template>
 
@@ -49,12 +49,35 @@
 
         return y;
 
+      },
+      checkForCookie: function () {
+
+        let showBanner = (this.$cookie.get('billy-watson')) ? false : true;
+
+        return showBanner;
+
       }
     },
     data () {
       return {
-        copyrightYear: this.getCurrentYear()
+        copyrightYear: this.getCurrentYear(),
+        cookieBanner: this.checkForCookie()
       }
+    },
+    mounted () {
+
+      let $root = document.getElementById('app'),
+          $banner = $root.querySelectorAll('.cookie-banner')[0],
+          height = '0';
+
+      if ($banner) {
+
+        height = $banner.offsetHeight.toString();
+
+        $root.style.paddingBottom = height + 'px';
+
+      }
+
     },
     computed: {
       ...mapGetters([

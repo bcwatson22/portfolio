@@ -26,15 +26,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 30px 30px 45px;
+  }
 
-    small {
-      display: block;
-    }
+  small {
+    display: block;
+  }
 
-    .logo {
-      max-width: 115px;
-      margin-left: auto;
-    }
+  .logo {
+    max-width: 115px;
+    margin-left: auto;
+    min-height: 40px;
   }
 
   @media screen and (max-width: 900px) {

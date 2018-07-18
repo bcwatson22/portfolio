@@ -93,7 +93,7 @@
 
         if ($iframe) $iframe.setAttribute('src', source);
 
-        this.toggleElement(event, '.projects', '.planet-vlog')
+        this.toggleElement(event, '.projects', '.planet-vlog');
 
       }
     }
