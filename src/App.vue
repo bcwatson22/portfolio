@@ -12,51 +12,54 @@
       </main>
 
       <Footer :year="copyrightYear"/>
+      <CookieBanner/>
     </section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+  // import HelloWorld from './components/HelloWorld.vue';
 
-import Header from './components/_common/Header.vue';
-import Project from './components/_common/Projects.vue';
-import Footer from './components/_common/Footer.vue';
-import Modal from './components/_common/Modal.vue';
+  import Header from './components/_common/Header.vue';
+  import Project from './components/_common/Projects.vue';
+  import Footer from './components/_common/Footer.vue';
+  import Modal from './components/_common/Modal.vue';
+  import CookieBanner from './components/_common/CookieBanner.vue';
 
-import { mapGetters } from 'vuex';
+  import { mapGetters } from 'vuex';
 
-import mixins from './scripts/mixins.js';
+  import mixins from './scripts/mixins.js';
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld,
-    Header,
-    Project,
-    Footer,
-    Modal
-  },
-  mixins: [mixins],
-  methods: {
-    getCurrentYear: function () {
+  export default {
+    name: 'app',
+    components: {
+      // HelloWorld,
+      Header,
+      Project,
+      Footer,
+      Modal,
+      CookieBanner
+    },
+    mixins: [mixins],
+    methods: {
+      getCurrentYear: function () {
 
-      let d = new Date(),
-          y = d.getFullYear();
+        let d = new Date(),
+            y = d.getFullYear();
 
-      return y;
+        return y;
 
+      }
+    },
+    data () {
+      return {
+        copyrightYear: this.getCurrentYear()
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'filteredProjects'
+      ])
     }
-  },
-  data () {
-    return {
-      copyrightYear: this.getCurrentYear()
-    }
-  },
-  computed: {
-    ...mapGetters([
-      'filteredProjects'
-    ])
   }
-}
 </script>
