@@ -40,17 +40,6 @@ export const store = new Vuex.Store({
           blurb: 'Logo and branding project for Stockport-based skateboarding and streetwear label. Brief included inclusion of local postcode and "moody-looking" clouds.',
           link: 'vector'
         },
-        // {
-        //   id: 8,
-        //   title: 'Back to Basics',
-        //   name: 'basics',
-        //   disciplines: {
-        //     primary: 'Design',
-        //     list: ['Design'],
-        //   },
-        //   blurb: 'Layout design for Fiyah! magazine article on Back to Basics; the longest running club night in the world. Created in InDesign, with Photoshop used for image manipulation.',
-        //   link: 'raster'
-        // },
         {
           id: 5,
           title: 'Quality of Service',
@@ -106,28 +95,6 @@ export const store = new Vuex.Store({
           blurb: 'Layout design for Fiyah! magazine article on Back to Basics; the longest running club night in the world. Created in InDesign, with Photoshop used for image manipulation.',
           link: 'raster'
         },
-        // {
-        //   id: 5,
-        //   title: 'Quality of Service',
-        //   name: 'quality-of-service',
-        //   disciplines: {
-        //     primary: 'Development',
-        //     list: ['Development'],
-        //   },
-        //   blurb: 'New page developed for Plusnet site, using animated graphs and counters to visualise results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and transition delays. Head of Digital proclaimed it "best page on\'t site."',
-        //   link: 'https://www.plus.net/help/quality-of-service/'
-        // },
-        // {
-        //   id: 6,
-        //   title: 'Planet Vlog',
-        //   name: 'planet-vlog',
-        //   disciplines: {
-        //     primary: 'Video',
-        //     list: ['Video'],
-        //   },
-        //   blurb: 'Video blog of backpacking trip through Asia. Concept was to capture one second of video every day, which creates a diverse montage when stitched together.',
-        //   link: 'raster'
-        // },
         {
           id: 7,
           title: 'X-Games',
@@ -149,29 +116,7 @@ export const store = new Vuex.Store({
           },
           blurb: 'Video blog of backpacking trip through Asia. Concept was to capture one second of video every day, which creates a diverse montage when stitched together.',
           link: 'embed'
-        },
-        // {
-        //   id: 9,
-        //   title: 'Pyramid SK8',
-        //   name: 'pyramid-sk8',
-        //   disciplines: {
-        //     primary: 'Branding',
-        //     list: ['Design', 'Branding'],
-        //   },
-        //   blurb: 'Logo and branding project for Stockport-based skateboarding and streetwear label. Brief included inclusion of local postcode and "moody-looking" clouds.',
-        //   link: 'vector'
-        // },
-        // {
-        //   id: 8,
-        //   title: 'Back to Basics',
-        //   name: 'basics',
-        //   disciplines: {
-        //     primary: 'Design',
-        //     list: ['Design'],
-        //   },
-        //   blurb: 'Layout design for Fiyah! magazine article on Back to Basics; the longest running club night in the world. Created in InDesign, with Photoshop used for image manipulation.',
-        //   link: 'raster'
-        // }
+        }
       ],
       filtered: [],
       activeFilter: false

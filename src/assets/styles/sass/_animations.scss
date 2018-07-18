@@ -19,14 +19,31 @@
   100%   { transform: translateX(0) scale(0.375); opacity: 1; }
 }
 
+// .router-enter-active {
+//   transition: opacity 0.3s ease;
+// }
+//
+// .router-enter,
+// .router-leave-active {
+//   opacity: 0;
+// }
+//
+// .router-enter {
+//   .project,
+//   .icon-links li {
+//     opacity: 0;
+//     transform: translateY(50px);
+//   }
+// }
+
 .router-enter-active,
 .router-leave-active {
   transition-property: opacity;
-  transition-duration: 0.25s;
+  transition-duration: .25s;
 }
 
 .router-enter-active {
-  transition-delay: 0.25s;
+  transition-delay: .25s;
 }
 
 .router-enter,

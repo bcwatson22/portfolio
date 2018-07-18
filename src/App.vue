@@ -5,8 +5,10 @@
 
       <main>
         <transition name="router">
-          <router-view></router-view>
+          <router-view name="view"></router-view>
         </transition>
+
+        <router-view name="modal"></router-view>
       </main>
 
       <Footer :year="copyrightYear"/>

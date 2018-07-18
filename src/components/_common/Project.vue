@@ -108,12 +108,16 @@
   .project {
     width: calc(50% - 15px);
     position: relative;
-    transition: all 0.3s ease;
     margin: 15px 0;
     background: #fff;
     display: flex;
     align-items: center;
     overflow: hidden;
+
+    &.embed {
+      background: url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
+      background-size: 50% 50%;
+    }
 
     &.vector {
       background: #fff;

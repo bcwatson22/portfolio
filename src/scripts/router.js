@@ -12,20 +12,29 @@ export default new Router({
     {
       path: '/projects',
       name: 'Projects',
-      component: Projects,
-      props: (route) => ({
-        activeFilter: route.query.filter
-      })
+      components: {
+        view: Projects
+      },
+      props: {
+        view: (route) => ({
+          activeFilter: route.query.filter
+        })
+      }
     },
     {
       path: '/projects/:name',
       name: 'Project',
-      component: Modal
+      components: {
+        view: Projects,
+        modal: Modal
+      }
     },
     {
       path: '/contact',
       name: 'Contact',
-      component: Contact
+      components: {
+        view: Contact
+      }
     },
     { path: '*',
       redirect: '/projects'
