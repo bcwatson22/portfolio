@@ -33,7 +33,6 @@
   </article>
   <article v-else-if="link === 'embed'" class="project embed" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="'projects/' + name" @click.prevent="toggleElement($event, '.projects', '.planet-vlog')">
-      <!-- <iframe class="embedded" width="730" height="516" src="https://www.youtube.com/embed/4bE4y2cXBns" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
       <span class="video-holder">
         <iframe src="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </span>
@@ -50,7 +49,7 @@
         <p>{{ blurb }}</p>
       </span>
     </a>
-    <button class="icon full-size close" @click.self="toggleElement($event, '.projects', '.planet-vlog')">Close</button>
+    <button class="icon full-size close" @click.self="refreshVideo($event)">Close</button>
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
@@ -84,7 +83,20 @@
       blurb: String,
       link: String
     },
-    mixins: [mixins]
+    mixins: [mixins],
+    methods: {
+      refreshVideo: function (event) {
+
+        let $parent = this.getClosest(event.currentTarget, '.project'),
+            $iframe = $parent.querySelectorAll('iframe')[0],
+            iframeSrc = $iframe.getAttribute('src');
+
+        if ($iframe) $iframe.setAttribute('src', iframeSrc);
+
+        this.toggleElement(event, '.projects', '.planet-vlog');
+
+      }
+    }
   }
 </script>
 
@@ -158,17 +170,6 @@
     }
   }
 
-  // .video-holder {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 100%;
-  //
-  //   iframe {
-  //     width: 100%;
-  //     height: 100%;
-  //   }
-  // }
-
   .info,
   .close {
     position: absolute;
@@ -209,14 +210,6 @@
   }
 
   img {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-
-    // &.toggle {
-    //   display: none;
-    // }
-
     .planet-vlog &,
     .furness-brothers &,
     .rmd &,
@@ -241,12 +234,6 @@
       left: -48%;
     }
   }
-
-  // iframe {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  // }
 
   .overlay {
     padding: 30px 120px 30px 30px;
@@ -324,6 +311,11 @@
     .disciplines {
       padding: 20px;
     }
+
+    .close {
+      top: 20px;
+      right: 20px;
+    }
   }
 
   @media screen and (max-width: 770px) {
@@ -373,6 +365,11 @@
         opacity: 1;
         margin: 0 0 0 15px;
       }
+    }
+
+    .close {
+      top: 15px;
+      right: 15px;
     }
   }
 </style>
