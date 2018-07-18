@@ -1,8 +1,8 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <img :src="require('./../../assets/images/projects/' + name + '-2400.jpg')" :alt="title + ' thumb'"
-      :srcset="require('./../../assets/images/projects/' + name + '-2400.jpg') + ' 2400w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
+      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'"
+      :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
       sizes="(min-width: 771px) 50vw, 100vw">
       <span class="overlay">
         <ul class="disciplines indicate">
@@ -14,7 +14,7 @@
         <p>{{ blurb }}</p>
       </span>
     </router-link>
-    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
+    <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'vector'" class="project vector" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
@@ -29,7 +29,29 @@
         <p>{{ blurb }}</p>
       </span>
     </router-link>
-    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
+    <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
+  </article>
+  <article v-else-if="link === 'embed'" class="project embed" :class="name" :data-primary="disciplines.primary.toLowerCase()">
+    <a :href="'projects/' + name" @click.prevent="toggleElement($event, '.projects', '.planet-vlog')">
+      <!-- <iframe class="embedded" width="730" height="516" src="https://www.youtube.com/embed/4bE4y2cXBns" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+      <span class="video-holder">
+        <iframe src="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </span>
+      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'"
+      :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
+      sizes="(min-width: 771px) 50vw, 100vw">
+      <span class="overlay">
+        <ul class="disciplines indicate">
+          <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
+            {{ discipline }}
+          </li>
+        </ul>
+        <h1>{{ title }}</h1>
+        <p>{{ blurb }}</p>
+      </span>
+    </a>
+    <button class="icon full-size close" @click.self="toggleElement($event, '.projects', '.planet-vlog')">Close</button>
+    <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="link" target="_blank">
@@ -44,7 +66,7 @@
         <p>{{ blurb }}</p>
       </span>
     </a>
-    <button class="icon full-size info" @click.self="toggleInfo($event, '.project', '.overlay')">Info</button>
+    <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
 </template>
 
@@ -136,10 +158,64 @@
     }
   }
 
+  // .video-holder {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  //
+  //   iframe {
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+  // }
+
+  .info,
+  .close {
+    position: absolute;
+    right: 30px;
+    display: none;
+  }
+
+  .info {
+    bottom: 30px;
+  }
+
+  .close {
+    top: 30px;
+  }
+
+  .toggle {
+    img,
+    .overlay {
+      display: none;
+    }
+
+    .close {
+      display: block;
+    }
+  }
+
+  iframe,
   img {
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  img {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+
+    // &.toggle {
+    //   display: none;
+    // }
 
     .planet-vlog &,
     .furness-brothers &,
@@ -166,12 +242,18 @@
     }
   }
 
+  // iframe {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  // }
+
   .overlay {
     padding: 30px 120px 30px 30px;
     position: relative;
     display: inherit;
 
-    &.visible {
+    &.toggle {
       opacity: 1;
       transition: all 0.15s ease;
 
@@ -206,20 +288,13 @@
     }
   }
 
-  .info {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    display: none;
-  }
-
   @media screen and (pointer: coarse) and (min-width: 771px) {
     .project:hover,
     .project:focus {
       .overlay {
         opacity: 0;
 
-        &.visible {
+        &.toggle {
           opacity: 1;
         }
       }

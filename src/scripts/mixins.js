@@ -53,12 +53,12 @@ export default {
 
     },
 
-    toggleInfo: function (event, parent, target) {
+    toggleElement: function (event, parent, target) {
 
       let $parent = this.getClosest(event.currentTarget, parent),
           $target = $parent.querySelectorAll(target)[0];
 
-      if ($target) $target.classList.toggle('visible');
+      if ($target) $target.classList.toggle('toggle');
 
     }
 

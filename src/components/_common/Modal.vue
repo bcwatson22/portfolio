@@ -12,10 +12,10 @@
             <h2>{{ projectData.title }}</h2>
             <p>{{ projectData.blurb }}</p>
           </div>
-          <!-- <button class="icon full-size info" @click="toggleInfo()">Info</button>
+          <!-- <button class="icon full-size info" @click="toggleElement()">Info</button>
           <a class="icon full-size close" @click="$router.go(-1)">Close</a> -->
         </div>
-        <button class="icon full-size info" @click="toggleInfo($event, '.modal', '.details')">Info</button>
+        <button class="icon full-size info" @click="toggleElement($event, '.modal', '.details')">Info</button>
         <a class="icon full-size close" @click="$router.go(-1)">Close</a>
       </div>
     </section>
@@ -90,7 +90,7 @@
     will-change: opacity, transform;
     transition: all 0.3s ease;
 
-    &.visible {
+    &.toggle {
       opacity: 1;
       transform: translateY(0%);
     }
