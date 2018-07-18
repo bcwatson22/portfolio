@@ -1,4 +1,4 @@
-@import 'animations';
+// @import 'animations';
 
 // page-foot .cookie-law .cookie-law-wrapper {
 //   font-family: inherit;
@@ -334,36 +334,6 @@ main {
   // position: relative;
   height: 100%;
   width: 100%;
-}
-
-.popup-enter-active,
-.popup-enter-active .container {
-  transition: all 0.3s ease-out;
-}
-
-// .popup-enter-active .mask {
-//   transition: all 0.15s ease-out;
-// }
-
-.popup-leave-active,
-.popup-leave-active .container {
-  transition: all 0.15s ease-in;
-}
-
-.popup-enter,
-.popup-leave-to {
-  .container {
-    opacity: 0;
-    transform: scale(1.02);
-  }
-}
-
-// .popup-enter .mask {
-//   opacity: 0;
-// }
-
-.popup-leave-to {
-  opacity: 0;
 }
 
 @media screen and (max-width: 900px) {

@@ -4,7 +4,9 @@
       <Header/>
 
       <main>
-        <router-view></router-view>
+        <transition name="router">
+          <router-view></router-view>
+        </transition>
       </main>
 
       <Footer :year="copyrightYear"/>

@@ -70,7 +70,7 @@ export const store = new Vuex.Store({
             primary: 'Design',
             list: ['Design'],
           },
-          blurb: 'Article design for Leeds-based arts magazine, profiling independent art space and recording studio. Created using InDesign, with image processing in Photoshop and vector graphics in Illustrator.',
+          blurb: 'Article design for Leeds creative magazine, profiling independent art space and recording studio. Created using InDesign, with image processing in Photoshop and vector graphics in Illustrator.',
           link: 'raster'
         },
         {

@@ -1,6 +1,6 @@
 <template>
   <section class="projects">
-    <!-- <h1 style="width: 100%">filteredProjects.length = {{filteredProjects.length}}, {{activeFilter}}</h1> -->
+  <!-- <transition-group name="flip-list" tag="section" class="projects"> -->
     <Project
       v-for="project of filteredProjects"
         :key="project.id"
@@ -11,14 +11,13 @@
         :link="project.link"
         :data="project"
       />
+  <!-- </transition-group> -->
   </section>
 </template>
 
 <script>
   import Project from './Project.vue';
-
   import { mapGetters } from 'vuex';
-  // import { mapMutations } from 'vuex';
 
   export default {
     name: 'Projects',
@@ -52,13 +51,11 @@
     },
     computed: {
       ...mapGetters([
-        // Mounts the "safelyStoredNumber" getter to the scope of your component.
         'filteredProjects'
       ])
     }
   }
 </script>
-
 
 <style lang="scss" scoped>
   .projects {
@@ -66,4 +63,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  // .flip-list-move {
+  //   transition: transform 1s;
+  // }
 </style>

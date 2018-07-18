@@ -17,44 +17,26 @@
         <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv">CV</a>
       </li>
       <li data-indicate="Contact">
-        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$router.currentRoute.path.substr(1) === 'contact' ? 'active' : ''">Contact</a>
+        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$route.path.substr(1) === 'contact' ? 'active' : ''">Contact</a>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+  import mixins from './../../scripts/mixins.js';
   import { mapGetters } from 'vuex';
 
   export default {
     name: 'Nav',
+    mixins: [mixins],
     computed: {
       ...mapGetters([
         'currentFilter'
       ])
-    },
-    methods: {
-      linkTo: function (event, file) {
-
-        let href = event ? event.currentTarget.getAttribute('href') : '';
-
-        if (file) {
-
-          window.open(href, '_blank');
-
-        } else {
-
-          if (this.currentFilter) this.$store.commit('restoreProjects');
-
-          this.$router.push(href);
-
-        }
-
-      }
     }
   }
 </script>
-
 
 <style lang="scss" scoped>
   @import './../../assets/styles/sass/_variables.scss';

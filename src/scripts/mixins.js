@@ -41,6 +41,24 @@ export default {
 
     },
 
+    linkTo: function (event, file) {
+
+      let href = event ? event.currentTarget.getAttribute('href') : '';
+
+      if (file) {
+
+        window.open(href, '_blank');
+
+      } else {
+
+        if (this.currentFilter) this.$store.commit('restoreProjects');
+
+        this.$router.push(href);
+
+      }
+
+    },
+
     getClosest: function (elem, selector) {
 
       for ( ; elem && elem !== document; elem = elem.parentNode ) {
