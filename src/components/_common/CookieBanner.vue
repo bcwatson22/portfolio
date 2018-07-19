@@ -2,8 +2,8 @@
   <div class="cookie-banner">
     <span class="icon full-size cookie">Cookie</span>
     <p>
-      <span>This site uses cookies to give you a mint user experience.</span>
-      <span>By continuing to browse you're saying you've got no dramas with this.</span>
+      <span>This site uses cookies to give you a sweet user experience.</span>
+      <span>By continuing to browse you have no qualms with that!</span>
     </p>
     <button class="icon full-size close" @click="dismissBanner($event)">Info</button>
   </div>
@@ -41,7 +41,7 @@
   .cookie-banner {
     display: flex;
     align-items: center;
-    padding: 20px 70px;
+    padding: 20px 70px 20px 50px;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     bottom: 0;
@@ -61,8 +61,8 @@
     position: absolute;
 
     &.cookie {
-      left: 20px;
-      background: #000;
+      left: 10px;
+      background: transparent;
     }
 
     &.close {
@@ -83,6 +83,12 @@
   @media screen and (max-width: 600px) {
     p span:nth-of-type(2) {
       display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .cookie-banner {
+      padding: 10px 70px 10px 50px;
     }
   }
 </style>

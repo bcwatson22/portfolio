@@ -1,6 +1,8 @@
 <template>
   <section class="contact">
     <article class="links">
+      <p>A creative Web Developer from the Peak District with five years' experience, both agency and in-house. Other skills include design, branding and video.</p>
+      <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also a fan of music, mountain biking and Yorkshire Tea.</p>
       <ul class="icon-links">
         <li class="email"><a href="mailto:bcwatson22@gmail.com">bcwatson22@gmail.com</a></li>
         <li class="linkedin"><a href="https://www.linkedin.com/in/watsonbilly" target="_blank">linkedin.com/in/watsonbilly</a></li>
@@ -38,6 +40,10 @@
 
   .links {
     padding-left: 10%;
+
+    p {
+      display: none;
+    }
   }
 
   ul {
@@ -63,8 +69,12 @@
     position: relative;
     border-radius: 100%;
     overflow: hidden;
+    transition: all 0.3s ease;
+    will-change: box-shadow;
 
     &:hover {
+      box-shadow: 0px 0px 5px 1px #fff;
+
       .overlay {
         opacity: 1;
         transition: all 0.15s ease;
@@ -106,6 +116,16 @@
     .links,
     .image {
       width: 100%;
+    }
+
+    .links {
+      p {
+        display: inline-block;
+
+        &:last-of-type {
+          margin-bottom: 30px;
+        }
+      }
     }
 
     ul {

@@ -143,6 +143,20 @@
     }
   }
 
+  @media screen and (max-width: 600px) {
+    .image {
+      // transform: rotate(270deg);
+
+      img {
+        width: auto;
+        height: auto;
+        max-width: none;
+        max-height: none;
+        transform: rotate(270deg);
+      }
+    }
+  }
+
   @media screen and (max-width: 450px) {
     .mask,
     .image.vector {

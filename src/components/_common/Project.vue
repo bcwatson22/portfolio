@@ -113,6 +113,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    transition: all 0.3s ease;
+    will-change: box-shadow;
 
     &.embed {
       background: url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;

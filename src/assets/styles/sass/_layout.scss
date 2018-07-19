@@ -249,12 +249,12 @@ main {
 
   &.contact {
     &:before {
-      background: url('./../../assets/images/global/icons/contact-light.svg') 50% 50% no-repeat;
+      background: url('./../../assets/images/global/icons/info-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
 
     &:after {
-      background: url('./../../assets/images/global/icons/contact-dark.svg') 50% 50% no-repeat;
+      background: url('./../../assets/images/global/icons/info-dark.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }

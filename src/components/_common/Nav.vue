@@ -1,22 +1,22 @@
 <template>
   <nav>
     <ul class="disciplines">
-      <li data-indicate="Development">
+      <li data-indicate="Development" :class="currentFilter === 'development' ? 'current' : ''">
         <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development" :class="currentFilter === 'development' ? 'active' : ''">Development</router-link>
       </li>
-      <li data-indicate="Design">
+      <li data-indicate="Design" :class="currentFilter === 'design' ? 'current' : ''">
         <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design" :class="currentFilter === 'design' ? 'active' : ''">Design</router-link>
       </li>
-      <li data-indicate="Branding">
+      <li data-indicate="Branding" :class="currentFilter === 'branding' ? 'current' : ''">
         <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding" :class="currentFilter === 'branding' ? 'active' : ''">Branding</router-link>
       </li>
-      <li data-indicate="Video">
+      <li data-indicate="Video" :class="currentFilter === 'video' ? 'current' : ''">
         <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''">Video</router-link>
       </li>
       <li data-indicate="CV">
         <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv">CV</a>
       </li>
-      <li data-indicate="Contact">
+      <li data-indicate="Contact" :class="this.$route.path.substr(1) === 'contact' ? 'current' : ''">
         <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$route.path.substr(1) === 'contact' ? 'active' : ''">Contact</a>
       </li>
     </ul>
@@ -69,7 +69,8 @@
       transform: translate(-50%, 10px);
     }
 
-    &:hover {
+    &:hover,
+    &.current {
       transform: translateY(-10px);
 
       &:after {
@@ -90,7 +91,7 @@
       transform: scale(1);
       background: #fff;
       will-change: transform, background-color;
-      box-shadow: 0px 0px 5px 5px;
+      box-shadow: 0px 0px 5px 3px;
 
       &:before {
         transform: scale(10);
@@ -108,6 +109,8 @@
     }
 
     .disciplines li {
+      margin: 10px 0;
+
       &:after {
         font-size: 12px;
         font-size: 1.2rem;
@@ -116,9 +119,9 @@
     }
   }
 
-  @media screen and (max-width: 900px) {
-    .disciplines li {
-      margin: 10px 0;
+  @media screen and (max-width: 500px) {
+    nav {
+      margin-top: 0;
     }
   }
 </style>

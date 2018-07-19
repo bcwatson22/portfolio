@@ -4,8 +4,8 @@
       <img src="./../../assets/images/global/logo-white.svg" alt="Billy Watson logo">
     </router-link>
     <section class="intro">
-      <p>A creative and passionate Web Developer from the Peak District with five years' experience, both in agency and in-house environments.</p>
-      <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also skilled in design, branding and video. Fan of music, mountain biking and Yorkshire Tea.</p>
+      <p>A creative Web Developer from the Peak District with five years' experience, both agency and in-house. Other skills include design, branding and video.</p>
+      <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also a fan of music, mountain biking and Yorkshire Tea.</p>
     </section>
     <Nav/>
   </header>
@@ -78,6 +78,12 @@
         width: calc(50% - 10px);
         margin: 0;
       }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    p {
+      display: none;
     }
   }
 
