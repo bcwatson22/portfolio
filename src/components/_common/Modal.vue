@@ -37,6 +37,15 @@
 
       this.getProjectData(this.$route.params.name);
 
+    },
+    watch: {
+      projectData: function (newValue) {
+
+        let title = newValue.title;
+
+        if (title) this.updateTitleMeta(title);
+
+      }
     }
   }
 </script>

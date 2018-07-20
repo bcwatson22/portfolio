@@ -71,12 +71,39 @@ export default {
 
     },
 
+    capitalise: function (string) {
+
+      return string.charAt(0).toUpperCase() + string.slice(1);
+
+    },
+
     toggleElement: function (event, parent, target) {
 
       let $parent = this.getClosest(event.currentTarget, parent),
           $target = $parent.querySelectorAll(target)[0];
 
       if ($target) $target.classList.toggle('toggle');
+
+    },
+
+    updateTitleMeta: function (newTitle, newDescription) {
+
+      if (newTitle) document.title = newTitle + ' // Billy Watson';
+
+      if (newDescription) {
+
+        let allMetaElements = document.getElementsByTagName('meta');
+        //loop through and find the element you want
+        for (var i = 0; i < allMetaElements.length; i++) {
+          if (allMetaElements[i].getAttribute('name') == 'description') {
+             //make necessary changes
+             allMetaElements[i].setAttribute('content', newDescription);
+             //no need to continue loop after making changes.
+             break;
+          }
+        }
+
+      }
 
     }
 

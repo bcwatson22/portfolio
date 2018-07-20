@@ -20,8 +20,16 @@
 </template>
 
 <script>
+  import mixins from './../../scripts/mixins.js';
+
   export default {
-    name: 'Contact'
+    name: 'Contact',
+    mixins: [mixins],
+    mounted () {
+
+      this.updateTitleMeta('Contact');
+
+    }
   }
 </script>
 

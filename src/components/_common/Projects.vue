@@ -18,6 +18,7 @@
 <script>
   import Project from './Project.vue';
   import { mapGetters } from 'vuex';
+  import mixins from './../../scripts/mixins.js';
 
   export default {
     name: 'Projects',
@@ -27,11 +28,27 @@
     components: {
       Project
     },
+    mixins: [mixins],
     created () {
 
       let filter = this.$route.query.filter;
 
       if (filter) this.$store.commit('filterProjects', filter);
+
+    },
+    mounted () {
+
+      let filter = this.activeFilter;
+
+      if (filter) {
+
+        this.updateTitleMeta(this.capitalise(filter));
+
+      } else {
+
+        this.updateTitleMeta('Projects');
+
+      }
 
     },
     watch: {
@@ -41,9 +58,13 @@
 
           this.$store.commit('filterProjects', newValue);
 
+          this.updateTitleMeta(this.capitalise(newValue));
+
         } else {
 
           this.$store.commit('restoreProjects');
+
+          this.updateTitleMeta('Projects');
 
         }
 
