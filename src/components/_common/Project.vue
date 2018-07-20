@@ -31,10 +31,10 @@
     </router-link>
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
-  <article v-else-if="link === 'embed'" class="project embed" :class="name" :data-primary="disciplines.primary.toLowerCase()">
-    <a :href="'projects/' + name" @click.prevent="loadVideo($event)">
+  <article v-else-if="link === 'embed'" class="project video" :class="[{ 'toggle': showPlayer, 'embedded': playerReady }, name]" :data-primary="disciplines.primary.toLowerCase()">
+    <a :href="'projects/' + name" @click.prevent="loadVideo()">
       <span class="video-holder">
-        <iframe src="" data-source="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe v-if="showPlayer" src="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen @load="iFrameLoaded()"></iframe>
       </span>
       <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'"
       :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
@@ -49,7 +49,7 @@
         <p>{{ blurb }}</p>
       </span>
     </a>
-    <button class="icon full-size close" @click.self="loadVideo($event)">Close</button>
+    <button class="icon full-size close" @click.self="unloadVideo()">Close</button>
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
@@ -84,16 +84,27 @@
       link: String
     },
     mixins: [mixins],
+    data () {
+      return {
+        showPlayer: false,
+        playerReady: false
+      }
+    },
     methods: {
-      loadVideo: function (event) {
+      loadVideo: function () {
 
-        let $parent = this.getClosest(event.currentTarget, '.project'),
-            $iframe = $parent.querySelectorAll('iframe')[0],
-            source = $iframe.getAttribute('data-source');
+        this.showPlayer = true;
 
-        if ($iframe) $iframe.setAttribute('src', source);
+      },
+      unloadVideo: function () {
 
-        this.toggleElement(event, '.projects', '.planet-vlog');
+        this.showPlayer = false;
+        this.playerReady = false;
+
+      },
+      iFrameLoaded: function () {
+
+        this.playerReady = true;
 
       }
     }
@@ -116,9 +127,10 @@
     transition: all 0.3s ease;
     will-change: box-shadow;
 
-    &.embed {
+    &.video {
+      background: url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
       background: url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
-      background-size: 50% 50%;
+      background-size: 80px 80px;
     }
 
     &.vector {
@@ -213,6 +225,15 @@
     width: 100%;
     height: 100%;
     background: #000;
+    transform: translateY(-100%);
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.3s ease;
+
+    .embedded & {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   img {

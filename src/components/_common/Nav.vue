@@ -1,23 +1,23 @@
 <template>
   <nav>
     <ul class="disciplines">
-      <li data-indicate="Development" :class="currentFilter === 'development' ? 'current' : ''">
-        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development" :class="currentFilter === 'development' ? 'active' : ''">Development</router-link>
+      <li data-indicate="Development" :class="currentFilter === 'development' ? 'active' : ''">
+        <router-link :to="currentFilter === 'development' ? '/projects' : { path: 'projects', query: { filter: 'development' }}" class="icon scaled development">Development</router-link>
       </li>
-      <li data-indicate="Design" :class="currentFilter === 'design' ? 'current' : ''">
-        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design" :class="currentFilter === 'design' ? 'active' : ''">Design</router-link>
+      <li data-indicate="Design" :class="currentFilter === 'design' ? 'active' : ''">
+        <router-link :to="currentFilter === 'design' ? '/projects' : { path: 'projects', query: { filter: 'design' }}" class="icon scaled design">Design</router-link>
       </li>
-      <li data-indicate="Branding" :class="currentFilter === 'branding' ? 'current' : ''">
-        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding" :class="currentFilter === 'branding' ? 'active' : ''">Branding</router-link>
+      <li data-indicate="Branding" :class="currentFilter === 'branding' ? 'active' : ''">
+        <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding">Branding</router-link>
       </li>
-      <li data-indicate="Video" :class="currentFilter === 'video' ? 'current' : ''">
-        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video" :class="currentFilter === 'video' ? 'active' : ''">Video</router-link>
+      <li data-indicate="Video" :class="currentFilter === 'video' ? 'active' : ''">
+        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video">Video</router-link>
       </li>
       <li data-indicate="CV">
         <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv">CV</a>
       </li>
-      <li data-indicate="Contact" :class="this.$route.path.substr(1) === 'contact' ? 'current' : ''">
-        <a href="/contact" @click.prevent="linkTo($event, false)" class="icon scaled contact" :class="this.$route.path.substr(1) === 'contact' ? 'active' : ''">Contact</a>
+      <li data-indicate="Contact" :class="this.$route.path.substr(1) === 'contact' ? 'active' : ''">
+        <a :href="this.$route.path.substr(1) !== 'contact' ? '/contact' : '/projects'" @click.prevent="linkTo($event, false)" class="icon scaled contact">Contact</a>
       </li>
     </ul>
   </nav>
@@ -70,7 +70,7 @@
     }
 
     &:hover,
-    &.current {
+    &.active {
       transform: translateY(-10px);
 
       &:after {
@@ -86,7 +86,7 @@
       }
     }
 
-    &.active,
+    .active &,
     &.router-link-exact-active {
       transform: scale(1);
       background: #fff;

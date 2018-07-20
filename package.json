@@ -9,8 +9,9 @@
   },
   "dependencies": {
     "vue": "2.5.16",
-    "vue-cookie": "^1.1.4",
+    "vue-cookie": "1.1.4",
     "vue-router": "3.0.1",
+    "vue-vimeo-player": "0.0.8",
     "vuex": "3.0.1"
   },
   "devDependencies": {
