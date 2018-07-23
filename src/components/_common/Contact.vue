@@ -149,6 +149,12 @@
     }
   }
 
+  @media screen and (max-width: 450px) {
+    .contact {
+      padding: 0 10px;
+    }
+  }
+
   @media screen and (max-width: 400px) {
     ul li {
       width: 100%;

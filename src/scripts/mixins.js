@@ -93,14 +93,20 @@ export default {
       if (newDescription) {
 
         let allMetaElements = document.getElementsByTagName('meta');
-        //loop through and find the element you want
+
         for (var i = 0; i < allMetaElements.length; i++) {
-          if (allMetaElements[i].getAttribute('name') == 'description') {
-             //make necessary changes
+
+          if (allMetaElements[i].getAttribute('name') == 'description' ||
+              allMetaElements[i].getAttribute('itemprop') == 'description' ||
+              allMetaElements[i].getAttribute('name') == 'twitter:description' ||
+              allMetaElements[i].getAttribute('property') == 'og:description') {
+
              allMetaElements[i].setAttribute('content', newDescription);
-             //no need to continue loop after making changes.
+
              break;
+
           }
+
         }
 
       }

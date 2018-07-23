@@ -35,15 +35,15 @@
 
   .logo,
   .intro {
-    width: calc(50% - 15px);
+    width: calc(40% - 15px);
   }
 
   .logo {
-    padding-left: 10%;
+    margin-left: 10%;
   }
 
   .intro {
-    padding-right: 10%;
+    margin-right: 10%;
 
     p {
       &:last-of-type {
@@ -64,8 +64,7 @@
     }
 
     .logo {
-      padding: 0 25%;
-      margin-bottom: 20px;
+      margin: 0 25% 20px;
     }
 
     .intro {
@@ -73,6 +72,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      margin-right: 0;
 
       p {
         width: calc(50% - 10px);
@@ -93,7 +93,7 @@
     }
 
     .logo {
-      padding: 0 15%;
+      margin: 0 15% 20px;
     }
 
     .intro {

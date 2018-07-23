@@ -123,5 +123,17 @@
     nav {
       margin-top: 0;
     }
+
+    .disciplines li {
+      // &:hover,
+      // &:active {
+      //   transform: translateY(0px);
+      // }
+
+      &:after {
+        font-size: 10px;
+        font-size: 1rem;
+      }
+    }
   }
 </style>

@@ -114,7 +114,6 @@
 <style lang="scss" scoped>
   @import './../../assets/styles/sass/_variables.scss';
   @import './../../assets/styles/sass/_mixins.scss';
-  @import './../../assets/styles/sass/_animations.scss';
 
   .project {
     width: calc(50% - 15px);
