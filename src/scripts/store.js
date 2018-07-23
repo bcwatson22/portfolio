@@ -26,8 +26,8 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development', 'Design'],
           },
-          blurb: 'Prototype Member Centre built for Plusnet, vastly modernising their current setup. Project developed in Angular 4 and features search functionality, broadband speed test journey and an intuitive, user tested UI.',
-          link: 'http://billywatson.net/member'
+          blurb: 'Rapid prototype Member Centre built for Plusnet, vastly modernising their current setup. Project developed in Angular 4 and features search functionality, broadband speed test journey and a user tested, data-driven UI.',
+          link: 'https://bcwatson22.github.io/member/'
         },
         {
           id: 9,
