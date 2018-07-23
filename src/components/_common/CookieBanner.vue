@@ -59,6 +59,8 @@
 
   .icon {
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 
     &.cookie {
       left: 10px;

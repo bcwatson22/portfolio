@@ -48,6 +48,7 @@
 
   .links {
     padding-left: 10%;
+    position: relative;
 
     p {
       display: none;
@@ -60,6 +61,9 @@
     flex-wrap: wrap;
     justify-content: center;
     height: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 
     li {
       width: 100%;

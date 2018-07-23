@@ -127,8 +127,8 @@
     will-change: box-shadow;
 
     &.video {
-      background: url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
-      background: url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
+      background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
+      background: #000 url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
       background-size: 80px 80px;
     }
 
@@ -136,28 +136,28 @@
       background: #fff;
     }
 
-    &:before {
-      content: '';
-      width: 1px;
-      margin-left: -1px;
-      float: left;
-      height: 0;
-      padding-top: 60%;
-    }
-
-    &.red-eric,
-    &.x-games,
-    &.basics {
-      &:before {
-        padding-top: 70%;
-      }
-    }
-
-    &:after {
-      content: '';
-      display: table;
-      clear: both;
-    }
+    // &:before {
+    //   content: '';
+    //   width: 1px;
+    //   margin-left: -1px;
+    //   float: left;
+    //   height: 0;
+    //   // padding-top: 60%;
+    // }
+    //
+    // &.red-eric,
+    // &.x-games,
+    // &.basics {
+    //   &:before {
+    //     padding-top: 70%;
+    //   }
+    // }
+    //
+    // &:after {
+    //   content: '';
+    //   display: table;
+    //   clear: both;
+    // }
 
     &:hover,
     &:focus {
@@ -203,6 +203,9 @@
   }
 
   .toggle {
+    min-height: 300px;
+    background: #000;
+
     img,
     .overlay {
       display: none;
@@ -216,7 +219,6 @@
   iframe,
   img {
     position: absolute;
-    top: 0;
     left: 0;
   }
 
@@ -236,15 +238,24 @@
   }
 
   img {
+    top: 50%;
+    transform: translateY(-50%);
+
     .planet-vlog &,
     .furness-brothers &,
     .rmd &,
     .pyramid-sk8 & {
       max-width: none;
+      transform: none;
+    }
+
+    .planet-vlog & {
+      top: 0;
     }
 
     .furness-brothers & {
       width: 400%;
+      top: 0;
       left: -20%;
     }
 
@@ -256,7 +267,7 @@
 
     .pyramid-sk8 & {
       width: 200%;
-      top: -190%;
+      top: -200%;
       left: -48%;
     }
   }
@@ -281,7 +292,7 @@
     }
 
     p {
-      margin: 0;
+      margin: 0 0 60px;
     }
   }
 
@@ -321,6 +332,10 @@
   @media screen and (max-width: 1000px) {
     .overlay {
       padding-right: 90px;
+
+      p {
+        margin-bottom: 40px;
+      }
     }
   }
 
@@ -355,6 +370,8 @@
 
     img {
       position: relative;
+      top: 0;
+      transform: none;
 
       .vector &,
       .planet-vlog & {
@@ -375,6 +392,10 @@
       .vector &,
       .planet-vlog & {
         margin-top: 60%;
+      }
+
+      p {
+        margin-bottom: 0;
       }
     }
 
