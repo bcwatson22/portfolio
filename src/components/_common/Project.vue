@@ -1,8 +1,8 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'"
-      :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
+      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'"
+      :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
       sizes="(min-width: 771px) 50vw, 100vw">
       <span class="overlay">
         <ul class="disciplines indicate">
@@ -36,8 +36,8 @@
       <span class="video-holder">
         <iframe v-if="showPlayer" src="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen @load="iFrameLoaded()"></iframe>
       </span>
-      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'"
-      :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
+      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'"
+      :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
       sizes="(min-width: 771px) 50vw, 100vw">
       <span class="overlay">
         <ul class="disciplines indicate">
@@ -54,7 +54,7 @@
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="link" target="_blank">
-      <img :src="require('./../../assets/images/projects/' + name + '-1200.jpg')" :alt="title + ' thumb'" :srcset="require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'" sizes="(min-width: 771px) 50vw, 100vw">
+      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'" :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'" sizes="(min-width: 771px) 50vw, 100vw">
       <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
