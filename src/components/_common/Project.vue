@@ -125,6 +125,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     will-change: box-shadow;
+    // min-height: 300px;
 
     &.video {
       background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
@@ -173,6 +174,13 @@
         transform: translateX(0);
       }
     }
+
+    &:active {
+      .overlay {
+        opacity: 0;
+        transition: none;
+      }
+    }
   }
 
   a {
@@ -219,6 +227,7 @@
   iframe,
   img {
     position: absolute;
+    top: 0;
     left: 0;
   }
 
@@ -238,9 +247,6 @@
   }
 
   img {
-    top: 50%;
-    transform: translateY(-50%);
-
     .planet-vlog &,
     .furness-brothers &,
     .rmd &,
@@ -273,7 +279,7 @@
   }
 
   .overlay {
-    padding: 30px 120px 30px 30px;
+    padding: 30px 120px 100px 30px;
     position: relative;
     display: inherit;
 
@@ -292,7 +298,7 @@
     }
 
     p {
-      margin: 0 0 60px;
+      margin: 0;
     }
   }
 
@@ -330,12 +336,14 @@
   }
 
   @media screen and (max-width: 1000px) {
+    img {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
     .overlay {
       padding-right: 90px;
-
-      p {
-        margin-bottom: 40px;
-      }
+      padding-bottom: 50px;
     }
   }
 
@@ -392,10 +400,6 @@
       .vector &,
       .planet-vlog & {
         margin-top: 60%;
-      }
-
-      p {
-        margin-bottom: 0;
       }
     }
 

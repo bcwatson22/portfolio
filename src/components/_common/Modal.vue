@@ -152,24 +152,23 @@
     }
   }
 
-  @media screen and (max-width: 600px) {
-    // .image {
-    //   // transform: rotate(270deg);
-    //
-    //   img {
-    //     width: auto;
-    //     height: auto;
-    //     max-width: none;
-    //     max-height: none;
-    //     transform: rotate(270deg);
-    //   }
-    // }
-  }
-
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 670px) {
     .mask,
     .image.vector {
       padding: 10px;
+    }
+
+    .image {
+      // height: 100%;
+      overflow-y: scroll;
+      // display: flex;
+
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        max-height: none;
+      }
     }
 
     .info {
