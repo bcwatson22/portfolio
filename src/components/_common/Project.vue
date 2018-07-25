@@ -215,7 +215,7 @@
   }
 
   .toggle {
-    min-height: 300px;
+    // min-height: 300px;
     background: #000;
 
     img,
@@ -409,6 +409,14 @@
       .vector &,
       .planet-vlog & {
         position: absolute;
+      }
+
+      &.v-lazy-image {
+        transform: scale(1.1);
+      }
+
+      &.v-lazy-image-loaded {
+        transform: scale(1);
       }
     }
 

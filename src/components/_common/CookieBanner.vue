@@ -1,10 +1,7 @@
 <template>
   <div class="cookie-banner">
     <span class="icon full-size cookie">Cookie</span>
-    <p>
-      <span>This site uses cookies to give you a sweet user experience.</span>
-      <span>By continuing to browse you have no qualms with that!</span>
-    </p>
+    <p>This site uses cookies to give you a sweet user experience.</p>
     <button class="icon full-size close" @click="dismissBanner($event)">Info</button>
   </div>
 </template>
@@ -41,11 +38,12 @@
   .cookie-banner {
     display: flex;
     align-items: center;
-    padding: 20px 70px 20px 50px;
+    padding: 20px 80px 20px 60px;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     bottom: 0;
     width: 100%;
+    max-width: 1200px;
     opacity: 1;
     transform: translateY(0%);
     will-change: opacity, transform;
@@ -63,28 +61,32 @@
     transform: translateY(-50%);
 
     &.cookie {
-      left: 10px;
+      left: 20px;
       background: transparent;
     }
 
     &.close {
-      right: 20px;
+      right: 30px;
     }
   }
 
   p {
     margin: 0;
-
-    span {
-      &:nth-of-type(2) {
-        margin-left: 5px;
-      }
-    }
   }
 
-  @media screen and (max-width: 600px) {
-    p span:nth-of-type(2) {
-      display: none;
+  @media screen and (max-width: 900px) {
+    .cookie-banner {
+      padding: 20px 70px 20px 50px;
+    }
+
+    .icon {
+      &.cookie {
+        left: 10px;
+      }
+
+      &.close {
+        right: 20px;
+      }
     }
   }
 
