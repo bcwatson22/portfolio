@@ -142,6 +142,9 @@
 
     ul {
       flex-direction: row;
+      position: relative;
+      top: 0;
+      transform: none;
 
       li {
         width: 60%;

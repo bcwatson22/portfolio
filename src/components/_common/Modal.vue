@@ -16,7 +16,7 @@
           <a class="icon full-size close" @click="$router.go(-1)">Close</a> -->
         </div>
         <button class="icon full-size info" @click="toggleElement($event, '.modal', '.details')">Info</button>
-        <a class="icon full-size close" @click="$router.go(-1)">Close</a>
+        <a class="icon full-size close" @click="deactivateModal()">Close</a>
       </div>
     </section>
   </transition>

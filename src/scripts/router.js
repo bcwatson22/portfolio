@@ -44,6 +44,14 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
 
+  // if (from.name === 'Project') {
+  //
+  //   let entries = window.history.length;
+  //
+  //   console.log(entries);
+  //
+  // } else {
+
     let newFilter = to.query.filter;
 
     if (newFilter) {
@@ -68,6 +76,14 @@ router.beforeEach((to, from, next) => {
       next();
 
     }
+
+  // }
+
+  // console.log(from.name);
+
+  // if (from.name) {
+  //
+  // }
 
 });
 
