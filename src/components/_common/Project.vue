@@ -343,6 +343,22 @@
     img {
       top: 50%;
       transform: translateY(-50%);
+
+      &.v-lazy-image {
+        transform: scale(1.1) translateY(-50%);
+
+        .planet-vlog & {
+          transform: scale(1.1);
+        }
+      }
+
+      &.v-lazy-image-loaded {
+        transform: scale(1) translateY(-50%);
+
+        .planet-vlog & {
+          transform: scale(1);
+        }
+      }
     }
 
     .overlay {
