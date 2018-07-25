@@ -36,6 +36,18 @@
 //   }
 // }
 
+.v-lazy-image {
+  filter: blur(10px);
+  transform: scale(1.1);
+  transition: all 0.7s ease;
+  will-change: transform, filter;
+}
+
+.v-lazy-image-loaded {
+  filter: blur(0);
+  transform: scale(1);
+}
+
 .router-enter-active,
 .router-leave-active {
   transition-property: opacity;

@@ -1,9 +1,9 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <router-link :to="'/projects/' + name">
-      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'"
+      <v-lazy-image :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :src-placeholder="require('./../../assets/images/projects/' + name + '-10.jpg')" :alt="title + ' thumb'"
       :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
-      sizes="(min-width: 771px) 50vw, 100vw">
+      sizes="(min-width: 771px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
@@ -36,9 +36,9 @@
       <span class="video-holder">
         <iframe v-if="showPlayer" src="https://player.vimeo.com/video/280418918" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen @load="iFrameLoaded()"></iframe>
       </span>
-      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'"
+      <v-lazy-image :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :src-placeholder="require('./../../assets/images/projects/' + name + '-10.jpg')" :alt="title + ' thumb'"
       :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
-      sizes="(min-width: 771px) 50vw, 100vw">
+      sizes="(min-width: 771px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
@@ -54,7 +54,7 @@
   </article>
   <article v-else class="project web" :class="name" :data-primary="disciplines.primary.toLowerCase()">
     <a :href="link" target="_blank">
-      <img :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :alt="title + ' thumb'" :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'" sizes="(min-width: 771px) 50vw, 100vw">
+      <v-lazy-image :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :src-placeholder="require('./../../assets/images/projects/' + name + '-10.jpg')" :alt="title + ' thumb'" :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'" sizes="(min-width: 771px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
         <ul class="disciplines indicate">
           <li v-for="(discipline, index) in disciplines.list" :key="index" class="icon" :class="discipline.toLowerCase()">
@@ -71,6 +71,7 @@
 
 <script>
   import mixins from './../../scripts/mixins.js';
+  import VLazyImage from 'v-lazy-image';
 
   export default {
     name: 'Project',
@@ -82,6 +83,9 @@
       disciplines: Object,
       blurb: String,
       link: String
+    },
+    components: {
+      VLazyImage
     },
     mixins: [mixins],
     data () {
