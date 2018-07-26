@@ -73,6 +73,9 @@
   import mixins from './../../scripts/mixins.js';
   import VLazyImage from 'v-lazy-image';
 
+  // IntersectionObserver polyfill
+  require('intersection-observer');
+
   export default {
     name: 'Project',
     props: {
@@ -215,7 +218,6 @@
   }
 
   .toggle {
-    // min-height: 300px;
     background: #000;
 
     img,
