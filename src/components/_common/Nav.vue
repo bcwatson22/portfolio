@@ -116,6 +116,10 @@
         font-size: 1.2rem;
         transform: translate(-50%, 5px);
       }
+
+      &[data-indicate="Development"]:after {
+        transform: translate(-45%, 5px);
+      }
     }
   }
 
