@@ -44,46 +44,30 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
 
-  // if (from.name === 'Project') {
-  //
-  //   let entries = window.history.length;
-  //
-  //   console.log(entries);
-  //
-  // } else {
+  let newFilter = to.query.filter;
 
-    let newFilter = to.query.filter;
+  if (newFilter) {
 
-    if (newFilter) {
+    switch (newFilter) {
 
-      switch (newFilter) {
+      case 'development':
+      case 'design':
+      case 'branding':
+      case 'video':
+        next();
+        break;
 
-        case 'development':
-        case 'design':
-        case 'branding':
-        case 'video':
-          next();
-          break;
-
-        default:
-          next('/');
-          break;
-
-      }
-
-    } else {
-
-      next();
+      default:
+        next('/');
+        break;
 
     }
 
-  // }
+  } else {
 
-  // console.log(from.name);
+    next();
 
-  // if (from.name) {
-  //
-  // }
+  }
 
 });
 

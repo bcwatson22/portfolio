@@ -24,6 +24,7 @@
 
 <script>
   import mixins from './../../scripts/mixins.js';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'Modal',
@@ -46,6 +47,11 @@
         if (title) this.updateTitleMeta(title);
 
       }
+    },
+    computed: {
+      ...mapGetters([
+        'previousFilter'
+      ])
     }
   }
 </script>

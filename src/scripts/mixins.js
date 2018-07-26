@@ -22,21 +22,15 @@ export default {
 
     deactivateModal: function () {
 
-      // let entries = window.history.length;
-      //
-      // console.log(previous.length);
-      // console.log(entries);
+      if (this.previousFilter) {
 
-
-      // if (entries <= 2)  {
-      //
-      //   this.$router.push('/projects');
-      //
-      // } else {
-      //
         this.$router.go(-1);
-      //
-      // }
+
+      } else {
+
+        this.$router.push('/');
+
+      }
 
     },
 

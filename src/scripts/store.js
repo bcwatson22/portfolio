@@ -119,7 +119,8 @@ export const store = new Vuex.Store({
         }
       ],
       filtered: [],
-      activeFilter: false
+      activeFilter: false,
+      prevFilter: false
     }
   },
   getters: {
@@ -127,7 +128,9 @@ export const store = new Vuex.Store({
 
     filteredProjects: state => state.projects.filtered.length ? state.projects.filtered : state.projects.original,
 
-    currentFilter: state => state.projects.activeFilter
+    currentFilter: state => state.projects.activeFilter,
+
+    previousFilter: state => state.projects.prevFilter
   },
   mutations: {
     filterProjects (state, payload) {
@@ -143,6 +146,16 @@ export const store = new Vuex.Store({
 
       state.projects.activeFilter = false;
 
+    },
+    setPrevFilter (state, payload) {
+
+      state.projects.prevFilter = payload;
+
+    },
+    removePrevFilter (state) {
+
+      state.projects.prevFilter = false;
+
     }
   },
   actions: {
@@ -154,6 +167,16 @@ export const store = new Vuex.Store({
     restoreProjects (context) {
 
       context.commit('restoreProjects');
+
+    },
+    setPrevFilter (context, payload) {
+
+      context.commit('setPrevFilter', payload);
+
+    },
+    removePrevFilter (context) {
+
+      context.commit('removePrevFilter');
 
     }
   }

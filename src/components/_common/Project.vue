@@ -17,7 +17,8 @@
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'vector'" class="project vector" :class="name" :data-primary="disciplines.primary.toLowerCase()">
-    <router-link :to="'/projects/' + name">
+    <!-- <router-link :to="'/projects/' + name"> -->
+    <a :href="'projects/' + name" @click.prevent="rememberFilter($event)">
       <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
       <span class="overlay">
         <ul class="disciplines indicate">
@@ -28,7 +29,8 @@
         <h1>{{ title }}</h1>
         <p>{{ blurb }}</p>
       </span>
-    </router-link>
+    </a>
+    <!-- </router-link> -->
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'embed'" class="project video" :class="[{ 'toggle': showPlayer, 'embedded': playerReady }, name]" :data-primary="disciplines.primary.toLowerCase()">
@@ -72,6 +74,7 @@
 <script>
   import mixins from './../../scripts/mixins.js';
   import VLazyImage from 'v-lazy-image';
+  import { mapGetters } from 'vuex';
 
   export default {
     name: 'Project',
@@ -95,6 +98,15 @@
       }
     },
     methods: {
+      rememberFilter: function (event) {
+
+        let href = event ? event.currentTarget.getAttribute('href') : '';
+
+        this.$store.commit('setPrevFilter', this.currentFilter);
+
+        this.$router.push(href);
+
+      },
       loadVideo: function () {
 
         this.showPlayer = true;
@@ -111,6 +123,11 @@
         this.playerReady = true;
 
       }
+    },
+    computed: {
+      ...mapGetters([
+        'currentFilter'
+      ])
     }
   }
 </script>
