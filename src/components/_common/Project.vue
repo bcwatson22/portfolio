@@ -302,9 +302,10 @@
   }
 
   .overlay {
-    padding: 30px 120px 100px 30px;
+    padding: 30px 120px 30px 30px;
     position: relative;
     display: inherit;
+    min-height: 300px;
 
     &.toggle {
       opacity: 1;
@@ -358,6 +359,12 @@
     }
   }
 
+  @media screen and (max-width: 1100px) {
+    .overlay {
+      min-height: 260px;
+    }
+  }
+
   @media screen and (max-width: 1000px) {
     img {
       top: 50%;
@@ -382,7 +389,6 @@
 
     .overlay {
       padding-right: 90px;
-      padding-bottom: 50px;
     }
   }
 
@@ -393,6 +399,7 @@
     }
 
     .overlay {
+      min-height: 230px;
       padding: 20px 80px 20px 20px;
     }
 
@@ -443,6 +450,7 @@
       padding: 15px;
       left: auto;
       background: #000;
+      min-height: 0;
 
       .vector &,
       .planet-vlog & {
