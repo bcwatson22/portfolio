@@ -147,7 +147,7 @@
     // min-height: 300px;
 
     &.video {
-      background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
+      // background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
       background: #000 url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
       background-size: 80px 80px;
     }
