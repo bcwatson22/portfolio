@@ -10,8 +10,9 @@
       </ul>
     </article>
     <article class="image">
-      <img src="./../../assets/images/global/mugshot-1000.jpg" alt="Billy Watson" srcset="./../../assets/images/global/mugshot-800.jpg 800w, ./../../assets/images/global/mugshot-600.jpg 600w, ./../../assets/images/global/mugshot-400.jpg 400w"
-      sizes="(min-width: 500px) 50vw, 100vw">
+      <v-lazy-image :src="require('./../../assets/images/global/mugshot-1000.jpg')" :src-placeholder="require('./../../assets/images/global/mugshot-10.jpg')" alt="Billy Watson"
+      :srcset="require('./../../assets/images/global/mugshot-1000.jpg') + ' 1000w,' + require('./../../assets/images/global/mugshot-800.jpg') + ' 800w,' + require('./../../assets/images/global/mugshot-600.jpg') + ' 600w,' + require('./../../assets/images/global/mugshot-400.jpg') + ' 400w'"
+      sizes="(min-width: 500px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
         <h1>Intit just.</h1>
       </span>
@@ -21,9 +22,13 @@
 
 <script>
   import mixins from './../../scripts/mixins.js';
+  import VLazyImage from "v-lazy-image";
 
   export default {
     name: 'Contact',
+    components: {
+      VLazyImage
+    },
     mixins: [mixins],
     mounted () {
 

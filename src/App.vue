@@ -31,6 +31,9 @@
 
   import mixins from './scripts/mixins.js';
 
+  // IntersectionObserver polyfill
+  require('intersection-observer');
+
   export default {
     name: 'app',
     components: {
