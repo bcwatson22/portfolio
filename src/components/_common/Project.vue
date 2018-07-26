@@ -1,6 +1,6 @@
 <template>
   <article v-if="link === 'raster'" class="project raster" :class="name" :data-primary="disciplines.primary.toLowerCase()">
-    <router-link :to="'/projects/' + name">
+    <a :href="'projects/' + name" @click.prevent="rememberFilter($event)">
       <v-lazy-image :src="require('./../../assets/images/projects/' + name + '-1460.jpg')" :src-placeholder="require('./../../assets/images/projects/' + name + '-10.jpg')" :alt="title + ' thumb'"
       :srcset="require('./../../assets/images/projects/' + name + '-1460.jpg') + ' 1460w,' + require('./../../assets/images/projects/' + name + '-1200.jpg') + ' 1200w,' + require('./../../assets/images/projects/' + name + '-800.jpg') + ' 800w,' + require('./../../assets/images/projects/' + name + '-600.jpg') + ' 600w,' + require('./../../assets/images/projects/' + name + '-400.jpg') + ' 400w'"
       sizes="(min-width: 771px) 50vw, 100vw"></v-lazy-image>
@@ -13,11 +13,10 @@
         <h1>{{ title }}</h1>
         <p>{{ blurb }}</p>
       </span>
-    </router-link>
+    </a>
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'vector'" class="project vector" :class="name" :data-primary="disciplines.primary.toLowerCase()">
-    <!-- <router-link :to="'/projects/' + name"> -->
     <a :href="'projects/' + name" @click.prevent="rememberFilter($event)">
       <img :src="require('./../../assets/images/projects/' + name + '.svg')" :alt="title + ' thumb'">
       <span class="overlay">
@@ -30,7 +29,6 @@
         <p>{{ blurb }}</p>
       </span>
     </a>
-    <!-- </router-link> -->
     <button class="icon full-size info" @click.self="toggleElement($event, '.project', '.overlay')">Info</button>
   </article>
   <article v-else-if="link === 'embed'" class="project video" :class="[{ 'toggle': showPlayer, 'embedded': playerReady }, name]" :data-primary="disciplines.primary.toLowerCase()">
