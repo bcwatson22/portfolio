@@ -17,6 +17,29 @@
         <h1>Intit just.</h1>
       </span>
     </article>
+    <article class="skills">
+      <h1>Skills and knowledge</h1>
+      <ul class="tech-icons">
+        <li data-indicate="Angular"><a href="https://angular.io/" target="_blank">Angular</a></li>
+        <li data-indicate="Vue"><a href="https://vuejs.org/" target="_blank">Vue</a></li>
+        <li data-indicate="Gulp"><a href="https://gulpjs.com/" target="_blank">Gulp</a></li>
+        <li data-indicate="Mocha"><a href="https://mochajs.org/" target="_blank">Mocha</a></li>
+        <li data-indicate="Chai"><a href="http://www.chaijs.com/" target="_blank">Chai</a></li>
+        <li data-indicate="Knockout"><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li>
+        <li data-indicate="Wordpress"><a href="https://wordpress.org/" target="_blank">Wordpress</a></li>
+        <li data-indicate="Require"><a href="https://requirejs.org/" target="_blank">Require</a></li>
+        <li data-indicate="Handlebars"><a href="https://handlebarsjs.com/" target="_blank">Handlebars</a></li>
+        <li data-indicate="Sass"><a href="https://sass-lang.com/" target="_blank">Sass</a></li>
+        <li data-indicate="Grunt"><a href="https://gruntjs.com/" target="_blank">Grunt</a></li>
+        <li data-indicate="jQuery"><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+        <li data-indicate="Bower"><a href="https://bower.io/" target="_blank">Bower</a></li>
+        <li data-indicate="Symfony"><a href="https://symfony.com/" target="_blank">Symfony</a></li>
+        <li data-indicate="Git"><a href="https://git-scm.com/" target="_blank">Git</a></li>
+        <li data-indicate="Photoshop"><a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank">Photoshop</a></li>
+        <li data-indicate="Illustrator"><a href="https://www.adobe.com/uk/products/illustrator.html" target="_blank">Illustrator</a></li>
+        <li data-indicate="InDesign"><a href="https://www.adobe.com/uk/products/indesign.html" target="_blank">InDesign</a></li>
+      </ul>
+    </article>
   </section>
 </template>
 
@@ -60,7 +83,7 @@
     }
   }
 
-  ul {
+  .icon-links {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -88,6 +111,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     will-change: box-shadow;
+    margin-bottom: 30px;
 
     &:hover {
       box-shadow: 0px 0px 5px 1px #fff;
@@ -112,16 +136,173 @@
     }
   }
 
+  .tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0 10px 20px 0;
+      width: calc(11.11% - 10px);
+      position: relative;
+      padding-bottom: 20px;
+
+      &:after {
+        content: attr(data-indicate);
+        display: inline-block;
+        color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        will-change: opacity;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        font-size: 14px;
+        font-size: 1.4rem;
+      }
+
+      &:hover:after {
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: block;
+      width: 80px;
+      height: 80px;
+      text-indent: -99999rem;
+      margin: 0 auto;
+
+      &:active {
+        opacity: 0.5;
+      }
+    }
+
+    [data-indicate="Angular"] a {
+      background: url('./../../assets/images/global/icons/tech/angular.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Vue"] a {
+      background: url('./../../assets/images/global/icons/tech/vue.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Gulp"] a {
+      background: url('./../../assets/images/global/icons/tech/gulp.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Mocha"] a {
+      background: url('./../../assets/images/global/icons/tech/mocha.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Chai"] a {
+      background: url('./../../assets/images/global/icons/tech/chai.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Wordpress"] a {
+      background: url('./../../assets/images/global/icons/tech/wordpress.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Knockout"] a {
+      background: url('./../../assets/images/global/icons/tech/knockout.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Require"] a {
+      background: url('./../../assets/images/global/icons/tech/require.svg') 50% 50% no-repeat;
+      background-size: auto 100%;
+    }
+
+    [data-indicate="Handlebars"] a {
+      background: url('./../../assets/images/global/icons/tech/handlebars.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Grunt"] a {
+      background: url('./../../assets/images/global/icons/tech/grunt.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="jQuery"] a {
+      background: url('./../../assets/images/global/icons/tech/jquery.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Bower"] a {
+      background: url('./../../assets/images/global/icons/tech/bower.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Sass"] a {
+      background: url('./../../assets/images/global/icons/tech/sass.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Symfony"] a {
+      background: url('./../../assets/images/global/icons/tech/symfony.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Git"] a {
+      background: url('./../../assets/images/global/icons/tech/git.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Photoshop"] a {
+      background: url('./../../assets/images/global/icons/tech/photoshop.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="Illustrator"] a {
+      background: url('./../../assets/images/global/icons/tech/illustrator.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+
+    [data-indicate="InDesign"] a {
+      background: url('./../../assets/images/global/icons/tech/indesign.svg') 50% 50% no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
   @media screen and (max-width: 900px) {
     .links {
       padding: 0;
     }
+
+    .tech-icons {
+      li {
+        width: calc(16.66% - 10px);
+        margin-bottom: 10px;
+      }
+    }
   }
 
   @media screen and (max-width: 650px) {
-    ul li {
+    .icon-links li {
       margin-bottom: 30px;
       font-size: inherit;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .tech-icons li {
+      margin-bottom: 0;
+
+      &:after {
+        bottom: 4px;
+        font-size: 12px;
+        font-size: 1.2rem;
+      }
+
+      a {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 
@@ -145,7 +326,7 @@
       }
     }
 
-    ul {
+    .icon-links {
       flex-direction: row;
       position: relative;
       top: 0;
@@ -159,6 +340,10 @@
         }
       }
     }
+
+    .tech-icons li {
+      width: calc(33.33% - 10px);
+    }
   }
 
   @media screen and (max-width: 450px) {
@@ -168,7 +353,7 @@
   }
 
   @media screen and (max-width: 400px) {
-    ul li {
+    .icon-links li {
       width: 100%;
     }
   }

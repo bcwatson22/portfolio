@@ -129,10 +129,10 @@
     }
 
     .disciplines li {
-      // &:hover,
-      // &:active {
-      //   transform: translateY(0px);
-      // }
+      &:hover,
+      &.active {
+        transform: translateY(-5px);
+      }
 
       &:after {
         font-size: 10px;

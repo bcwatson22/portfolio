@@ -95,4 +95,20 @@
       padding: 10px 70px 10px 50px;
     }
   }
+
+  @media screen and (max-width: 450px) {
+    .cookie-banner {
+      padding: 20px 65px 20px 45px;
+    }
+
+    .icon {
+      &.cookie {
+        left: 5px;
+      }
+
+      &.close {
+        right: 15px;
+      }
+    }
+  }
 </style>
