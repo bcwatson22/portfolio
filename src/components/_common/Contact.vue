@@ -25,13 +25,13 @@
         <li data-indicate="Gulp"><a href="https://gulpjs.com/" target="_blank">Gulp</a></li>
         <li data-indicate="Mocha"><a href="https://mochajs.org/" target="_blank">Mocha</a></li>
         <li data-indicate="Chai"><a href="http://www.chaijs.com/" target="_blank">Chai</a></li>
+        <li data-indicate="Require"><a href="https://requirejs.org/" target="_blank">Require</a></li>
         <li data-indicate="Knockout"><a href="http://knockoutjs.com/" target="_blank">Knockout</a></li>
         <li data-indicate="Wordpress"><a href="https://wordpress.org/" target="_blank">Wordpress</a></li>
-        <li data-indicate="Require"><a href="https://requirejs.org/" target="_blank">Require</a></li>
         <li data-indicate="Handlebars"><a href="https://handlebarsjs.com/" target="_blank">Handlebars</a></li>
         <li data-indicate="Sass"><a href="https://sass-lang.com/" target="_blank">Sass</a></li>
-        <li data-indicate="Grunt"><a href="https://gruntjs.com/" target="_blank">Grunt</a></li>
         <li data-indicate="jQuery"><a href="https://jquery.com/" target="_blank">jQuery</a></li>
+        <li data-indicate="Grunt"><a href="https://gruntjs.com/" target="_blank">Grunt</a></li>
         <li data-indicate="Bower"><a href="https://bower.io/" target="_blank">Bower</a></li>
         <li data-indicate="Symfony"><a href="https://symfony.com/" target="_blank">Symfony</a></li>
         <li data-indicate="Git"><a href="https://git-scm.com/" target="_blank">Git</a></li>
