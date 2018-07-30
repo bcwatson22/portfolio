@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development', 'Design', 'Branding'],
           },
-          blurb: 'Portrait gallery design and development project for Sheffield-based painter. Site built in Angular 4; featuring progressive image loading, meta-based animations and randomised content based on promises and behaviour subjects.',
+          blurb: 'Portrait gallery design and development project for Sheffield-based painter. Site built in Angular 4; featuring progressive image loading, meta-based animations and reactive content using RxJS Observables and Subjects.',
           link: 'http://bingjones.co.uk'
         },
         {
@@ -48,7 +48,7 @@ export const store = new Vuex.Store({
             primary: 'Development',
             list: ['Development'],
           },
-          blurb: 'New page developed for Plusnet site, using animated graphs and counters to visualise results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and transition delays. Head of Digital proclaimed it "best page on\'t site."',
+          blurb: 'New page developed for Plusnet site, using animated graphs and counters to visualise results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and transition delays. Head of Digital branded it "best page on\'t site."',
           link: 'https://www.plus.net/help/quality-of-service/'
         },
         {
