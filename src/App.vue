@@ -12,9 +12,8 @@
       </main>
 
       <Footer :year="copyrightYear"/>
-
-      <CookieBanner v-if="cookieBanner"/>
     </section>
+    <CookieBanner v-if="cookieBanner"/>
   </div>
 </template>
 

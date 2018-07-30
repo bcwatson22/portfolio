@@ -24,13 +24,17 @@
   export default {
     name: 'Projects',
     props: {
-      activeFilter: String,
-      projectsTitle: String
+      activeFilter: String
     },
     components: {
       Project
     },
     mixins: [mixins],
+    data () {
+      return {
+        projectsTitle: false
+      }
+    },
     created () {
 
       let filter = this.$route.query.filter;

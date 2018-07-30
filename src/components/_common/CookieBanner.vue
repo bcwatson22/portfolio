@@ -1,9 +1,11 @@
 <template>
-  <div class="cookie-banner">
-    <span class="icon full-size cookie">Cookie</span>
-    <p>This site uses cookies to give you a sweet user experience.</p>
-    <button class="icon full-size close" @click="dismissBanner($event)">Info</button>
-  </div>
+  <section class="cookie-banner">
+    <div class="inner">
+      <span class="icon full-size cookie">Cookie</span>
+      <p>This site uses cookies to give you a sweet user experience.</p>
+      <button class="icon full-size close" @click="dismissBanner($event)">Info</button>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -36,14 +38,21 @@
 
 <style lang="scss" scoped>
   .cookie-banner {
-    display: flex;
-    align-items: center;
-    padding: 20px 80px 20px 60px;
+    width: 100%;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     bottom: 0;
-    width: 100%;
-    max-width: 1200px;
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    padding: 20px 80px 20px 60px;
+    // background: rgba(0, 0, 0, 0.8);
+    // position: fixed;
+    // bottom: 0;
+    // width: 100%;
+    max-width: 1160px;
     opacity: 1;
     transform: translateY(0%);
     will-change: opacity, transform;
@@ -75,7 +84,7 @@
   }
 
   @media screen and (max-width: 900px) {
-    .cookie-banner {
+    .inner {
       padding: 20px 70px 20px 50px;
     }
 
@@ -91,13 +100,13 @@
   }
 
   @media screen and (max-width: 500px) {
-    .cookie-banner {
+    .inner {
       padding: 10px 70px 10px 50px;
     }
   }
 
   @media screen and (max-width: 450px) {
-    .cookie-banner {
+    .inner {
       padding: 20px 65px 20px 45px;
     }
 

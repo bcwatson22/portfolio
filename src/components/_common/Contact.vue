@@ -145,21 +145,10 @@
       margin: 0 10px 20px 0;
       width: calc(11.11% - 10px);
       position: relative;
-      padding-bottom: 20px;
+      // padding-bottom: 20px;
 
       &:after {
-        content: attr(data-indicate);
-        display: inline-block;
-        color: #fff;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        will-change: opacity;
-        transition: opacity 0.3s ease;
-        opacity: 0;
-        font-size: 14px;
-        font-size: 1.4rem;
+        // bottom: 0;
       }
 
       &:hover:after {
