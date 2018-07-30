@@ -223,10 +223,12 @@
     }
 
     &:active {
-      .overlay {
-        opacity: 0;
-        transition: none;
-      }
+      // .overlay {
+      //   opacity: 0;
+      //   transition: none;
+      // }
+      transform: scale(0.99);
+      transition: none;
     }
   }
 
@@ -350,6 +352,7 @@
 
     .icon {
       margin-top: 0;
+      margin-bottom: 15px;
       opacity: 0;
       transform: translateX(50px);
       transition: all 0.25s ease;
