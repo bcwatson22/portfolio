@@ -66,7 +66,6 @@
   li {
     &:after {
       left: 50%;
-      // transform: translate(-50%, 10px);
     }
 
     &:hover,
@@ -114,7 +113,6 @@
       &:after {
         font-size: 12px;
         font-size: 1.2rem;
-        // transform: translate(-50%, 5px);
       }
 
       &[data-indicate="Development"]:after {

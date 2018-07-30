@@ -144,10 +144,8 @@
     overflow: hidden;
     transition: all 0.3s ease;
     will-change: box-shadow;
-    // min-height: 300px;
 
     &.video {
-      // background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
       background: #000 url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
       background-size: 80px 80px;
 
@@ -184,29 +182,6 @@
       background: #fff;
     }
 
-    // &:before {
-    //   content: '';
-    //   width: 1px;
-    //   margin-left: -1px;
-    //   float: left;
-    //   height: 0;
-    //   // padding-top: 60%;
-    // }
-    //
-    // &.red-eric,
-    // &.x-games,
-    // &.basics {
-    //   &:before {
-    //     padding-top: 70%;
-    //   }
-    // }
-    //
-    // &:after {
-    //   content: '';
-    //   display: table;
-    //   clear: both;
-    // }
-
     &:hover,
     &:focus {
       box-shadow: 0px 0px 5px 1px #fff;
@@ -223,10 +198,6 @@
     }
 
     &:active {
-      // .overlay {
-      //   opacity: 0;
-      //   transition: none;
-      // }
       transform: scale(0.99);
       transition: none;
     }

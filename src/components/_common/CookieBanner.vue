@@ -48,10 +48,6 @@
     display: flex;
     align-items: center;
     padding: 20px 80px 20px 60px;
-    // background: rgba(0, 0, 0, 0.8);
-    // position: fixed;
-    // bottom: 0;
-    // width: 100%;
     max-width: 1160px;
     opacity: 1;
     transform: translateY(0%);

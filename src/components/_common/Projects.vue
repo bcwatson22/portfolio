@@ -1,6 +1,5 @@
 <template>
   <section class="projects">
-  <!-- <transition-group name="flip-list" tag="section" class="projects"> -->
     <h1 class="hidden">{{ projectsTitle }} Projects</h1>
     <Project
       v-for="project of filteredProjects"
@@ -12,7 +11,6 @@
         :link="project.link"
         :data="project"
       />
-  <!-- </transition-group> -->
   </section>
 </template>
 
@@ -102,8 +100,4 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-
-  // .flip-list-move {
-  //   transition: transform 1s;
-  // }
 </style>

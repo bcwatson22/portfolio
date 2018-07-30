@@ -3,20 +3,12 @@ html {
 }
 
 body {
-  // font-family: 'Helvetica Neue', Arial, sans-serif;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // font-weight: 300;
   font-size: 16px;
   font-size: 1.6rem;
-
-  // .wf-active & {
-  //   font-family: 'Montserrat', Helvetica, sans-serif;
-  //   font-size: 14px;
-  //   font-size: 1.4rem;
-  // }
 }
 
 h1,
@@ -35,17 +27,9 @@ h2 {
   text-align: center;
 }
 
-// h2 {
-//   font-size: 2rem;
-//   font-weight: 700;
-//   // color: $orange;
-//   margin-top: 60px;
-// }
-
 h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  // color: $dark-blue;
   margin-bottom: 15px;
   margin-top: 30px;
 }
@@ -61,7 +45,6 @@ small {
 
 a {
   text-decoration: none;
-  // color: $orange;
 
   &:hover,
   &:focus {
@@ -70,7 +53,6 @@ a {
 
   &:active {
     text-decoration: none;
-    // color: $dark-blue;
   }
 }
 
@@ -82,12 +64,6 @@ button {
      outline: 0;
    }
 }
-
-// span {
-//   .vcard & {
-//     display: block;
-//   }
-// }
 
 li {
   margin-bottom: 10px;
@@ -103,26 +79,6 @@ li {
 	width: 1px;
 	overflow: hidden;
 }
-
-// @media screen and (max-width: 900px) {
-//
-//   h1 {
-//     font-size: 3rem;
-//     margin-bottom: 20px;
-//     text-align: left;
-//   }
-//
-//   h2 {
-//     font-size: 1.8rem;
-//     margin-top: 20px;
-//     margin-bottom: 20px;
-//   }
-//
-//   h3 {
-//     margin-top: 20px;
-//   }
-//
-// }
 
 @media screen and (max-width: 900px) {
   h1 {

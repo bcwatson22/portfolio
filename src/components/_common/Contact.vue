@@ -145,11 +145,6 @@
       margin: 0 10px 20px 0;
       width: calc(11.11% - 10px);
       position: relative;
-      // padding-bottom: 20px;
-
-      &:after {
-        // bottom: 0;
-      }
 
       &:hover:after {
         opacity: 1;

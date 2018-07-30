@@ -19,23 +19,6 @@
   100%   { transform: translateX(0) scale(0.375); opacity: 1; }
 }
 
-// .router-enter-active {
-//   transition: opacity 0.3s ease;
-// }
-//
-// .router-enter,
-// .router-leave-active {
-//   opacity: 0;
-// }
-//
-// .router-enter {
-//   .project,
-//   .icon-links li {
-//     opacity: 0;
-//     transform: translateY(50px);
-//   }
-// }
-
 .v-lazy-image {
   filter: blur(10px);
   transform: scale(1.05);
@@ -69,10 +52,6 @@
   transition: all 0.3s ease-out;
 }
 
-// .popup-enter-active .mask {
-//   transition: all 0.15s ease-out;
-// }
-
 .popup-leave-active,
 .popup-leave-active .container {
   transition: all 0.15s ease-in;
@@ -85,10 +64,6 @@
     transform: scale(1.02);
   }
 }
-
-// .popup-enter .mask {
-//   opacity: 0;
-// }
 
 .popup-leave-to {
   opacity: 0;

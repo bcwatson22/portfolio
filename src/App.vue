@@ -18,8 +18,6 @@
 </template>
 
 <script>
-  // import HelloWorld from './components/HelloWorld.vue';
-
   import Header from './components/_common/Header.vue';
   import Project from './components/_common/Projects.vue';
   import Footer from './components/_common/Footer.vue';
@@ -36,7 +34,6 @@
   export default {
     name: 'app',
     components: {
-      // HelloWorld,
       Header,
       Project,
       Footer,

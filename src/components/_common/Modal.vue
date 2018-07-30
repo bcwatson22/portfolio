@@ -73,13 +73,10 @@
   .container {
     overflow: hidden;
     will-change: opacity, transform;
-    // pointer-events: none;
   }
 
   .image {
     height: 100%;
-    // overflow-y: scroll;
-    // display: flex;
 
     &.vector {
       background: #fff;
@@ -165,9 +162,7 @@
     }
 
     .image {
-      // height: 100%;
       overflow-y: scroll;
-      // display: flex;
 
       img {
         width: 100%;
