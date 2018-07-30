@@ -174,7 +174,7 @@
       margin: 0 auto;
 
       &:active {
-        opacity: 0.5;
+        transform: scale(0.9);
       }
     }
 

@@ -420,6 +420,23 @@
       background: none;
       margin: 20px 0;
       box-shadow: 0px 0px 5px 1px #fff;
+
+      &.video.toggle {
+        &:before {
+          content: '';
+          width: 1px;
+          margin-left: -1px;
+          float: left;
+          height: 0;
+          padding-top: 70%;
+        }
+
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+      }
     }
 
     img {
