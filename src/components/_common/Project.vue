@@ -150,8 +150,6 @@
       background-size: 80px 80px;
 
       &.toggle {
-        background: #000;
-
         &:before {
           content: '';
           width: 1px;
