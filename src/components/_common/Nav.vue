@@ -10,8 +10,8 @@
       <li data-indicate="Branding" :class="currentFilter === 'branding' ? 'active' : ''">
         <router-link :to="currentFilter === 'branding' ? '/projects' : { path: 'projects', query: { filter: 'branding' }}" class="icon scaled branding">Branding</router-link>
       </li>
-      <li data-indicate="Video" :class="currentFilter === 'video' ? 'active' : ''">
-        <router-link :to="currentFilter === 'video' ? '/projects' : { path: 'projects', query: { filter: 'video' }}" class="icon scaled video">Video</router-link>
+      <li data-indicate="Other" :class="currentFilter === 'other' ? 'active' : ''">
+        <router-link :to="currentFilter === 'other' ? '/projects' : { path: 'projects', query: { filter: 'other' }}" class="icon scaled other">Other</router-link>
       </li>
       <li data-indicate="CV">
         <a href="/cv.pdf" @click.prevent="linkTo($event, true)" class="icon scaled cv">CV</a>

@@ -53,7 +53,7 @@ router.beforeEach((to, from, next) => {
       case 'development':
       case 'design':
       case 'branding':
-      case 'video':
+      case 'other':
         next();
         break;
 

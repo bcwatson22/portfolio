@@ -150,6 +150,34 @@
       // background: #000 url('./../../assets/images/global/loader.gif') 50% 50% no-repeat;
       background: #000 url('./../../assets/images/global/loader.svg') 50% 50% no-repeat;
       background-size: 80px 80px;
+
+      &.toggle {
+        background: #000;
+
+        &:before {
+          content: '';
+          width: 1px;
+          margin-left: -1px;
+          float: left;
+          height: 0;
+          padding-top: 70%;
+        }
+
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+
+        img,
+        .overlay {
+          display: none;
+        }
+
+        .close {
+          display: block;
+        }
+      }
     }
 
     &.vector {
@@ -227,19 +255,6 @@
 
   .close {
     top: 30px;
-  }
-
-  .toggle {
-    background: #000;
-
-    img,
-    .overlay {
-      display: none;
-    }
-
-    .close {
-      display: block;
-    }
   }
 
   iframe,
@@ -420,23 +435,6 @@
       background: none;
       margin: 20px 0;
       box-shadow: 0px 0px 5px 1px #fff;
-
-      &.video.toggle {
-        &:before {
-          content: '';
-          width: 1px;
-          margin-left: -1px;
-          float: left;
-          height: 0;
-          padding-top: 70%;
-        }
-
-        &:after {
-          content: '';
-          display: table;
-          clear: both;
-        }
-      }
     }
 
     img {

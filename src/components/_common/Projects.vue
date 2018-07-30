@@ -1,6 +1,7 @@
 <template>
   <section class="projects">
   <!-- <transition-group name="flip-list" tag="section" class="projects"> -->
+    <h1 class="hidden">{{ projectsTitle }} Projects</h1>
     <Project
       v-for="project of filteredProjects"
         :key="project.id"
@@ -23,7 +24,8 @@
   export default {
     name: 'Projects',
     props: {
-      activeFilter: String
+      activeFilter: String,
+      projectsTitle: String
     },
     components: {
       Project
@@ -38,15 +40,21 @@
     },
     mounted () {
 
-      let filter = this.activeFilter;
+      let activeFilter = this.activeFilter;
 
-      if (filter) {
+      if (activeFilter) {
 
-        this.updateTitleMeta(this.capitalise(filter));
+        let title = this.capitalise(activeFilter);
+
+        this.updateTitleMeta(title + ' Projects');
+
+        this.projectsTitle = title;
 
       } else {
 
         this.updateTitleMeta('Projects');
+
+        this.projectsTitle = 'All';
 
       }
 
@@ -56,15 +64,21 @@
 
         if (newValue) {
 
+          let filter = this.capitalise(newValue);
+
           this.$store.commit('filterProjects', newValue);
 
-          this.updateTitleMeta(this.capitalise(newValue));
+          this.updateTitleMeta(filter + ' Projects');
+
+          this.projectsTitle = filter;
 
         } else {
 
           this.$store.commit('restoreProjects');
 
           this.updateTitleMeta('Projects');
+
+          this.projectsTitle = 'All';
 
         }
 

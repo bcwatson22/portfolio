@@ -10,7 +10,7 @@ module.exports = {
               name: 'img/[name].[hash:8].[ext]',
               mozjpeg: {
                 progressive: true,
-                quality: 90
+                quality: 85
               },
               optipng: {
                 enabled: false,

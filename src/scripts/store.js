@@ -111,10 +111,10 @@ export const store = new Vuex.Store({
           title: 'Planet Vlog',
           name: 'planet-vlog',
           disciplines: {
-            primary: 'Video',
-            list: ['Video'],
+            primary: 'Other',
+            list: ['Other'],
           },
-          blurb: 'Video blog of backpacking trip through Asia. Concept was to capture one second of video every day, which creates a diverse montage when stitched together.',
+          blurb: 'Video blog of a trip through Asia; including India, Sri Lanka and the Philippines. The concept was to capture one second of video every day - which creates a diverse montage when stitched together.',
           link: 'embed'
         }
       ],

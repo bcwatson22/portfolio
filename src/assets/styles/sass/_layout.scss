@@ -61,6 +61,7 @@ main {
       display: inline-block;
       color: #fff;
       position: absolute;
+      // bottom: -10px;
       will-change: opacity;
       transition: opacity 0.3s ease;
       opacity: 0;
@@ -216,7 +217,7 @@ main {
     }
   }
 
-  &.video {
+  &.other {
     color: $red;
     background: $red;
 

@@ -4,7 +4,7 @@
       <img src="./../../assets/images/global/logo-white.svg" alt="Billy Watson logo">
     </router-link>
     <section class="intro">
-      <p>A creative Web Developer from the Peak District with five years' experience, both agency and in-house. Other skills include design, branding and video.</p>
+      <p>A creative Web Developer from the Peak District with five years' experience, in both agency and client side roles. Other skills include design and branding.</p>
       <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also a fan of music, mountain biking and Yorkshire Tea.</p>
     </section>
     <Nav/>

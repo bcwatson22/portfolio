@@ -1,7 +1,8 @@
 <template>
   <section class="contact">
     <article class="links">
-      <p>A creative Web Developer from the Peak District with five years' experience, both agency and in-house. Other skills include design, branding and video.</p>
+      <h1 class="hidden">Contact</h1>
+      <p>A creative Web Developer from the Peak District with five years' experience, in both agency and client side roles. Other skills include design and branding.</p>
       <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also a fan of music, mountain biking and Yorkshire Tea.</p>
       <ul class="icon-links">
         <li class="email"><a href="mailto:bcwatson22@gmail.com">bcwatson22@gmail.com</a></li>
@@ -14,7 +15,7 @@
       :srcset="require('./../../assets/images/global/mugshot-1000.jpg') + ' 1000w,' + require('./../../assets/images/global/mugshot-800.jpg') + ' 800w,' + require('./../../assets/images/global/mugshot-600.jpg') + ' 600w,' + require('./../../assets/images/global/mugshot-400.jpg') + ' 400w'"
       sizes="(min-width: 500px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
-        <h1>Intit just.</h1>
+        <h2>Intit just.</h2>
       </span>
     </article>
     <article class="skills">
@@ -130,7 +131,7 @@
     display: flex;
     align-items: center;
 
-    h1 {
+    h2 {
       margin: 0;
       width: 100%;
     }
