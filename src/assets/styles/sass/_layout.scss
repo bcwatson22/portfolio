@@ -221,12 +221,12 @@ main {
     background: $red;
 
     &:before {
-      background: url('./../../assets/images/global/icons/video-circle-light.svg') 50% 50% no-repeat;
+      background: url('./../../assets/images/global/icons/other-light.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
 
     &:after {
-      background: url('./../../assets/images/global/icons/video-circle-colour.svg') 50% 50% no-repeat;
+      background: url('./../../assets/images/global/icons/other-colour.svg') 50% 50% no-repeat;
       background-size: 50% 50%;
     }
   }
