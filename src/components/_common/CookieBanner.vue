@@ -42,13 +42,6 @@
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     bottom: 0;
-  }
-
-  .inner {
-    display: flex;
-    align-items: center;
-    padding: 20px 80px 20px 60px;
-    max-width: 1160px;
     opacity: 1;
     transform: translateY(0%);
     will-change: opacity, transform;
@@ -58,6 +51,13 @@
       opacity: 0;
       transform: translateY(100%);
     }
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    padding: 20px 80px 20px 60px;
+    max-width: 1160px;
   }
 
   .icon {
