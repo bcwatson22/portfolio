@@ -16,7 +16,8 @@ export const store = new Vuex.Store({
             list: ['Development', 'Design', 'Branding'],
           },
           blurb: 'Portrait gallery design and development project for Sheffield-based painter. Site built in Angular 4; featuring progressive image loading, meta-based animations and reactive content using RxJS Observables and Subjects.',
-          link: 'http://bingjones.co.uk'
+          link: 'http://bingjones.co.uk',
+          initial: 'development'
         },
         {
           id: 2,
@@ -27,7 +28,8 @@ export const store = new Vuex.Store({
             list: ['Development', 'Design'],
           },
           blurb: 'Rapid prototype Member Centre built for Plusnet, vastly modernising their current setup. Project developed in Angular 4 and features search functionality, broadband speed test journey and a user tested, data-driven UI.',
-          link: 'https://bcwatson22.github.io/member/'
+          link: 'https://bcwatson22.github.io/member/',
+          initial: 'none'
         },
         {
           id: 9,
@@ -38,7 +40,8 @@ export const store = new Vuex.Store({
             list: ['Design', 'Branding'],
           },
           blurb: 'Logo and branding project for Stockport-based skateboarding and streetwear label. Brief included inclusion of local postcode and "moody-looking" clouds.',
-          link: 'vector'
+          link: 'vector',
+          initial: 'branding'
         },
         {
           id: 5,
@@ -49,7 +52,8 @@ export const store = new Vuex.Store({
             list: ['Development'],
           },
           blurb: 'New page developed for Plusnet site, using animated graphs and counters to visualise results of quarterly satisfaction surveys. Written using Handlebars, with variable axes and transition delays. Head of Digital branded it "best page on\'t site."',
-          link: 'https://www.plus.net/help/quality-of-service/'
+          link: 'https://www.plus.net/help/quality-of-service/',
+          initial: 'none'
         },
         {
           id: 10,
@@ -60,7 +64,8 @@ export const store = new Vuex.Store({
             list: ['Design'],
           },
           blurb: 'Article design for Leeds creative magazine, profiling independent art space and recording studio. Created using InDesign, with image processing in Photoshop and vector graphics in Illustrator.',
-          link: 'raster'
+          link: 'raster',
+          initial: 'design'
         },
         {
           id: 3,
@@ -71,7 +76,8 @@ export const store = new Vuex.Store({
             list: ['Design', 'Branding'],
           },
           blurb: 'Logo design and branding project for existing business. Project included modern recreation of existing logo from low-resolution scan, achieved in Illustrator using masks and live trace.',
-          link: 'vector'
+          link: 'vector',
+          initial: 'none'
         },
         {
           id: 4,
@@ -82,7 +88,8 @@ export const store = new Vuex.Store({
             list: ['Design', 'Branding'],
           },
           blurb: 'Corporate identity created for new business in the industrial sector, working from a brief that required eco-friendly connotations. All vector elements created in Illustrator.',
-          link: 'vector'
+          link: 'vector',
+          initial: 'none'
         },
         {
           id: 8,
@@ -93,7 +100,8 @@ export const store = new Vuex.Store({
             list: ['Design'],
           },
           blurb: 'Layout design for Fiyah! magazine article on Back to Basics; the longest running club night in the world. Created in InDesign, with Photoshop used for image manipulation.',
-          link: 'raster'
+          link: 'raster',
+          initial: 'none'
         },
         {
           id: 7,
@@ -104,7 +112,8 @@ export const store = new Vuex.Store({
             list: ['Design'],
           },
           blurb: 'Article design for TBB magazine outlining X-Games - an annual extreme sports event that takes place in Rhode Island. InDesign used for layout and graphic design.',
-          link: 'raster'
+          link: 'raster',
+          initial: 'none'
         },
         {
           id: 6,
@@ -115,7 +124,8 @@ export const store = new Vuex.Store({
             list: ['Other'],
           },
           blurb: 'Video blog of a trip through Asia; including India, Sri Lanka and the Philippines. The concept was to capture one second of video every day - which creates a diverse montage when stitched together.',
-          link: 'embed'
+          link: 'embed',
+          initial: 'none'
         }
       ],
       filtered: [],
@@ -135,7 +145,17 @@ export const store = new Vuex.Store({
   mutations: {
     filterProjects (state, payload) {
 
-      state.projects.filtered = state.projects.original.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(payload.toLowerCase()) > -1);
+      let filter = payload.toLowerCase();
+
+      state.projects.filtered = state.projects.original.filter(project => JSON.stringify(project.disciplines).toLowerCase().indexOf(filter) > -1);
+
+      state.projects.filtered.sort(() => Math.random() - 0.5);
+
+      state.projects.filtered = state.projects.filtered.filter(project => project.initial.indexOf('none') > -1);
+
+      let initialItem = state.projects.original.filter(project => project.initial.indexOf(filter) > -1)[0];
+
+      state.projects.filtered.unshift(initialItem);
 
       state.projects.activeFilter = payload;
 

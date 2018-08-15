@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section class="projects" :class="activeFilter ? activeFilter : ''">
     <h1 class="hidden">{{ projectsTitle }} Projects</h1>
     <Project
       v-for="project of filteredProjects"

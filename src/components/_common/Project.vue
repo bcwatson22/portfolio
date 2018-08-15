@@ -282,7 +282,7 @@
 
     .pyramid-sk8 & {
       width: 200%;
-      top: -200%;
+      top: -160%;
       left: -48%;
     }
   }
