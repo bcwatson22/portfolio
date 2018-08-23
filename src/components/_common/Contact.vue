@@ -46,7 +46,7 @@
 
 <script>
   import mixins from './../../scripts/mixins.js';
-  import VLazyImage from "v-lazy-image";
+  import VLazyImage from 'v-lazy-image';
 
   export default {
     name: 'Contact',
