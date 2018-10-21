@@ -16,7 +16,8 @@ module.exports = {
                 enabled: false,
               },
               pngquant: {
-                enabled: false
+                quality: '65-90',
+                speed: 4
               }
             })
     }

@@ -125,7 +125,7 @@ export const store = new Vuex.Store({
           },
           blurb: 'Video blog of a trip through Asia; including India, Sri Lanka and the Philippines. The concept was to capture one second of video every day - which creates a diverse montage when stitched together.',
           link: 'embed',
-          initial: 'none'
+          initial: 'other'
         }
       ],
       filtered: [],
@@ -151,7 +151,7 @@ export const store = new Vuex.Store({
 
       state.projects.filtered.sort(() => Math.random() - 0.5);
 
-      state.projects.filtered = state.projects.filtered.filter(project => project.initial.indexOf('none') > -1);
+      state.projects.filtered = state.projects.filtered.filter(project => project.initial.indexOf(filter) <= -1);
 
       let initialItem = state.projects.original.filter(project => project.initial.indexOf(filter) > -1)[0];
 

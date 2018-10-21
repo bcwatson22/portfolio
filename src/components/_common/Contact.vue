@@ -5,7 +5,7 @@
       <p>A creative Web Developer from the Peak District with five years' experience, in both agency and client side roles. Other skills include design and branding.</p>
       <p>JavaScript specialist with extensive knowledge of modern frameworks including Angular and Vue. Also a fan of music, mountain biking and Yorkshire Tea.</p>
       <ul class="icon-links">
-        <li class="email"><a href="mailto:bcwatson22@gmail.com">bcwatson22@gmail.com</a></li>
+        <li class="email"><a href="mailto:hello@billywatson.net">hello@billywatson.net</a></li>
         <li class="linkedin"><a href="https://www.linkedin.com/in/watsonbilly" target="_blank">linkedin.com/in/watsonbilly</a></li>
         <li class="github"><a href="https://github.com/bcwatson22" target="_blank">github.com/bcwatson22</a></li>
       </ul>
