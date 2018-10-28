@@ -11,8 +11,8 @@
       </ul>
     </article>
     <article class="image">
-      <v-lazy-image :src="require('./../../assets/images/global/mugshot-1000.jpg')" :src-placeholder="require('./../../assets/images/global/mugshot-10.jpg')" alt="Billy Watson"
-      :srcset="require('./../../assets/images/global/mugshot-1000.jpg') + ' 1000w,' + require('./../../assets/images/global/mugshot-800.jpg') + ' 800w,' + require('./../../assets/images/global/mugshot-600.jpg') + ' 600w,' + require('./../../assets/images/global/mugshot-400.jpg') + ' 400w'"
+      <v-lazy-image :src="require('./../../assets/images/global/mugshot-blue-2000.jpg')" :src-placeholder="require('./../../assets/images/global/mugshot-blue-10.jpg')" alt="Billy Watson"
+      :srcset="require('./../../assets/images/global/mugshot-blue-2000.jpg') + ' 2000w,' + require('./../../assets/images/global/mugshot-blue-1000.jpg') + ' 1000w,' + require('./../../assets/images/global/mugshot-blue-800.jpg') + ' 800w,' + require('./../../assets/images/global/mugshot-blue-600.jpg') + ' 600w,' + require('./../../assets/images/global/mugshot-blue-400.jpg') + ' 400w'"
       sizes="(min-width: 500px) 50vw, 100vw"></v-lazy-image>
       <span class="overlay">
         <h2>Intit just.</h2>
@@ -280,7 +280,7 @@
       margin-bottom: 0;
 
       &:after {
-        bottom: 4px;
+        bottom: 2px;
         font-size: 12px;
         font-size: 1.2rem;
       }

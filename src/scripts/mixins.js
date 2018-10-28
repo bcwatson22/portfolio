@@ -26,9 +26,13 @@ export default {
 
         this.$router.go(-1);
 
+        this.updateTitleMeta(this.previousFilter);
+
       } else {
 
         this.$router.push('/');
+
+        this.updateTitleMeta('Projects');
 
       }
 
